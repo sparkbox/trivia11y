@@ -6,6 +6,8 @@ A site for questions and answers, either for studying or fun (or both).
 
 This project requires [Node.js](https://nodejs.org) and `npm` (included with Node.js) to build the site and run it in local development. The LTS (Long Term Support) version is recommended for most cases.
 
+You will need `netlify-cli` installed globally before running `npm start`, so be sure to run `npm i -g netlify-cli` if you don't have it installed already.
+
 Here are the main commands you'll need to run to get the project up and running.
 
 ```sh
