@@ -26,6 +26,8 @@
     "stylelint-config-standard": "^32.0.0"
   },
   "dependencies": {
-    "airtable": "^0.11.6"
+    "airtable": "^0.11.6",
+    "isomorphic-dompurify": "^1.2.0",
+    "marked": "^4.3.0"
   }
 }
