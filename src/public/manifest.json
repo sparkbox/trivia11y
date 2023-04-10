@@ -1,6 +1,6 @@
 {
-  "short_name": "11ty Starter Lite",
-  "name": "Eleventy Starter Lite",
+  "short_name": "Pursuit of Trivia",
+  "name": "Pursuit of Trivia",
   "icons": [
     {
       "src": "favicon.svg",
@@ -21,8 +21,8 @@
   ],
   "start_url": "/",
   "background_color": "#1a1a1a",
-  "display": "browser",
+  "display": "standalone",
   "scope": "/",
   "theme_color": "#1a1a1a",
-  "description": "A minimal starter template for creating websites using Eleventy."
+  "description": "Questions and answers for either studying or fun (or both). "
 }
