@@ -9,6 +9,6 @@ layout: default
 <dl>
 {% for question in questions %}
   <dt>{{ question.Question }}</dt>
-  <dl>{{ question.Answer }}</dl>
+  <dl>{{ question.Answer | mdToHtml | safe }}</dl>
 {% endfor %}
 </dl>

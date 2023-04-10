@@ -15,7 +15,6 @@ const getPublishedQuestions = async () => {
   const publishedQuestions = questions
     .filter((record) => record.fields.Published)
     .map((record) => record.fields);
-  console.log(JSON.stringify(publishedQuestions, null, 2));
 
   return publishedQuestions;
 };
