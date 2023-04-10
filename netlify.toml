@@ -1,0 +1,9 @@
+[dev]
+autoLaunch = false
+
+[[redirects]]
+from = "/serverless/"
+to = "/.netlify/builders/serverless"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "serverless"

@@ -9,7 +9,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "start": "rm -rf dist && eleventy --serve --incremental",
+    "start": "rm -rf dist && netlify dev -c \"eleventy --serve --incremental\"",
     "build": "rm -rf dist && eleventy",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint \"src/**/*.{css,scss,sass}\" --color --formatter verbose",
@@ -26,6 +26,7 @@
     "stylelint-config-standard": "^32.0.0"
   },
   "dependencies": {
+    "@netlify/functions": "^1.4.0",
     "airtable": "^0.11.6",
     "isomorphic-dompurify": "^1.2.0",
     "marked": "^4.3.0"
