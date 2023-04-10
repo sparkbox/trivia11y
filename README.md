@@ -1,4 +1,4 @@
-# Eleventy Starter Lite
+# Pursuit of Trivia
 
 A minimal starter template for building a site with Eleventy. For those who prefer to add tools when needed rather than delete boilerplate. [Create a new repository from this template](https://github.com/dustin-jw/eleventy-starter-lite/generate).
 
