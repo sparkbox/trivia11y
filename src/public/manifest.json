@@ -21,7 +21,7 @@
   ],
   "start_url": "/",
   "background_color": "#1a1a1a",
-  "display": "browser",
+  "display": "standalone",
   "scope": "/",
   "theme_color": "#1a1a1a",
   "description": "Questions and answers for either studying or fun (or both). "
