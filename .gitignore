@@ -3,3 +3,8 @@ dist
 .env
 coverage
 .DS_Store
+
+# Local Netlify folder
+.netlify
+netlify/functions/serverless/**
+!netlify/functions/serverless/index.js
