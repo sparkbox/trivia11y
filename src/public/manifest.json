@@ -1,0 +1,28 @@
+{
+  "short_name": "11ty Starter Lite",
+  "name": "Eleventy Starter Lite",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    },
+    {
+      "src": "splash_icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "maskable_icon.png",
+      "type": "image/png",
+      "sizes": "196x196",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1a1a1a",
+  "display": "browser",
+  "scope": "/",
+  "theme_color": "#1a1a1a",
+  "description": "A minimal starter template for creating websites using Eleventy."
+}

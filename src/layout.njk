@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block titleAndDescription %}
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    {% endblock %}
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/favicon.png" type="image/png">
+    <link rel="mask-icon" href="/favicon.svg">
+
+    <link rel="apple-touch-icon" href="/maskable_icon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f2f2f2" media="(prefers-color-scheme: light)">
+
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    {% block header %}
+      {% include 'partials/header.njk' %}
+    {% endblock %}
+    <main id="main-content">
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+    </main>
+    {% block footer %}{% endblock %}
+
+    <!-- global scripts, should render on every page -->
+
+    <!-- page-specific scripts, should be set within the page template -->
+    {% block scripts %}{% endblock %}
+
+    <script type="module">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "eleventy-starter-lite",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "rm -rf dist && eleventy --serve --incremental",
+    "build": "rm -rf dist && eleventy",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "stylelint \"src/**/*.{css,scss,sass}\" --color --formatter verbose",
+    "lint:js": "DEBUG=eslint:cli-engine eslint .",
+    "test": "echo \"TODO: add support for testing\" && exit 0",
+    "update-deps": "ncu -u && npm install"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.38.0",
+    "npm-check-updates": "^16.10.7",
+    "stylelint": "^15.4.0",
+    "stylelint-config-standard": "^32.0.0"
+  }
+}
