@@ -24,6 +24,11 @@ module.exports = function (eleventyConfig) {
     redirects: 'netlify-toml-builders',
   });
 
+  eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+    name: 'dynamic',
+    functionsDir: './netlify/functions/',
+  });
+
   return {
     dir: {
       input: 'pages',
