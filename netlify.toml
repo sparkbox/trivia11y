@@ -2,8 +2,15 @@
 autoLaunch = false
 
 [[redirects]]
-from = "/serverless/"
-to = "/.netlify/builders/serverless"
+from = "/dynamic/"
+to = "/.netlify/functions/dynamic"
 status = 200
 force = true
-_generated_by_eleventy_serverless = "serverless"
+_generated_by_eleventy_serverless = "dynamic"
+
+[[redirects]]
+from = "/on-demand/"
+to = "/.netlify/builders/on-demand"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "on-demand"

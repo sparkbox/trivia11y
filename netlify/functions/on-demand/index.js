@@ -6,7 +6,7 @@ const { builder } = require('@netlify/functions');
 require('./eleventy-bundler-modules.js');
 
 async function handler(event) {
-  let elev = new EleventyServerless('serverless', {
+  let elev = new EleventyServerless('on-demand', {
     path: new URL(event.rawUrl).pathname,
     query: event.multiValueQueryStringParameters || event.queryStringParameters,
     functionsDir: './netlify/functions/',

@@ -6,5 +6,8 @@ coverage
 
 # Local Netlify folder
 .netlify
-netlify/functions/serverless/**
-!netlify/functions/serverless/index.js
+netlify/functions/on-demand/**
+!netlify/functions/on-demand/index.js
+
+netlify/functions/dynamic/**
+!netlify/functions/dynamic/index.js
