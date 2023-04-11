@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('mdToHtml', markdownToHtml);
 
   eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-    name: 'serverless',
+    name: 'on-demand',
     functionsDir: './netlify/functions/',
     redirects: 'netlify-toml-builders',
   });
