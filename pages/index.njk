@@ -2,17 +2,15 @@
 title: Home
 description: This is the home page.
 layout: default
-permalink:
-  build: /
-  on-demand: /on-demand/
-  dynamic: /dynamic/
 ---
 
 <h1>Home Page</h1>
 
-<dl>
-{% for question in questions %}
-  <dt>{{ question.Question }}</dt>
-  <dl>{{ question.Answer | mdToHtml | safe }}</dl>
-{% endfor %}
-</dl>
+<ul>
+  <li>
+    <a href="/categories/">Categories</a>
+  </li>
+  <li>
+    <a href="/dynamic/categories/">Categories (Dynamic)</a>
+  </li>
+</ul>

@@ -2,14 +2,28 @@
 autoLaunch = false
 
 [[redirects]]
-from = "/dynamic/"
+from = "/dynamic/categories/:tag"
 to = "/.netlify/functions/dynamic"
 status = 200
 force = true
 _generated_by_eleventy_serverless = "dynamic"
 
 [[redirects]]
-from = "/on-demand/"
+from = "/categories/:tag"
+to = "/.netlify/builders/on-demand"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "on-demand"
+
+[[redirects]]
+from = "/dynamic/categories/"
+to = "/.netlify/functions/dynamic"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "dynamic"
+
+[[redirects]]
+from = "/categories/"
 to = "/.netlify/builders/on-demand"
 status = 200
 force = true

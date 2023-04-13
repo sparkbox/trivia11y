@@ -1,0 +1,20 @@
+---
+title: Categories
+description: Choose one or more categories to focus on, or study everything at once.
+layout: default
+permalink:
+  on-demand: /categories/
+  dynamic: /dynamic/categories/
+---
+
+<h1>Categories</h1>
+
+<ul>
+{% for category in questionData.categories %}
+  <li>
+    <a href="/categories/{{ category | slugify }}/">
+      {{ category }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
