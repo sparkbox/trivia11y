@@ -10,9 +10,16 @@ permalink:
 
 <h1>Home Page</h1>
 
-<dl>
 {% for question in questions %}
-  <dt>{{ question.Question }}</dt>
-  <dl>{{ question.Answer | mdToHtml | safe }}</dl>
+  <div>
+    {{ question.Question | mdToHtml | safe }}
+  </div>
+  <details>
+    <summary>
+      Reveal Answer
+    </summary>
+    <div>
+      {{ question.Answer | mdToHtml | safe }}
+    </div>
+  </details>
 {% endfor %}
-</dl>
