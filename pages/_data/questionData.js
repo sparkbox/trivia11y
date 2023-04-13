@@ -19,8 +19,24 @@ const getPublishedQuestions = async () => {
   return publishedQuestions;
 };
 
+const getUniqueCategories = (questions) => {
+  // console.log(JSON.stringify({ questions }, null, 2));
+  return [
+    ...new Set(
+      questions
+        .map((question) => question.Tags)
+        .flat()
+        .sort()
+    ),
+  ];
+};
+
 module.exports = async () => {
   const questions = await getPublishedQuestions();
+  const categories = getUniqueCategories(questions);
 
-  return questions;
+  return {
+    questions,
+    categories,
+  };
 };
