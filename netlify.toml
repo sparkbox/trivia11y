@@ -2,6 +2,20 @@
 autoLaunch = false
 
 [[redirects]]
+from = "/questions/:tag/:questionNumber/"
+to = "/.netlify/functions/dynamic"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "dynamic"
+
+[[redirects]]
+from = "/questions/:tag/:questionNumber/"
+to = "/.netlify/builders/on-demand"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "on-demand"
+
+[[redirects]]
 from = "/dynamic/categories/:tag"
 to = "/.netlify/functions/dynamic"
 status = 200

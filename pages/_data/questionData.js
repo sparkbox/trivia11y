@@ -38,9 +38,12 @@ const groupQuestionsIntoCategories = async (questions) => {
     question.Tags.forEach((tag) => {
       const category = slugify(tag);
       if (!questionGroups[category]) {
-        questionGroups[category] = [question];
+        questionGroups[category] = {
+          tagName: tag,
+          questions: [question],
+        };
       } else {
-        questionGroups[category].push(question);
+        questionGroups[category].questions.push(question);
       }
     });
   });
