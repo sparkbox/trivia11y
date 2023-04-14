@@ -20,7 +20,6 @@ const getPublishedQuestions = async () => {
 };
 
 const getUniqueCategories = (questions) => {
-  // console.log(JSON.stringify({ questions }, null, 2));
   return [
     ...new Set(
       questions
@@ -31,12 +30,32 @@ const getUniqueCategories = (questions) => {
   ];
 };
 
+const groupQuestionsIntoCategories = async (questions) => {
+  const { default: slugify } = await import('@sindresorhus/slugify');
+  const questionGroups = {};
+
+  questions.forEach((question) => {
+    question.Tags.forEach((tag) => {
+      const category = slugify(tag);
+      if (!questionGroups[category]) {
+        questionGroups[category] = [question];
+      } else {
+        questionGroups[category].push(question);
+      }
+    });
+  });
+
+  return questionGroups;
+};
+
 module.exports = async () => {
   const questions = await getPublishedQuestions();
   const categories = getUniqueCategories(questions);
+  const questionGroups = await groupQuestionsIntoCategories(questions);
 
   return {
     questions,
     categories,
+    questionGroups,
   };
 };
