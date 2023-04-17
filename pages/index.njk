@@ -1,16 +1,19 @@
 ---
 title: Home
-description: This is the home page.
+description: Choose a category to test your accessibility knowledge in.
 layout: default
+permalink:
+  on-demand: /
 ---
 
-<h1>Home Page</h1>
+<h1>Trivia11y</h1>
 
 <ul>
+{% for category in questionData.categories %}
   <li>
-    <a href="/categories/">Categories</a>
+    <a href="/questions/{{ category | slugify }}/1/">
+      {{ category }}
+    </a>
   </li>
-  <li>
-    <a href="/dynamic/categories/">Categories (Dynamic)</a>
-  </li>
+{% endfor %}
 </ul>
