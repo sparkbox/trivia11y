@@ -1,4 +1,4 @@
-# Pursuit of Trivia
+# Trivia11y
 
 A site for questions and answers, either for studying or fun (or both).
 
