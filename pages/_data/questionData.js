@@ -1,6 +1,7 @@
 /* eslint-env node */
 require('dotenv').config();
 const Airtable = require('airtable');
+const slugify = require('@sindresorhus/slugify');
 
 Airtable.configure({
   endpointUrl: 'https://api.airtable.com',
@@ -31,7 +32,6 @@ const getUniqueCategories = (questions) => {
 };
 
 const groupQuestionsIntoCategories = async (questions) => {
-  const { default: slugify } = await import('@sindresorhus/slugify');
   const questionGroups = {};
 
   questions.forEach((question) => {
