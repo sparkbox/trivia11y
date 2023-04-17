@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@sindresorhus/slugify": "^2.2.0",
+    "@sindresorhus/slugify": "^1.1.2",
     "dotenv": "^16.0.3",
     "eslint": "^8.38.0",
     "npm-check-updates": "^16.10.8",
