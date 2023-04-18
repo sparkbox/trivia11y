@@ -1,0 +1,43 @@
+---
+permalink:
+  on-demand: /all-questions/:questionNumber/
+---
+
+{% extends 'layout.njk' %}
+
+{% set questionNum = eleventy.serverless.path.questionNumber | int %}
+{% set questionTotal = questionData.questions.length %}
+{% set question = questionData.questions[questionNum - 1] %}
+
+{% block titleAndDescription %}
+  <title>Question {{ questionNum }} of {{ questionTotal }} | All Questions | Trivia11y</title>
+  <meta name="description" content="Answer question {{ questionNum }} of {{ questionTotal }} in all categories.">
+{% endblock %}
+
+{% block content %}
+  <h1>Question {{ questionNum }} of {{ questionTotal }}</h1>
+
+  <div>
+    {{ question.Question | mdToHtml | safe }}
+  </div>
+  <details>
+    <summary>
+      Reveal Answer
+    </summary>
+    <div>
+      {{ question.Answer | mdToHtml | safe }}
+    </div>
+  </details>
+
+  {% if questionNum > 1 %}
+    <a href="/all-questions/{{ questionNum - 1 }}/">
+      Previous Question
+    </a>
+  {% endif %}
+
+  {% if questionTotal > questionNum %}
+    <a href="/all-questions/{{ questionNum + 1 }}/">
+      Next Question
+    </a>
+  {% endif %}
+{% endblock %}
