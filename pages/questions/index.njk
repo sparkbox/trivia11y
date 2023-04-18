@@ -11,12 +11,12 @@ permalink:
 {% set question = questionData.questionGroups[eleventy.serverless.path.tag].questions[questionNum - 1] %}
 
 {% block titleAndDescription %}
-  <title>Question {{ questionNum }} | {{ tagName }} | Trivia11y</title>
+  <title>Question {{ questionNum }} of {{ questionTotal }} | {{ tagName }} | Trivia11y</title>
   <meta name="description" content="Answer question {{ questionNum }} of {{ questionTotal }} about {{ tagName }}.">
 {% endblock %}
 
 {% block content %}
-  <h1>{{ tagName }}: Question {{ questionNum }}</h1>
+  <h1>{{ tagName }}: Question {{ questionNum }} of {{ questionTotal }}</h1>
 
   <div>
     {{ question.Question | mdToHtml | safe }}
