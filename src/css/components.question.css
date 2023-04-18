@@ -1,0 +1,11 @@
+.cmp-question {
+  padding: 3rem;
+  border: 0.125rem solid currentcolor;
+  border-radius: 0.25rem;
+  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+}
+
+.cmp-question p {
+  margin: 0;
+  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+}

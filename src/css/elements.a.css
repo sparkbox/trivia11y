@@ -1,0 +1,4 @@
+a {
+  color: currentcolor;
+  font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
+}
