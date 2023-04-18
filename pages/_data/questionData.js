@@ -9,12 +9,13 @@ Airtable.configure({
 });
 
 const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
+const viewDrafts = process.env.VIEW_DRAFTS === 'true';
 
-const getPublishedQuestions = async () => {
+const getQuestions = async () => {
   const questions = await base('Questions and Answers').select().all();
 
   const publishedQuestions = questions
-    .filter((record) => record.fields.Published)
+    .filter((record) => record.fields.Published || viewDrafts)
     .map((record) => record.fields);
 
   return publishedQuestions;
@@ -52,7 +53,7 @@ const groupQuestionsIntoCategories = async (questions) => {
 };
 
 module.exports = async () => {
-  const questions = await getPublishedQuestions();
+  const questions = await getQuestions();
   const categories = getUniqueCategories(questions);
   const questionGroups = await groupQuestionsIntoCategories(questions);
 
