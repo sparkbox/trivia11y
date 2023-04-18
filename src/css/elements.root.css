@@ -1,0 +1,14 @@
+:root {
+  --ink: hsl(0deg 0% 5%);
+  --paper: hsl(0deg 0% 95%);
+
+  color: var(--ink);
+  background-color: var(--paper);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: hsl(0deg 0% 95%);
+    --paper: hsl(0deg 0% 5%);
+  }
+}
