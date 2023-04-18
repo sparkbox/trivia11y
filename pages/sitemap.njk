@@ -10,4 +10,16 @@ eleventyExcludeFromCollections: true
       <lastmod>{{ page.date.toISOString() }}</lastmod>
     </url>
   {% endfor %}
+  {% for question in questionData.questions %}
+    <url>
+      <loc>{{ processEnv.BASE_URL }}/all-questions/{{ loop.index }}/</loc>
+    </url>
+  {% endfor %}
+  {% for tag, questionGroup in questionData.questionGroups %}
+    {% for question in questionGroup.questions %}
+      <url>
+        <loc>{{ processEnv.BASE_URL }}/questions/{{ tag }}/{{ loop.index }}/</loc>
+      </url>
+    {% endfor %}
+  {% endfor %}
 </urlset>
