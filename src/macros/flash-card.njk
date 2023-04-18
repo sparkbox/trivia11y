@@ -1,0 +1,13 @@
+{% macro flashCard(question) %}
+  <div>
+    {{ question.Question | mdToHtml | safe }}
+  </div>
+  <details>
+    <summary>
+      Reveal Answer
+    </summary>
+    <div>
+      {{ question.Answer | mdToHtml | safe }}
+    </div>
+  </details>
+{% endmacro %}

@@ -19,17 +19,8 @@ eleventyExcludeFromCollections: true
 {% block content %}
   <h1>{{ tagName }}: Question {{ questionNum }} of {{ questionTotal }}</h1>
 
-  <div>
-    {{ question.Question | mdToHtml | safe }}
-  </div>
-  <details>
-    <summary>
-      Reveal Answer
-    </summary>
-    <div>
-      {{ question.Answer | mdToHtml | safe }}
-    </div>
-  </details>
+  {% from 'macros/flash-card.njk' import flashCard %}
+  {{ flashCard(question) }}
 
   {% if questionNum > 1 %}
     <a href="/questions/{{ eleventy.serverless.path.tag }}/{{ questionNum - 1 }}/">
