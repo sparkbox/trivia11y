@@ -1,0 +1,18 @@
+.cmp-answer {
+  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+}
+
+.cmp-answer summary {
+  cursor: pointer;
+  margin-block: 1rem;
+}
+
+.cmp-answer div {
+  padding: 3rem;
+  border: 0.125rem solid currentcolor;
+  border-radius: 0.25rem;
+}
+
+.cmp-answer p {
+  margin: 0;
+}
