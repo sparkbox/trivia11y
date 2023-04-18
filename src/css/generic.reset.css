@@ -49,6 +49,16 @@ h6 {
   line-height: calc(1em + 0.5rem);
 }
 
+:focus {
+  outline: 0.125rem solid currentcolor;
+  outline-style: dashed;
+  outline-offset: 0.25rem;
+}
+
+:focus:not(:focus-visible) {
+  outline-color: transparent;
+}
+
 :root {
   color-scheme: light dark;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
