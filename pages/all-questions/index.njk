@@ -21,15 +21,21 @@ eleventyExcludeFromCollections: true
   {% from 'macros/flash-card.njk' import flashCard %}
   {{ flashCard(question) }}
 
-  {% if questionNum > 1 %}
-    <a href="/all-questions/{{ questionNum - 1 }}/">
-      Previous Question
-    </a>
-  {% endif %}
+  <div class="cmp-pagination">
+    {% if questionNum > 1 %}
+      <a href="/all-questions/{{ questionNum - 1 }}/">
+        Previous Question
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
 
-  {% if questionTotal > questionNum %}
-    <a href="/all-questions/{{ questionNum + 1 }}/">
-      Next Question
-    </a>
-  {% endif %}
+    {% if questionTotal > questionNum %}
+      <a href="/all-questions/{{ questionNum + 1 }}/">
+        Next Question
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
+  </div>
 {% endblock %}
