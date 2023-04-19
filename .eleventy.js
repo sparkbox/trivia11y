@@ -1,4 +1,3 @@
-const { EleventyServerlessBundlerPlugin } = require('@11ty/eleventy');
 const { marked } = require('marked');
 const DOMPurify = require('isomorphic-dompurify');
 
@@ -17,12 +16,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('default', 'layout.njk');
 
   eleventyConfig.addFilter('mdToHtml', markdownToHtml);
-
-  eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-    name: 'on-demand',
-    functionsDir: './netlify/functions/',
-    redirects: 'netlify-toml-builders',
-  });
 
   return {
     dir: {

@@ -9,7 +9,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "start": "rm -rf dist && netlify dev -c \"eleventy --serve --incremental\"",
+    "start": "rm -rf dist && eleventy --serve --incremental",
     "build": "rm -rf dist && eleventy",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint \"src/**/*.{css,scss,sass}\" --color --formatter verbose",
