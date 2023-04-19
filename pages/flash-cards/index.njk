@@ -1,38 +1,36 @@
 ---
-permalink:
-  on-demand: /flash-cards/:tag/:questionNumber/
+pagination:
+  data: questionData.flashCardQuestionGroups
+  size: 1
+  alias: questionGroup
+permalink: /flash-cards/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber }}/
 eleventyExcludeFromCollections: true
 ---
 
 {% extends 'layout.njk' %}
 
-{% set questionNum = eleventy.serverless.path.questionNumber | int %}
-{% set questionTotal = questionData.flashCardQuestionGroups[eleventy.serverless.path.tag].questions.length %}
-{% set tagName = questionData.flashCardQuestionGroups[eleventy.serverless.path.tag].tagName %}
-{% set question = questionData.flashCardQuestionGroups[eleventy.serverless.path.tag].questions[questionNum - 1] %}
-
 {% block titleAndDescription %}
-  <title>Question {{ questionNum }} of {{ questionTotal }} | {{ tagName }} | Trivia11y</title>
-  <meta name="description" content="Answer question {{ questionNum }} of {{ questionTotal }} about {{ tagName }}.">
+  <title>Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | {{ questionGroup.category }} | Trivia11y</title>
+  <meta name="description" content="Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }}.">
 {% endblock %}
 
 {% block content %}
-  <h1>{{ tagName }}: Question {{ questionNum }} of {{ questionTotal }}</h1>
+  <h1>{{ questionGroup.category }}: Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h1>
 
   {% from 'macros/flash-card.njk' import flashCard %}
-  {{ flashCard(question) }}
+  {{ flashCard(questionGroup.question) }}
 
   <div class="cmp-pagination">
-    {% if questionNum > 1 %}
-      <a href="/flash-cards/{{ eleventy.serverless.path.tag }}/{{ questionNum - 1 }}/">
+    {% if questionGroup.pageNumber > 1 %}
+      <a href="/flash-cards/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
         Previous Question
       </a>
     {% else %}
       <span></span>
     {% endif %}
 
-    {% if questionTotal > questionNum %}
-      <a href="/flash-cards/{{ eleventy.serverless.path.tag }}/{{ questionNum + 1 }}/">
+    {% if questionGroup.questionTotal > questionGroup.pageNumber %}
+      <a href="/flash-cards/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
         Next Question
       </a>
     {% else %}

@@ -35,19 +35,30 @@ const getUniqueCategories = (questions) => {
   ];
 };
 
-const groupQuestionsIntoCategories = (questions) => {
-  const questionGroups = {};
+const groupQuestionsIntoCategories = (questions, categories) => {
+  const questionGroups = [];
 
-  questions.forEach((question) => {
-    question.Tags.forEach((tag) => {
-      const category = slugify(tag);
-      if (!questionGroups[category]) {
-        questionGroups[category] = {
-          tagName: tag,
-          questions: [question],
-        };
-      } else {
-        questionGroups[category].questions.push(question);
+  categories.forEach((category) => {
+    let pageNumber = 1;
+    const questionTotal = questions.reduce((sum, question) => {
+      if (question.Tags.includes(category)) {
+        return sum + 1;
+      }
+
+      return sum;
+    }, 0);
+
+    questions.forEach((question) => {
+      if (question.Tags.includes(category)) {
+        questionGroups.push({
+          category,
+          tagName: slugify(category),
+          pageNumber,
+          questionTotal,
+          question,
+        });
+
+        pageNumber += 1;
       }
     });
   });
@@ -58,12 +69,14 @@ const groupQuestionsIntoCategories = (questions) => {
 module.exports = async () => {
   const questions = await getQuestions();
   const categories = getUniqueCategories(questions);
-  const questionGroups = groupQuestionsIntoCategories(questions);
+  const questionGroups = groupQuestionsIntoCategories(questions, categories);
 
   const flashCardQuestions = getFlashCardQuestions(questions);
   const flashCardCategories = getUniqueCategories(flashCardQuestions);
-  const flashCardQuestionGroups =
-    groupQuestionsIntoCategories(flashCardQuestions);
+  const flashCardQuestionGroups = groupQuestionsIntoCategories(
+    flashCardQuestions,
+    flashCardCategories
+  );
 
   return {
     questions,
