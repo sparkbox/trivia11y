@@ -51,6 +51,7 @@ const groupQuestionsIntoCategories = (questions, categories) => {
     questions.forEach((question) => {
       if (question.Tags.includes(category)) {
         questionGroups.push({
+          category,
           tagName: slugify(category),
           pageNumber,
           questionTotal,

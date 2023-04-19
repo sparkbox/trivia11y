@@ -10,12 +10,12 @@ eleventyExcludeFromCollections: true
 {% extends 'layout.njk' %}
 
 {% block titleAndDescription %}
-  <title>Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | {{ questionGroup.tagName }} | Trivia11y</title>
-  <meta name="description" content="Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.tagName }}.">
+  <title>Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | {{ questionGroup.category }} | Trivia11y</title>
+  <meta name="description" content="Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }}.">
 {% endblock %}
 
 {% block content %}
-  <h1>{{ questionGroup.tagName }}: Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h1>
+  <h1>{{ questionGroup.category }}: Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h1>
 
   {% from 'macros/flash-card.njk' import flashCard %}
   {{ flashCard(questionGroup.question) }}
