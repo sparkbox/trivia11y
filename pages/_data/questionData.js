@@ -21,6 +21,9 @@ const getQuestions = async () => {
   return publishedQuestions;
 };
 
+const getFlashCardQuestions = (questions) =>
+  questions.filter((question) => !question['Multiple Choice Only']);
+
 const getUniqueCategories = (questions) => {
   return [
     ...new Set(
@@ -32,7 +35,7 @@ const getUniqueCategories = (questions) => {
   ];
 };
 
-const groupQuestionsIntoCategories = async (questions) => {
+const groupQuestionsIntoCategories = (questions) => {
   const questionGroups = {};
 
   questions.forEach((question) => {
@@ -55,11 +58,19 @@ const groupQuestionsIntoCategories = async (questions) => {
 module.exports = async () => {
   const questions = await getQuestions();
   const categories = getUniqueCategories(questions);
-  const questionGroups = await groupQuestionsIntoCategories(questions);
+  const questionGroups = groupQuestionsIntoCategories(questions);
+
+  const flashCardQuestions = getFlashCardQuestions(questions);
+  const flashCardCategories = getUniqueCategories(flashCardQuestions);
+  const flashCardQuestionGroups =
+    groupQuestionsIntoCategories(flashCardQuestions);
 
   return {
     questions,
     categories,
     questionGroups,
+    flashCardQuestions,
+    flashCardCategories,
+    flashCardQuestionGroups,
   };
 };
