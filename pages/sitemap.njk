@@ -10,16 +10,14 @@ eleventyExcludeFromCollections: true
       <lastmod>{{ page.date.toISOString() }}</lastmod>
     </url>
   {% endfor %}
-  {% for question in questionData.questions %}
+  {% for question in questionData.flashCardQuestions %}
     <url>
-      <loc>{{ processEnv.BASE_URL }}/all-questions/{{ loop.index }}/</loc>
+      <loc>{{ processEnv.BASE_URL }}/all/flash-cards/{{ loop.index }}/</loc>
     </url>
   {% endfor %}
-  {% for tag, questionGroup in questionData.questionGroups %}
-    {% for question in questionGroup.questions %}
-      <url>
-        <loc>{{ processEnv.BASE_URL }}/questions/{{ tag }}/{{ loop.index }}/</loc>
-      </url>
-    {% endfor %}
+  {% for questionGroup in questionData.flashCardQuestionGroups %}
+    <url>
+      <loc>{{ processEnv.BASE_URL }}/flash-cards/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber }}/</loc>
+    </url>
   {% endfor %}
 </urlset>
