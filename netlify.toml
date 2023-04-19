@@ -2,7 +2,14 @@
 autoLaunch = false
 
 [[redirects]]
-from = "/all-questions/:questionNumber/"
+from = "/flash-cards/:tag/:questionNumber/"
+to = "/.netlify/builders/on-demand"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "on-demand"
+
+[[redirects]]
+from = "/all/flash-cards/:questionNumber/"
 to = "/.netlify/builders/on-demand"
 status = 200
 force = true
@@ -10,20 +17,6 @@ _generated_by_eleventy_serverless = "on-demand"
 
 [[redirects]]
 from = "/"
-to = "/.netlify/builders/on-demand"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "on-demand"
-
-[[redirects]]
-from = "/questions/:tag/:questionNumber/"
-to = "/.netlify/builders/on-demand"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "on-demand"
-
-[[redirects]]
-from = "/categories/:tag/"
 to = "/.netlify/builders/on-demand"
 status = 200
 force = true

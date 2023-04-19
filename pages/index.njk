@@ -8,19 +8,21 @@ permalink:
 
 <h1 aria-label="Triviaccessibility">Trivia11y</h1>
 
+<h2>Flash Cards</h2>
+
 <p>
-  Choose a category to study or select "All Questions" to review all subjects at once.
+  Choose a category in which to review your knowledge flash card style.
 </p>
 
 <ul class="cmp-categories">
   <li>
-    <a href="/all-questions/1/">
+    <a href="/all/flash-cards/1/">
       All Questions
     </a>
   </li>
-{% for category in questionData.categories %}
+{% for category in questionData.flashCardCategories %}
   <li>
-    <a href="/questions/{{ category | slugify }}/1/">
+    <a href="/flash-cards/{{ category | slugify }}/1/">
       {{ category }}
     </a>
   </li>
