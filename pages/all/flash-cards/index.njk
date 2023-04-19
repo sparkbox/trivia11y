@@ -1,14 +1,14 @@
 ---
 permalink:
-  on-demand: /all-questions/:questionNumber/
+  on-demand: /all/flash-cards/:questionNumber/
 eleventyExcludeFromCollections: true
 ---
 
 {% extends 'layout.njk' %}
 
 {% set questionNum = eleventy.serverless.path.questionNumber | int %}
-{% set questionTotal = questionData.questions.length %}
-{% set question = questionData.questions[questionNum - 1] %}
+{% set questionTotal = questionData.flashCardQuestions.length %}
+{% set question = questionData.flashCardQuestions[questionNum - 1] %}
 
 {% block titleAndDescription %}
   <title>Question {{ questionNum }} of {{ questionTotal }} | All Questions | Trivia11y</title>
@@ -23,7 +23,7 @@ eleventyExcludeFromCollections: true
 
   <div class="cmp-pagination">
     {% if questionNum > 1 %}
-      <a href="/all-questions/{{ questionNum - 1 }}/">
+      <a href="/all/flash-cards/{{ questionNum - 1 }}/">
         Previous Question
       </a>
     {% else %}
@@ -31,7 +31,7 @@ eleventyExcludeFromCollections: true
     {% endif %}
 
     {% if questionTotal > questionNum %}
-      <a href="/all-questions/{{ questionNum + 1 }}/">
+      <a href="/all/flash-cards/{{ questionNum + 1 }}/">
         Next Question
       </a>
     {% else %}

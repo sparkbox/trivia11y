@@ -1,15 +1,15 @@
 ---
 permalink:
-  on-demand: /questions/:tag/:questionNumber/
+  on-demand: /flash-cards/:tag/:questionNumber/
 eleventyExcludeFromCollections: true
 ---
 
 {% extends 'layout.njk' %}
 
 {% set questionNum = eleventy.serverless.path.questionNumber | int %}
-{% set questionTotal = questionData.questionGroups[eleventy.serverless.path.tag].questions.length %}
-{% set tagName = questionData.questionGroups[eleventy.serverless.path.tag].tagName %}
-{% set question = questionData.questionGroups[eleventy.serverless.path.tag].questions[questionNum - 1] %}
+{% set questionTotal = questionData.flashCardQuestionGroups[eleventy.serverless.path.tag].questions.length %}
+{% set tagName = questionData.flashCardQuestionGroups[eleventy.serverless.path.tag].tagName %}
+{% set question = questionData.flashCardQuestionGroups[eleventy.serverless.path.tag].questions[questionNum - 1] %}
 
 {% block titleAndDescription %}
   <title>Question {{ questionNum }} of {{ questionTotal }} | {{ tagName }} | Trivia11y</title>
@@ -24,7 +24,7 @@ eleventyExcludeFromCollections: true
 
   <div class="cmp-pagination">
     {% if questionNum > 1 %}
-      <a href="/questions/{{ eleventy.serverless.path.tag }}/{{ questionNum - 1 }}/">
+      <a href="/flash-cards/{{ eleventy.serverless.path.tag }}/{{ questionNum - 1 }}/">
         Previous Question
       </a>
     {% else %}
@@ -32,7 +32,7 @@ eleventyExcludeFromCollections: true
     {% endif %}
 
     {% if questionTotal > questionNum %}
-      <a href="/questions/{{ eleventy.serverless.path.tag }}/{{ questionNum + 1 }}/">
+      <a href="/flash-cards/{{ eleventy.serverless.path.tag }}/{{ questionNum + 1 }}/">
         Next Question
       </a>
     {% else %}
