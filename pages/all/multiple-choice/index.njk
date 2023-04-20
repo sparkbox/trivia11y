@@ -1,0 +1,42 @@
+---
+pagination:
+  data: questionData.questions
+  size: 1
+  alias: question
+permalink: /all/multiple-choice/{{ pagination.pageNumber + 1 }}/
+eleventyExcludeFromCollections: true
+---
+
+{% extends 'layout.njk' %}
+
+{% set questionTotal = questionData.questions.length %}
+
+{% block titleAndDescription %}
+  <title>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }} | All Questions | Trivia11y</title>
+  <meta name="description" content="Answer question {{ pagination.pageNumber + 1 }} of {{ questionTotal }} in all categories.">
+{% endblock %}
+
+{% block content %}
+  <h1>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h1>
+
+  {% from 'macros/multiple-choice.njk' import multipleChoice %}
+  {{ multipleChoice(question) }}
+
+  <div class="cmp-pagination">
+    {% if pagination.pageNumber + 1 > 1 %}
+      <a href="/all/multiple-choice/{{ pagination.pageNumber }}/">
+        Previous Question
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
+
+    {% if questionTotal > pagination.pageNumber + 1 %}
+      <a href="/all/multiple-choice/{{ pagination.pageNumber + 2 }}/">
+        Next Question
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
+  </div>
+{% endblock %}
