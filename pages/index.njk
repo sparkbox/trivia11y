@@ -9,7 +9,7 @@ layout: default
 <h2>Flash Cards</h2>
 
 <p>
-  Choose a category in which to review your knowledge flash card style.
+  Choose a category in which to review your knowledge, flash card style.
 </p>
 
 <ul class="cmp-categories">
@@ -21,6 +21,28 @@ layout: default
 {% for category in questionData.flashCardCategories %}
   <li>
     <a href="/flash-cards/{{ category | slugify }}/1/">
+      {{ category }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
+
+<h2>Multiple Choice</h2>
+
+<p>
+  Choose a category in which to review your knowledge, multiple choice style.
+</p>
+
+<ul class="cmp-categories">
+  <li>
+    <a href="/all/multiple-choice/1/">
+      All Questions
+    </a>
+  </li>
+{% for category in questionData.categories %}
+  <li>
+    <a href="/multiple-choice/{{ category | slugify }}/1/">
       {{ category }}
     </a>
   </li>
