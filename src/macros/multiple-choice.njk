@@ -4,8 +4,8 @@
   </div>
   <div class="cmp-switcher">
     {% for option in question.options %}
-      <div class="cmp-option">
-        <button type="button" class="cmp-option__button" aria-pressed="false" aria-describedby="option-{{ loop.index }}" data-correct="{{ option.isCorrect }}">
+      <div>
+        <button type="button" class="cmp-option-button" aria-pressed="false" aria-describedby="option-{{ loop.index }}" data-correct="{{ option.isCorrect }}">
           {% if loop.index === 1 %}
             A
           {% elseif loop.index === 2 %}
@@ -14,7 +14,7 @@
             C
           {% endif %}
         </button>
-        <div id="option-{{ loop.index }}" class="cmp-option__answer">
+        <div id="option-{{ loop.index }}">
           {{ option.answer | mdToHtml | safe }}
         </div>
       </div>
