@@ -17,3 +17,7 @@
   margin: 0;
   font-size: clamp(1rem, 1rem + 1vw, 2rem);
 }
+
+.cmp-answer p:not(:first-child) {
+  margin-block-start: 1rem;
+}
