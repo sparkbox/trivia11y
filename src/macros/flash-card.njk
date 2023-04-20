@@ -8,6 +8,9 @@
     </summary>
     <div>
       {{ question.Answer | mdToHtml | safe }}
+      {% if question.Explanation %}
+        {{ question.Explanation | mdToHtml | safe }}
+      {% endif %}
     </div>
   </details>
 {% endmacro %}
