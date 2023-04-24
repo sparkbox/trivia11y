@@ -21,17 +21,17 @@ eleventyExcludeFromCollections: true
   {{ multipleChoice(questionGroup.question) }}
 
   <div class="cmp-pagination">
-    {% if questionGroup.pageNumber > 1 %}
-      <a href="/multiple-choice/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
-        Previous Question
+    {% if questionGroup.questionTotal > questionGroup.pageNumber %}
+      <a href="/multiple-choice/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
+        Next Question
       </a>
     {% else %}
       <span></span>
     {% endif %}
 
-    {% if questionGroup.questionTotal > questionGroup.pageNumber %}
-      <a href="/multiple-choice/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
-        Next Question
+    {% if questionGroup.pageNumber > 1 %}
+      <a href="/multiple-choice/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
+        Previous Question
       </a>
     {% else %}
       <span></span>
