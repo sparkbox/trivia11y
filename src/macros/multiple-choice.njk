@@ -20,7 +20,7 @@
       </div>
     {% endfor %}
   </div>
-  <div role="region" aria-live="polite"></div>
+  <div id="explanationSection" tabindex="-1"></div>
   <template id="explanation">
     {% if question.Explanation %}
       {{ question.Explanation | mdToHtml | safe }}

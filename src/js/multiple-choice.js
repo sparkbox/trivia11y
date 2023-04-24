@@ -1,6 +1,6 @@
 const optionButtons = document.querySelectorAll('.cmp-option-button');
 const explanation = document.querySelector('#explanation');
-const liveRegion = document.querySelector('[aria-live]');
+const explanationSection = document.querySelector('#explanationSection');
 
 const handleOptionButtonClick = (event) => {
   const isPressed = event.target.getAttribute('aria-pressed') === 'true';
@@ -12,9 +12,10 @@ const handleOptionButtonClick = (event) => {
   });
 
   event.target.setAttribute('aria-pressed', isPressed ? 'false' : 'true');
-  liveRegion.innerHTML = `<p>${
+  explanationSection.innerHTML = `<p>${
     isCorrect ? 'Correct' : 'Incorrect'
   }</p>${explanationContent}`;
+  explanationSection.focus();
 };
 
 optionButtons.forEach((button) => {
