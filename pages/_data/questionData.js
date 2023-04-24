@@ -16,7 +16,37 @@ const getQuestions = async () => {
 
   const publishedQuestions = questions
     .filter((record) => record.fields.Published || viewDrafts)
-    .map((record) => record.fields);
+    .map((record) => {
+      const options = [
+        {
+          answer: record.fields.Answer,
+          isCorrect: true,
+        },
+      ];
+
+      if (record.fields['Distractor 1']) {
+        options.push({
+          answer: record.fields['Distractor 1'],
+          isCorrect: false,
+        });
+      }
+
+      if (record.fields['Distractor 2']) {
+        options.push({
+          answer: record.fields['Distractor 2'],
+          isCorrect: false,
+        });
+      }
+
+      return {
+        ...record.fields,
+        options: options.sort(() => {
+          const sign = Math.round(Math.random()) > 0 ? 1 : -1;
+
+          return sign;
+        }),
+      };
+    });
 
   return publishedQuestions;
 };

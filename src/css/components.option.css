@@ -1,0 +1,22 @@
+.cmp-option-button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+  font-weight: 700;
+  border: 0.125rem solid var(--ink);
+  border-radius: 0.25rem;
+  box-shadow: 0.25rem 0.25rem 0 0 var(--shadow);
+}
+
+.cmp-option-button[aria-pressed='true'] {
+  box-shadow: none;
+  border-color: var(--incorrect);
+}
+
+.cmp-option-button[aria-pressed='true'][data-correct='true'] {
+  box-shadow: none;
+  border-color: var(--correct);
+}

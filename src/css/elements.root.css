@@ -1,6 +1,9 @@
 :root {
   --ink: hsl(0deg 0% 5%);
   --paper: hsl(0deg 0% 95%);
+  --shadow: #999;
+  --correct: forestgreen;
+  --incorrect: tomato;
 
   color: var(--ink);
   background-color: var(--paper);
@@ -10,5 +13,8 @@
   :root {
     --ink: hsl(0deg 0% 95%);
     --paper: hsl(0deg 0% 5%);
+    --shadow: #444;
+    --correct: forestgreen;
+    --incorrect: tomato;
   }
 }
