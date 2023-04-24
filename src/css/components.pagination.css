@@ -1,6 +1,6 @@
 .cmp-pagination {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row-reverse wrap;
   gap: 2rem;
   justify-content: space-between;
 }

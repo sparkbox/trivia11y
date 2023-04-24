@@ -23,17 +23,17 @@ eleventyExcludeFromCollections: true
   {{ flashCard(question) }}
 
   <div class="cmp-pagination">
-    {% if pagination.pageNumber + 1 > 1 %}
-      <a href="/all/flash-cards/{{ pagination.pageNumber }}/">
-        Previous Question
+    {% if questionTotal > pagination.pageNumber + 1 %}
+      <a href="/all/flash-cards/{{ pagination.pageNumber + 2 }}/">
+        Next Question
       </a>
     {% else %}
       <span></span>
     {% endif %}
 
-    {% if questionTotal > pagination.pageNumber + 1 %}
-      <a href="/all/flash-cards/{{ pagination.pageNumber + 2 }}/">
-        Next Question
+    {% if pagination.pageNumber + 1 > 1 %}
+      <a href="/all/flash-cards/{{ pagination.pageNumber }}/">
+        Previous Question
       </a>
     {% else %}
       <span></span>
