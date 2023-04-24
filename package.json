@@ -15,14 +15,14 @@
     "lint:css": "stylelint \"src/**/*.{css,scss,sass}\" --color --formatter verbose",
     "lint:js": "DEBUG=eslint:cli-engine eslint .",
     "test": "echo \"TODO: add support for testing\" && exit 0",
-    "update-deps": "ncu -u && npm install"
+    "update-deps": "ncu -u -x @sindresorhus/slugify && npm install"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "dotenv": "^16.0.3",
-    "eslint": "^8.38.0",
-    "npm-check-updates": "^16.10.8",
-    "stylelint": "^15.5.0",
+    "eslint": "^8.39.0",
+    "npm-check-updates": "^16.10.9",
+    "stylelint": "^15.6.0",
     "stylelint-config-standard": "^33.0.0"
   },
   "dependencies": {
