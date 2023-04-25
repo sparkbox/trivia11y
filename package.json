@@ -9,8 +9,12 @@
     "node": ">=18"
   },
   "scripts": {
-    "start": "rm -rf dist && eleventy --serve --incremental",
-    "build": "rm -rf dist && eleventy",
+    "prestart": "rm -rf dist",
+    "start": "npm run eleventy:watch & npm run sass:watch","prebuild": "rm -rf dist",
+    "build": "eleventy & npm run sass",
+    "eleventy:watch": "eleventy --serve --incremental",
+    "sass": "sass ./src/css/styles.scss:./dist/styles.css --no-source-map",
+    "sass:watch": "sass ./src/css/styles.scss:./dist/styles.css --watch",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint \"src/**/*.{css,scss,sass}\" --color --formatter verbose",
     "lint:js": "DEBUG=eslint:cli-engine eslint .",
@@ -22,6 +26,7 @@
     "dotenv": "^16.0.3",
     "eslint": "^8.39.0",
     "npm-check-updates": "^16.10.9",
+    "sass": "^1.62.0",
     "stylelint": "^15.6.0",
     "stylelint-config-standard": "^33.0.0"
   },
