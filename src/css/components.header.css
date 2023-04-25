@@ -1,6 +1,7 @@
 .cmp-header {
 	position: relative;
-	color: white;
+	padding-block: 1.5rem;
+	color: var(--white);
 	background:
 		linear-gradient(0deg, hsl(0deg 0% 15%), hsl(0deg 0% 15% / 0%)),
 		url("/pattern.svg") center hsl(0deg 0% 15%);
@@ -11,22 +12,61 @@
 	z-index: 200;
 	width: var(--width);
 	margin-inline: auto;
+	display: flex;
+	justify-content: space-between;
 }
 
 .cmp-header__nav-item {
-	text-decoration: none;
+	display: inline-block;
+	text-decoration-color: #fff0;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.0625em;
 	font-stretch: 150%;
-	font-size: clamp(1.25rem, 5vw, 2.5rem);
+	font-size: clamp(1.75rem, 1.75rem + 1vw, 3rem);
+	color: inherit;
+	font-weight: 200;
+	transition: text-decoration-color ease-in-out 150ms;
 }
 
-.cmp-header__background {
-	z-index: 100;
-	position: absolute;
-	inset: 0;
+.cmp-header__nav-item:hover {
+	text-decoration-color: currentcolor;
 }
 
-.sbx-patterns {
-	fill: black;
-	stroke: white;
-	stroke-width: 1px;
+.cmp-header__nav-highlight {
+	background: var(--gradient-blue-green);
+	background-clip: text;
+	color: transparent;
+	font-weight: 600;
+}
+
+.cmp-header__nav-sparkbox {
+	color: inherit;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	width: 2.5rem;
+}
+
+.cmp-header__sparkbox-logo {
+	fill: currentColor;
+	height: 2.5rem;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+
+	@media (min-width: $bp-md) {
+		display: none;
+	}
+}
+
+.cmp-header__sparkbox-lockup {
+	fill: currentColor;
+	height: 2.5rem;
+	width: 100%;
+	aspect-ratio: 578 / 154;
+	display: none;
+
+	@media (min-width: $bp-md) {
+		display: unset;
+	}
 }

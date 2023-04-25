@@ -41,12 +41,12 @@ h6 {
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  line-height: calc(1em + 0.5rem);
+  line-height: 1.25;
 }
 
 :focus {
   outline: 0.125rem solid currentcolor;
-  outline-style: dashed;
+  outline-style: solid;
   outline-offset: 0.25rem;
 }
 
@@ -56,5 +56,5 @@ h6 {
 
 :root {
   color-scheme: light dark;
-  font: 100% /1.5 "Sole Sans", sans-serif;
+  font: 100% / 1.5 "Sole Sans", sans-serif;
 }

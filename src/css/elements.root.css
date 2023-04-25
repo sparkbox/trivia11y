@@ -66,6 +66,12 @@
 
   --width: min(100vw - 2rem, 50rem);
 
+  --gradient-blue-green: linear-gradient(
+    0deg,
+    hsl(var(--blue-h) var(--blue-s) var(--blue-l)),
+    hsl(var(--green-h) var(--green-s) var(--green-l))
+  );
+
   color: var(--ink);
 }
 
