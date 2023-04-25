@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="220" width="220" viewBox="0 0 920 920" overflow="visible">
+	<defs>
+		<symbol id="asset-1" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M52 0H4C2 0 0 2 0 4v192c0 2 2 4 4 4h48c2 0 4-2 4-4V4c0-2-2-4-4-4ZM38 178c0 2-2 4-4 4H22c-2 0-4-2-4-4V22c0-2 2-4 4-4h12c2 0 4 2 4 4v156ZM196 0h-48c-2 0-4 2-4 4v192c0 2 2 4 4 4h48c2 0 4-2 4-4V4c0-2-2-4-4-4Zm-14 178c0 2-2 4-4 4h-12c-2 0-4-2-4-4V22c0-2 2-4 4-4h12c2 0 4 2 4 4v156ZM124 0H76c-2 0-4 2-4 4v192c0 2 2 4 4 4h48c2 0 4-2 4-4V4c0-2-2-4-4-4Zm-14 178c0 2-2 4-4 4H94c-2 0-4-2-4-4V22c0-2 2-4 4-4h12c2 0 4 2 4 4v156Z" />
+		</symbol>
+		<symbol id="asset-2" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M0 6v188c0 3 3 6 6 6h188c3 0 6-3 6-6V6c0-3-3-6-6-6H6C3 0 0 3 0 6Zm174 174H26c-3 0-6-3-6-6V26c0-3 3-6 6-6h148c3 0 6 3 6 6v148c0 3-3 6-6 6Z"/>
+			<path d="M40 46v108c0 3 3 6 6 6h108c3 0 6-3 6-6V46c0-3-3-6-6-6H46c-3 0-6 3-6 6Zm94 94H66c-3 0-6-3-6-6V66c0-3 3-6 6-6h68c3 0 6 3 6 6v68c0 3-3 6-6 6Z"/>
+			<rect width="40" height="40" x="80" y="80" rx="6" ry="6"/>
+		</symbol>
+		<symbol id="asset-3" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M194 0H6C3 0 0 3 0 6v188c0 3 3 6 6 6h14V26c0-3 3-6 6-6h174V6c0-3-3-6-6-6Z" />
+			<path d="M200 40H46c-3 0-6 3-6 6v154h20V66c0-3 3-6 6-6h134V40Z" />
+			<path d="M126 120h73l1 1v73c0 3-3 6-6 6h-73l-1-1v-73c0-3 3-6 6-6Z" />
+			<path d="M200 80H86c-3 0-6 3-6 6v114h20v-94c0-3 3-6 6-6h94V80Z" />
+		</symbol>
+		<symbol id="asset-4" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<circle cx="173.9" cy="131" r="25"/>
+			<path d="M196 189 73 114a47 47 0 0 0-73 39c0 26 21 47 47 47h146c6 0 8-8 3-11ZM47 178a25 25 0 1 1 0-50 25 25 0 0 1 0 50Z"/>
+			<circle cx="173.9" cy="25" r="25"/>
+			<path d="M196 83 73 8A47 47 0 0 0 0 47c0 26 21 47 47 47h146c6 0 8-8 3-11ZM47 72a25 25 0 1 1 0-50 25 25 0 0 1 0 50Z"/>
+		</symbol>
+		<symbol id="asset-5" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M194 0h-81l40 40h-51l58 58V47l40 40V6c0-3-3-6-6-6ZM87 0H6C3 0 0 3 0 6v81l40-40v51l58-58H47L87 0Zm73 102-58 58h51l-40 40h81c3 0 6-3 6-6v-81l-40 40v-51Zm-120 0v51L0 113v81c0 3 3 6 6 6h81l-40-40h51l-58-58Z"/>
+			<rect width="46" height="46" x="77" y="77" rx="6" ry="6"/>
+		</symbol>
+		<symbol id="asset-6" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M0 47a47 47 0 1 0 94 0 47 47 0 0 0-94 0Zm52-27a27 27 0 0 1 0 54c-3 0-5-2-5-4V24c0-2 2-4 5-4ZM153 0a47 47 0 1 0 0 94 47 47 0 0 0 0-94Zm27 52a27 27 0 0 1-54 0c0-3 2-5 4-5h46c2 0 4 2 4 5Zm20 101a47 47 0 1 0-94 0 47 47 0 0 0 94 0Zm-52 27a27 27 0 0 1 0-54c3 0 5 2 5 4v46c0 2-2 4-5 4ZM47 200a47 47 0 1 0 0-94 47 47 0 0 0 0 94Zm-27-52a27 27 0 0 1 54 0c0 3-2 5-4 5H24c-2 0-4-2-4-5Z"/>
+		</symbol>
+		<symbol id="asset-7" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M52 0H4C2 0 0 2 0 4v48c0 2 2 4 4 4h48c2 0 4-2 4-4V4c0-2-2-4-4-4ZM38 34c0 2-2 4-4 4H22c-2 0-4-2-4-4V22c0-2 2-4 4-4h12c2 0 4 2 4 4v12Zm158 110h-48c-2 0-4 2-4 4v48c0 2 2 4 4 4h48c2 0 4-2 4-4v-48c0-2-2-4-4-4Zm-14 34c0 2-2 4-4 4h-12c-2 0-4-2-4-4v-12c0-2 2-4 4-4h12c2 0 4 2 4 4v12ZM52 72H4c-2 0-4 2-4 4v120c0 2 2 4 4 4h48c2 0 4-2 4-4V76c0-2-2-4-4-4ZM38 178c0 2-2 4-4 4H22c-2 0-4-2-4-4V94c0-2 2-4 4-4h12c2 0 4 2 4 4v84ZM196 0h-48c-2 0-4 2-4 4v120c0 2 2 4 4 4h48c2 0 4-2 4-4V4c0-2-2-4-4-4Zm-14 106c0 2-2 4-4 4h-12c-2 0-4-2-4-4V22c0-2 2-4 4-4h12c2 0 4 2 4 4v84ZM124 0H76c-2 0-4 2-4 4v192c0 2 2 4 4 4h48c2 0 4-2 4-4V4c0-2-2-4-4-4Zm-14 178c0 2-2 4-4 4H94c-2 0-4-2-4-4V22c0-2 2-4 4-4h12c2 0 4 2 4 4v156Z" />
+		</symbol>
+		<symbol id="asset-8" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M0 148v48c0 2 2 4 4 4h192c2 0 4-2 4-4v-48c0-2-2-4-4-4H4c-2 0-4 2-4 4Zm178 14c2 0 4 2 4 4v12c0 2-2 4-4 4H22c-2 0-4-2-4-4v-12c0-2 2-4 4-4h156ZM0 4v48c0 2 2 4 4 4h192c2 0 4-2 4-4V4c0-2-2-4-4-4H4C2 0 0 2 0 4Zm178 14c2 0 4 2 4 4v12c0 2-2 4-4 4H22c-2 0-4-2-4-4V22c0-2 2-4 4-4h156ZM0 76v48c0 2 2 4 4 4h192c2 0 4-2 4-4V76c0-2-2-4-4-4H4c-2 0-4 2-4 4Zm178 14c2 0 4 2 4 4v12c0 2-2 4-4 4H22c-2 0-4-2-4-4V94c0-2 2-4 4-4h156Z"/>
+		</symbol>
+		<symbol id="asset-9" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<rect width="56" height="56" y="144" rx="6" ry="6"/>
+			<rect width="56" height="56" rx="6" ry="6"/>
+			<rect width="56" height="56" x="144" y="144" rx="6" ry="6"/>
+			<rect width="56" height="56" x="144" rx="6" ry="6"/>
+			<rect width="56" height="56" x="72" y="144" rx="6" ry="6"/>
+			<rect width="56" height="56" x="72" rx="6" ry="6"/>
+			<path d="M0 76v48c0 2 2 4 4 4h192c2 0 4-2 4-4V76c0-2-2-4-4-4H4c-2 0-4 2-4 4Zm178 14c2 0 4 2 4 4v12c0 2-2 4-4 4H22c-2 0-4-2-4-4V94c0-2 2-4 4-4h156Z" />
+		</symbol>
+		<symbol id="asset-10" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M5 197 198 58l2-5V6c0-3-3-4-5-3L2 142l-2 5v47c0 3 3 4 5 3Zm195-3v-44c0-3-3-4-5-3l-65 48c-3 1-1 5 2 5h62c3 0 6-3 6-6ZM5 125 170 5c3-1 1-5-2-5h-66l-4 1L2 70l-2 5v47c0 3 3 4 5 3Zm191-50L30 195c-2 1-1 5 2 5h66l4-1 96-69 2-5V78c0-3-2-4-4-3ZM0 6v44c0 3 3 4 5 3L70 5c3-1 1-5-2-5H6C3 0 0 3 0 6Z"/>
+		</symbol>
+		<symbol id="asset-11" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M194 0H6C3 0 0 3 0 6v80c0 3 3 6 6 6h188c3 0 6-3 6-6V6c0-3-3-6-6-6Zm-14 66c0 3-3 6-6 6H26c-3 0-6-3-6-6V26c0-3 3-6 6-6h148c3 0 6 3 6 6v40Z"/>
+			<rect width="120" height="16" x="40" y="38" rx="6" ry="6"/>
+			<path d="M194 108H6c-3 0-6 3-6 6v80c0 3 3 6 6 6h188c3 0 6-3 6-6v-80c0-3-3-6-6-6Zm-14 66c0 3-3 6-6 6H26c-3 0-6-3-6-6v-40c0-3 3-6 6-6h148c3 0 6 3 6 6v40Z"/>
+			<rect width="120" height="16" x="40" y="146" rx="6" ry="6"/>
+		</symbol>
+		<symbol id="asset-12" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M46 0H6C3 0 0 3 0 6v80c0 3 3 6 6 6h80c3 0 6-3 6-6V46C92 21 71 0 46 0Zm26 46v22c0 2-2 4-4 4H24c-2 0-4-2-4-4V24c0-2 2-4 4-4h22c14 0 26 12 26 26Z"/>
+			<path d="M46 38h-6l-2 2v12l2 2h12l2-2v-6c0-4-4-8-8-8Zm154 8V6c0-3-3-6-6-6h-80c-3 0-6 3-6 6v80c0 3 3 6 6 6h40c25 0 46-21 46-46Zm-46 26h-22c-2 0-4-2-4-4V24c0-2 2-4 4-4h44c2 0 4 2 4 4v22c0 14-12 26-26 26Z"/>
+			<path d="M162 46v-6l-2-2h-12l-2 2v12l2 2h6c4 0 8-4 8-8Zm-8 154h40c3 0 6-3 6-6v-80c0-3-3-6-6-6h-80c-3 0-6 3-6 6v40c0 25 21 46 46 46Zm-26-46v-22c0-2 2-4 4-4h44c2 0 4 2 4 4v44c0 2-2 4-4 4h-22c-14 0-26-12-26-26Z"/>
+			<path d="M154 162h6l2-2v-12l-2-2h-12l-2 2v6c0 4 4 8 8 8ZM0 154v40c0 3 3 6 6 6h80c3 0 6-3 6-6v-80c0-3-3-6-6-6H46c-25 0-46 21-46 46Zm46-26h22c2 0 4 2 4 4v44c0 2-2 4-4 4H24c-2 0-4-2-4-4v-22c0-14 12-26 26-26Z"/>
+			<path d="M38 154v6l2 2h12l2-2v-12l-2-2h-6c-4 0-8 4-8 8Z"/>
+		</symbol>
+		<symbol id="asset-13" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M5 69 88 6c2-2 1-6-2-6H6C3 0 0 3 0 6v61c0 2 3 4 5 2Zm17-59a12 12 0 1 1 0 24 12 12 0 0 1 0-24Zm65 13L4 86c-2 2-1 6 2 6h80c3 0 6-3 6-6V25c0-2-3-4-5-2ZM70 82a12 12 0 1 1 0-24 12 12 0 0 1 0 24Zm43-13 83-63c2-2 1-6-2-6h-80c-3 0-6 3-6 6v61c0 2 3 4 5 2Zm17-59a12 12 0 1 1 0 24 12 12 0 0 1 0-24Zm65 13-83 63c-2 2-1 6 2 6h80c3 0 6-3 6-6V25c0-2-3-4-5-2Zm-17 59a12 12 0 1 1 0-24 12 12 0 0 1 0 24Zm-90 32c2-2 1-6-2-6H6c-3 0-6 3-6 6v61c0 2 3 4 5 2l83-63Zm-66 4a12 12 0 1 1 0 24 12 12 0 0 1 0-24Zm65 13L4 194c-2 2-1 6 2 6h80c3 0 6-3 6-6v-61c0-2-3-4-5-2Zm-17 59a12 12 0 1 1 0-24 12 12 0 0 1 0 24Zm126-76c2-2 1-6-2-6h-80c-3 0-6 3-6 6v61c0 2 3 4 5 2l83-63Zm-66 4a12 12 0 1 1 0 24 12 12 0 0 1 0-24Zm65 13-83 63c-2 2-1 6 2 6h80c3 0 6-3 6-6v-61c0-2-3-4-5-2Zm-17 59a12 12 0 1 1 0-24 12 12 0 0 1 0 24Z"/>
+		</symbol>
+		<symbol id="asset-14" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<circle cx="69" cy="173.9" r="25"/>
+			<path d="M11 196 86 73A47 47 0 1 0 0 47v146c0 6 8 8 11 3ZM22 47a25 25 0 1 1 50 0 25 25 0 0 1-50 0Z"/>
+			<circle cx="175" cy="173.9" r="25"/>
+			<path d="m117 196 75-123a47 47 0 1 0-86-26v146c0 6 8 8 11 3Zm11-149a25 25 0 1 1 50 0 25 25 0 0 1-50 0Z"/>
+		</symbol>
+		<symbol id="asset-15" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M46 0H6C3 0 0 3 0 6v82c0 3 3 6 6 6h41a47 47 0 1 0-1-94Zm1 74a27 27 0 1 1 0-54 27 27 0 0 1 0 54Z"/>
+			<circle cx="47" cy="47" r="7"/>
+			<path d="M200 46V6c0-3-3-6-6-6h-82c-3 0-6 3-6 6v41c0 26 21 46 46 47 26 1 48-21 48-48Zm-74 1a27 27 0 1 1 54 0 27 27 0 0 1-54 0Z"/>
+			<circle cx="153" cy="47" r="7"/>
+			<path d="M154 200h40c3 0 6-3 6-6v-82c0-3-3-6-6-6h-41c-26 0-46 21-47 46-1 26 21 48 48 48Zm-1-74a27 27 0 1 1 0 54 27 27 0 0 1 0-54Z"/>
+			<circle cx="153" cy="153" r="7"/>
+			<path d="M0 154v40c0 3 3 6 6 6h82c3 0 6-3 6-6v-41a47 47 0 1 0-94 1Zm74-1a27 27 0 1 1-54 0 27 27 0 0 1 54 0Z"/>
+			<circle cx="47" cy="153" r="7"/>
+		</symbol>
+		<symbol id="asset-16" height="200" width="200" viewBox="0 0 200 200" overflow="visible">
+			<path d="M196 102h-62a2 2 0 0 1-2-4l46-78L27 122h173v-20h-4Z"/>
+			<path d="M197 37h-6l-27 45h36V37h-3ZM22 37V20c0-2 1-3 2-3h123l26-17H6C3 0 0 3 0 6v111l22-15V37Z"/>
+			<path d="M42 37v52l77-52H42zm0 144v19h30l11-19H42z"/>
+			<path d="m22 164 2-2h89l2 2v2l-20 34h32l73-49v-9H0v52c0 3 3 6 6 6h16v-36Zm167 17-27 19h32c3 0 6-3 6-6v-12l-3-1h-8Z"/>
+		</symbol>
+	</defs>
+
+	<g transform="translate(2, 2)"
+		 stroke-width="2" stroke="hsl(0deg 0% 100% / 30%)" fill="none"
+		 stroke-linejoin="round" stroke-linecap="round"
+		 vector-effect="non-scaling-stroke">
+		<use x="0" y="0" height="200" width="200" href="#asset-1" />
+		<use x="230" y="0" height="200" width="200" href="#asset-6" />
+		<use x="460" y="0" height="200" width="200" href="#asset-3" />
+		<use x="690" y="0" height="200" width="200" href="#asset-4" />
+
+		<use x="0" y="230" height="200" width="200" href="#asset-5" />
+		<use x="230" y="230" height="200" width="200" href="#asset-2" />
+		<use x="460" y="230" height="200" width="200" href="#asset-14" />
+		<use x="690" y="230" height="200" width="200" href="#asset-8" />
+
+		<use x="0" y="460" height="200" width="200" href="#asset-9" />
+		<use x="230" y="460" height="200" width="200" href="#asset-15" />
+		<use x="460" y="460" height="200" width="200" href="#asset-11" />
+		<use x="690" y="460" height="200" width="200" href="#asset-12" />
+
+		<use x="0" y="690" height="200" width="200" href="#asset-13" />
+		<use x="230" y="690" height="200" width="200" href="#asset-7" />
+		<use x="460" y="690" height="200" width="200" href="#asset-10" />
+		<use x="690" y="690" height="200" width="200" href="#asset-16" />
+	</g>
+</svg>
