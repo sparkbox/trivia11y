@@ -3,7 +3,7 @@ pagination:
   data: questionData.flashCardQuestions
   size: 1
   alias: question
-permalink: /all/flash-cards-with-typing/{{ pagination.pageNumber + 1 }}/
+permalink: /all/short-answer/{{ pagination.pageNumber + 1 }}/
 eleventyExcludeFromCollections: true
 ---
 
@@ -24,7 +24,7 @@ eleventyExcludeFromCollections: true
 
   <div class="cmp-pagination">
     {% if questionTotal > pagination.pageNumber + 1 %}
-      <a href="/all/flash-cards-with-typing/{{ pagination.pageNumber + 2 }}/">
+      <a href="/all/short-answer/{{ pagination.pageNumber + 2 }}/">
         Next Question
       </a>
     {% else %}
@@ -32,7 +32,7 @@ eleventyExcludeFromCollections: true
     {% endif %}
 
     {% if pagination.pageNumber + 1 > 1 %}
-      <a href="/all/flash-cards-with-typing/{{ pagination.pageNumber }}/">
+      <a href="/all/short-answer/{{ pagination.pageNumber }}/">
         Previous Question
       </a>
     {% else %}
