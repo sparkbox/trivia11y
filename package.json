@@ -10,7 +10,8 @@
   },
   "scripts": {
     "prestart": "rm -rf dist",
-    "start": "npm run eleventy:watch & npm run sass:watch","prebuild": "rm -rf dist",
+    "start": "npm run eleventy:watch & npm run sass:watch",
+    "prebuild": "rm -rf dist",
     "build": "eleventy & npm run sass",
     "eleventy:watch": "eleventy --serve --incremental",
     "sass": "sass ./src/css/styles.scss:./dist/styles.css --no-source-map",
@@ -28,6 +29,7 @@
     "npm-check-updates": "^16.10.9",
     "sass": "^1.62.0",
     "stylelint": "^15.6.0",
+    "stylelint-config-recommended-scss": "^11.0.0",
     "stylelint-config-standard": "^33.0.0"
   },
   "dependencies": {

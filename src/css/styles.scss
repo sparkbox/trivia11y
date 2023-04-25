@@ -1,12 +1,12 @@
 // Introduction
 // Welcome to the CSS file! This is subjectively the most exciting code
 // of the website. Here we bring together the visual style of the website.
-//
+
 // Our CSS is organized using Harry Roberts' (csswizardry.com) Inverted
 // Triangle CSS (ITCSS) organizational approach. This method is mixed with
 // Block Element Modifier (BEM) naming convention for class names throughout
 // the stylesheet.
-//
+
 // Table of Contents:
 // 1. Settings
 // 2. Tools
@@ -44,17 +44,17 @@
 //    the site. This section should include any Reset or Normalize libraries
 //    and any preferential base styles for elements. There shouldn't be any
 //    classes or ids used in this section.
-@use 'generic/reset';
+@forward "generic/reset";
 
 // =====================================================================
 // 4. Elements
 //    Styling for bare HTML elements (like H1, A, etc.). These come with
 //    default styling from the browser so we can redefine them here.
-@use 'elements/root';
-@use 'elements/body';
-@use 'elements/a';
-@use 'elements/p';
-@use 'elements/header';
+@forward "elements/root";
+@forward "elements/body";
+@forward "elements/a";
+@forward "elements/p";
+@forward "elements/header";
 
 // =====================================================================
 // 5. Objects
@@ -65,14 +65,14 @@
 // 6. Components
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
-@use 'components/container';
-@use 'components/stack';
-@use 'components/switcher';
-@use 'components/pagination';
-@use 'components/question';
-@use 'components/answer';
-@use 'components/categories';
-@use 'components/option';
+@forward "components/container";
+@forward "components/stack";
+@forward "components/switcher";
+@forward "components/pagination";
+@forward "components/question";
+@forward "components/answer";
+@forward "components/categories";
+@forward "components/option";
 
 // =====================================================================
 // 7. Vendors (Optional)
