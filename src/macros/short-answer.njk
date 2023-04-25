@@ -17,6 +17,7 @@
   </form>
   <div id="acceptedAnswerSection" tabindex="-1"></div>
   <template id="acceptedAnswer">
+    <p>Correct Answer:</p>
     {{ question.Answer | mdToHtml | safe }}
     {% if question.Explanation %}
       {{ question.Explanation | mdToHtml | safe }}
