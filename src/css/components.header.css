@@ -1,0 +1,32 @@
+.cmp-header {
+	position: relative;
+	color: white;
+	background:
+		linear-gradient(0deg, hsl(0deg 0% 15%), hsl(0deg 0% 15% / 0%)),
+		url("/pattern.svg") center hsl(0deg 0% 15%);
+}
+
+.cmp-header__nav {
+	position: relative;
+	z-index: 200;
+	width: var(--width);
+	margin-inline: auto;
+}
+
+.cmp-header__nav-item {
+	text-decoration: none;
+	font-stretch: 150%;
+	font-size: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+.cmp-header__background {
+	z-index: 100;
+	position: absolute;
+	inset: 0;
+}
+
+.sbx-patterns {
+	fill: black;
+	stroke: white;
+	stroke-width: 1px;
+}

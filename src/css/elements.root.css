@@ -1,12 +1,14 @@
 :root {
-  --ink: hsl(0deg 0% 5%);
+  --ink: hsl(0deg 0% 12%);
   --paper: hsl(0deg 0% 95%);
   --shadow: #999;
   --correct: forestgreen;
   --incorrect: tomato;
+  --black: hsl(0deg 0% 0%);
+  --white: hsl(0deg 0% 100%);
+  --width: min(100vw - 2rem, 50rem);
 
   color: var(--ink);
-  background-color: var(--paper);
 }
 
 @media (prefers-color-scheme: dark) {

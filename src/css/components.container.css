@@ -1,4 +1,4 @@
 .cmp-container {
-  width: min(100vw - 2rem, 50rem);
+  width: var(--width);
   margin-inline: auto;
 }
