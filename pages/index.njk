@@ -11,14 +11,14 @@ layout: default
 </p>
 
 <ul class="cmp-categories">
-  <li>
-    <a href="/all/flash-cards/1/">
+  <li class="cmp-categories__item">
+    <a href="/all/flash-cards/1/" class="cmp-categories__link">
       All Questions
     </a>
   </li>
 {% for category in questionData.flashCardCategories %}
-  <li>
-    <a href="/flash-cards/{{ category | slugify }}/1/">
+  <li class="cmp-categories__item">
+    <a href="/flash-cards/{{ category | slugify }}/1/" class="cmp-categories__link">
       {{ category }}
     </a>
   </li>
