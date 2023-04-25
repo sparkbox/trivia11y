@@ -19,8 +19,8 @@ eleventyExcludeFromCollections: true
 {% block content %}
   <h1>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h1>
 
-  {% from 'macros/flash-card.njk' import flashCard %}
-  {{ flashCard(question) }}
+  {% from 'macros/short-answer.njk' import shortAnswer %}
+  {{ shortAnswer(question) }}
 
   <div class="cmp-pagination">
     {% if questionTotal > pagination.pageNumber + 1 %}
@@ -39,4 +39,10 @@ eleventyExcludeFromCollections: true
       <span></span>
     {% endif %}
   </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    {% include 'js/short-answer.js' %}
+  </script>
 {% endblock %}
