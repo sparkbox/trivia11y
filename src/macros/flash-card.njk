@@ -3,10 +3,10 @@
     {{ question.Question | mdToHtml | safe }}
   </div>
   <details class="cmp-answer">
-    <summary>
+    <summary class="cmp-answer__summary">
       Reveal Answer
     </summary>
-    <div>
+    <div class="cmp-answer__reveal">
       {{ question.Answer | mdToHtml | safe }}
       {% if question.Explanation %}
         {{ question.Explanation | mdToHtml | safe }}
