@@ -1,11 +1,65 @@
 .cmp-categories {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-.cmp-categories a {
-  font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
+.cmp-categories__item:first-child {
+  grid-column: span 2;
+}
+
+.cmp-categories__item:first-child .cmp-categories__link {
+  aspect-ratio: 32 / 9;
+}
+
+@keyframes link-pop {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.05;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.cmp-categories__link {
+  text-align: center;
+  padding-inline: 1em;
+  line-height: 1.15;
+  font-size: clamp(1.25rem, 5vw, 2.5rem);
+  font-stretch: 150%;
+  font-weight: 300;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--smokey-black);
+}
+
+.cmp-categories__link:hover {
+  animation: link-pop 250ms cubic-bezier(0.25,0.65,0.75,1.25);
+}
+
+.cmp-categories__link:focus {
+  outline-color: var(--smokey-black);
+  background-color: currentcolor;
+  color: white;
+}
+
+.cmp-categories__item:nth-child(3n):not(:first-child) .cmp-categories__link {
+  color: var(--brand-pink);
+}
+
+.cmp-categories__item:nth-child(3n + 1):not(:first-child) .cmp-categories__link {
+  color: var(--brand-green);
+}
+
+.cmp-categories__item:nth-child(3n + 2):not(:first-child) .cmp-categories__link {
+  color: var(--brand-turquoise);
 }

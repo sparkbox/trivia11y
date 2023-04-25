@@ -38,7 +38,9 @@
     <!-- global scripts, should render on every page -->
 
     <!-- page-specific scripts, should be set within the page template -->
-    {% block scripts %}{% endblock %}
+    {% block scripts %}
+      {% include 'partials/footer.njk' %}
+    {% endblock %}
 
     <script type="module">
       if ('serviceWorker' in navigator) {
