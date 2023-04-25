@@ -1,0 +1,42 @@
+---
+pagination:
+  data: questionData.flashCardQuestions
+  size: 1
+  alias: question
+permalink: /all/flash-cards-with-typing/{{ pagination.pageNumber + 1 }}/
+eleventyExcludeFromCollections: true
+---
+
+{% extends 'layout.njk' %}
+
+{% set questionTotal = questionData.flashCardQuestions.length %}
+
+{% block titleAndDescription %}
+  <title>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }} | All Questions | Trivia11y</title>
+  <meta name="description" content="Answer question {{ pagination.pageNumber + 1 }} of {{ questionTotal }} in all categories.">
+{% endblock %}
+
+{% block content %}
+  <h1>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h1>
+
+  {% from 'macros/flash-card.njk' import flashCard %}
+  {{ flashCard(question) }}
+
+  <div class="cmp-pagination">
+    {% if questionTotal > pagination.pageNumber + 1 %}
+      <a href="/all/flash-cards-with-typing/{{ pagination.pageNumber + 2 }}/">
+        Next Question
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
+
+    {% if pagination.pageNumber + 1 > 1 %}
+      <a href="/all/flash-cards-with-typing/{{ pagination.pageNumber }}/">
+        Previous Question
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+---
+pagination:
+  data: questionData.flashCardQuestionGroups
+  size: 1
+  alias: questionGroup
+permalink: /flash-cards-with-typing/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber }}/
+eleventyExcludeFromCollections: true
+---
+
+{% extends 'layout.njk' %}
+
+{% block titleAndDescription %}
+  <title>Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | {{ questionGroup.category }} | Trivia11y</title>
+  <meta name="description" content="Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }}.">
+{% endblock %}
+
+{% block content %}
+  <h1>{{ questionGroup.category }}: Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h1>
+
+  {% from 'macros/flash-card.njk' import flashCard %}
+  {{ flashCard(questionGroup.question) }}
+
+  <div class="cmp-pagination">
+    {% if questionGroup.questionTotal > questionGroup.pageNumber %}
+      <a href="/flash-cards-with-typing/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
+        Next Question
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
+
+    {% if questionGroup.pageNumber > 1 %}
+      <a href="/flash-cards-with-typing/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
+        Previous Question
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
+  </div>
+{% endblock %}
