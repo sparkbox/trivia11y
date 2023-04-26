@@ -6,69 +6,75 @@ $bp-md: 40rem;
 	color: var(--white);
 	background:
 		linear-gradient(0deg, hsl(0deg 0% 15%), hsl(0deg 0% 15% / 0%)),
-		url("/pattern.svg") center hsl(0deg 0% 15%);
-}
+		url("assets/pattern.svg") center hsl(0deg 0% 15%);
 
-.cmp-header__nav {
-	position: relative;
-	z-index: 200;
-	width: var(--width);
-	margin-inline: auto;
-	display: flex;
-	justify-content: space-between;
-}
-
-.cmp-header__nav-item {
-	display: inline-block;
-	text-decoration-color: #fff0;
-	text-decoration-thickness: 1px;
-	text-underline-offset: 0.0625em;
-	font-stretch: 150%;
-	font-size: clamp(1.75rem, 1.75rem + 1vw, 3rem);
-	color: inherit;
-	font-weight: 200;
-	transition: text-decoration-color ease-in-out 150ms;
-}
-
-.cmp-header__nav-item:hover {
-	text-decoration-color: currentcolor;
-}
-
-.cmp-header__nav-highlight {
-	background: var(--gradient-blue-green);
-	background-clip: text;
-	color: transparent;
-	font-weight: 600;
-}
-
-.cmp-header__nav-sparkbox {
-	color: inherit;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	width: 2.5rem;
-}
-
-.cmp-header__sparkbox-logo {
-	fill: currentColor;
-	height: 2.5rem;
-	width: 100%;
-	aspect-ratio: 1 / 1;
-
-	@media (min-width: $bp-md) {
-		display: none;
+	&__nav {
+		position: relative;
+		z-index: 200;
+		width: var(--width);
+		margin-inline: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
-}
 
-.cmp-header__sparkbox-lockup {
-	fill: currentColor;
-	height: 2.5rem;
-	width: 100%;
-	aspect-ratio: 578 / 154;
-	display: none;
+	&__nav-item {
+		display: inline-block;
+		text-decoration-color: #fff0;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.0625em;
+		font-stretch: 150%;
+		font-size: clamp(1.75rem, 1.75rem + 1vw, 3rem);
+		color: inherit;
+		font-weight: 200;
+		transition: text-decoration-color ease-in-out 150ms;
 
-	@media (min-width: $bp-md) {
-		display: unset;
+		&:hover {
+			text-decoration-color: currentcolor;
+		}
+	}
+
+	&__nav-highlight {
+		background: var(--gradient-blue-green);
+		background-clip: text;
+		color: transparent;
+		font-weight: 600;
+	}
+
+	&__nav-sparkbox {
+		--size: 2.5rem;
+		color: inherit;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		height: var(--size);
+		width: var(--size);
+
+		@media (min-width: $bp-md) {
+			width: calc(var(--size) * ( 578 / 154 ));
+		}
+	}
+
+	&__sparkbox-logo {
+		fill: currentColor;
+		width: 100%;
+
+		&--symbol {
+			aspect-ratio: 1 / 1;
+
+			@media (min-width: $bp-md) {
+				display: none;
+			}
+		}
+
+		&--lockup {
+			display: none;
+
+			@media (min-width: $bp-md) {
+				aspect-ratio: 578 / 154;
+				display: block;
+			}
+		}
 	}
 }
