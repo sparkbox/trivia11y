@@ -10,7 +10,7 @@
   },
   "scripts": {
     "prestart": "rm -rf dist",
-    "start": "npm run eleventy:watch && npm run sass:watch",
+    "start": "npm run eleventy:watch & npm run sass:watch",
     "build": "eleventy && npm run sass",
     "eleventy:watch": "eleventy --serve --incremental",
     "sass": "sass ./src/css/styles.scss:./dist/styles.css --no-source-map",
