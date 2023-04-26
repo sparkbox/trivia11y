@@ -4,8 +4,6 @@ description: Choose a category to test your accessibility knowledge in.
 layout: default
 ---
 
-<h1 aria-label="Triviaccessibility">Trivia11y</h1>
-
 <h2>Flash Cards</h2>
 
 <p>
@@ -13,14 +11,14 @@ layout: default
 </p>
 
 <ul class="cmp-categories">
-  <li>
-    <a href="/all/flash-cards/1/">
+  <li class="cmp-categories__item">
+    <a href="/all/flash-cards/1/" class="cmp-categories__link">
       All Questions
     </a>
   </li>
 {% for category in questionData.flashCardCategories %}
-  <li>
-    <a href="/flash-cards/{{ category | slugify }}/1/">
+  <li class="cmp-categories__item">
+    <a href="/flash-cards/{{ category | slugify }}/1/" class="cmp-categories__link">
       {{ category }}
     </a>
   </li>
@@ -35,14 +33,14 @@ layout: default
 </p>
 
 <ul class="cmp-categories">
-  <li>
-    <a href="/all/multiple-choice/1/">
+  <li class="cmp-categories__item">
+    <a href="/all/multiple-choice/1/" class="cmp-categories__link">
       All Questions
     </a>
   </li>
 {% for category in questionData.categories %}
-  <li>
-    <a href="/multiple-choice/{{ category | slugify }}/1/">
+  <li class="cmp-categories__item">
+    <a href="/multiple-choice/{{ category | slugify }}/1/" class="cmp-categories__link">
       {{ category }}
     </a>
   </li>

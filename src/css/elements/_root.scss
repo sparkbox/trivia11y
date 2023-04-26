@@ -1,9 +1,9 @@
 :root {
   --ink: hsl(0deg 0% 12%);
   --paper: hsl(0deg 0% 95%);
-  --shadow: #999;
-  --correct: forestgreen;
-  --incorrect: tomato;
+  --shadow: hsl(0deg 0% 60%);
+  --correct: hsl(120deg 62% 34%);
+  --incorrect: hsl(9deg 100% 64%);
   --smokey-black: hsl(0deg 0% 4%);
   --white: hsl(0deg 0% 100%);
 
@@ -79,8 +79,8 @@
   :root {
     --ink: hsl(0deg 0% 95%);
     --paper: hsl(0deg 0% 5%);
-    --shadow: #444;
-    --correct: forestgreen;
-    --incorrect: tomato;
+    --shadow: hsl(0deg 0% 27%);
+    --correct: hsl(120deg 62% 34%);
+    --incorrect: hsl(9deg 100% 64%);
   }
 }
