@@ -19,9 +19,6 @@
         </div>
       </div>
       <div data-no-js class="cmp-switcher__full-width">
-        <div id="no-js-option-{{ loop.index }}">
-          {{ option.answer | mdToHtml | safe }}
-        </div>
         <details class="cmp-answer">
           <summary aria-describedby="no-js-option-{{ loop.index }}">
             {% if loop.index === 1 %}
@@ -45,6 +42,9 @@
             {% endif %}
           </div>
         </details>
+        <div id="no-js-option-{{ loop.index }}">
+          {{ option.answer | mdToHtml | safe }}
+        </div>
       </div>
     {% endfor %}
   </div>
