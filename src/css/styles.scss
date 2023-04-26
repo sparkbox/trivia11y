@@ -52,9 +52,9 @@
 //    default styling from the browser so we can redefine them here.
 @forward "elements/root";
 @forward "elements/body";
+@forward "elements/heading";
 @forward "elements/a";
 @forward "elements/p";
-@forward "elements/header";
 
 // =====================================================================
 // 5. Objects
@@ -65,6 +65,7 @@
 // 6. Components
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
+@forward "components/header";
 @forward "components/container";
 @forward "components/stack";
 @forward "components/switcher";
@@ -85,3 +86,4 @@
 // 8. Utilities
 //    Utilities and helper classes with ability to override anything
 //    which goes before in the triangle, eg. hide helper class
+@forward "utilities/visually-hidden";
