@@ -2,14 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-}
 
-.cmp-switcher > * {
-  flex-grow: 1;
-  flex-basis: calc((30rem - 100%) * 999);
-}
+  > * {
+    flex-grow: 1;
+    flex-basis: calc((30rem - 100%) * 999);
+  }
 
-.cmp-switcher > :nth-last-child(n + 5),
-.cmp-switcher > :nth-last-child(n + 5) ~ * {
-  flex-basis: 100%;
+  &__full-width {
+    flex-basis: 100%;
+  }
 }
