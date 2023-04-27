@@ -12,7 +12,7 @@ const markdownToHtml = (markdown) => {
 };
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ 'src/public': '/' });
+  eleventyConfig.addPassthroughCopy({ 'src/public/': '/' });
   eleventyConfig.addLayoutAlias('default', 'layout.njk');
 
   eleventyConfig.addFilter('mdToHtml', markdownToHtml);
