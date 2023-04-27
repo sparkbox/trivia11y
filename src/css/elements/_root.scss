@@ -1,86 +1,81 @@
 :root {
+  // COLORS
+  --brand-turquoise: hsl(187deg 98% 64%);
+  --brand-turquoise-light-1: hsl(188deg 100% 94%);
+  --brand-turquoise-light-2: hsl(188deg 98% 84%);
+  --brand-turquoise-light-3: hsl(188deg 100% 74%);
+  --brand-turquoise-dark-1: hsl(188deg 100% 38%);
+  --brand-turquoise-dark-2: hsl(188deg 100% 21%);
+  --brand-turquoise-dark-3: hsl(188deg 100% 11%);
+
+  --brand-pink: hsl(324deg 99% 62%);
+  --brand-pink-light-1: hsl(324deg 99% 71%);
+  --brand-pink-light-2: hsl(324deg 98% 80%);
+  --brand-pink-light-3: hsl(324deg 100% 90%);
+  --brand-pink-dark-1: hsl(325deg 85% 39%);
+  --brand-pink-dark-2: hsl(324deg 91% 21%);
+  --brand-pink-dark-3: hsl(324deg 85% 10%);
+
+  --brand-green: hsl(162deg 99% 48%);
+  --brand-green-light-1: hsl(162deg 98% 69%);
+  --brand-green-light-2: hsl(163deg 98% 78%);
+  --brand-green-light-3: hsl(162deg 100% 88%);
+  --brand-green-dark-1: hsl(161deg 82% 37%);
+  --brand-green-dark-2: hsl(162deg 88% 20%);
+  --brand-green-dark-3: hsl(162deg 88% 10%);
+
+  --brand-gray: hsl(0deg 0% 87%);
+  --brand-gray-light-1: hsl(0deg 0% 92%);
+  --brand-gray-light-2: hsl(0deg 0% 97%);
+  --brand-gray-light-3: hsl(0deg 0% 100%);
+  --brand-gray-dark-1: hsl(0deg 0% 82%);
+  --brand-gray-dark-2: hsl(0deg 0% 66%);
+  --brand-gray-dark-3: hsl(0deg 0% 48%);
+
+  // Green Foundry Group
+  --foundry-content-base: hsl(102deg 67% 41%);
+  --foundry-content-accent-light: hsl(77deg 74% 66%);
+  --foundry-content-accent-dark: hsl(102deg 69% 32%);
+  --foundry-content-gradient-start: hsl(77deg 71% 67%);
+  --foundry-content-gradient-end: hsl(53deg 90% 64%);
+
+  // Red Foundry Group
+  --foundry-development-base: hsl(346deg 72% 49%);
+  --foundry-development-accent-light: hsl(15deg 99% 71%);
+  --foundry-development-accent-dark: hsl(346deg 72% 37%);
+  --foundry-development-gradient-start: hsl(15deg 97% 71%);
+  --foundry-development-gradient-end: hsl(40deg 99% 67%);
+
+  // Purple Foundry Group
+  --foundry-design-base: hsl(265deg 57% 34%);
+  --foundry-design-accent-light: hsl(293deg 90% 65%);
+  --foundry-design-accent-dark: hsl(265deg 58% 13%);
+  --foundry-design-gradient-start: hsl(294deg 83% 65%);
+  --foundry-design-gradient-end: hsl(327deg 87% 58%);
+
+  // Blue Foundry Group
+  --foundry-culture-base: hsl(207deg 85% 38%);
+  --foundry-culture-accent-light: hsl(187deg 63% 82%);
+  --foundry-culture-accent-dark: hsl(207deg 86% 30%);
+  --foundry-culture-gradient-start: hsl(182deg 57% 80%);
+  --foundry-culture-gradient-end: hsl(159deg 84% 60%);
+
   --ink: hsl(0deg 0% 12%);
-  --paper: hsl(0deg 0% 95%);
-  --shadow: hsl(0deg 0% 60%);
-  --correct: hsl(120deg 62% 34%);
-  --incorrect: hsl(9deg 100% 64%);
+  --paper: var(--brand-gray-light-2);
+  --shadow: var(--brand-gray-dark-2);
+  --correct: var(--foundry-content-base);
+  --incorrect: var(--foundry-development-base);
+
   --smokey-black: hsl(0deg 0% 4%);
   --white: hsl(0deg 0% 100%);
 
-  --blue-h: 187deg;
-  --blue-s: 99%;
-  --blue-l: 64%;
-
-  --brand-turquoise: hsl(var(--blue-h) var(--blue-s) var(--blue-l));
-
-  --brand-turquoise-light-1: hsl(var(--blue-h) var(--blue-s) calc(var(--blue-l) + 8%));
-  --brand-turquoise-light-2: hsl(var(--blue-h) var(--blue-s) calc(var(--blue-l) + 16%));
-  --brand-turquoise-light-3: hsl(var(--blue-h) var(--blue-s) calc(var(--blue-l) + 24%));
-
-  --brand-turquoise-dark-1: hsl(var(--blue-h) var(--blue-s) calc(var(--blue-l) - 16%));
-  --brand-turquoise-dark-2: hsl(var(--blue-h) var(--blue-s) calc(var(--blue-l) - 32%));
-  --brand-turquoise-dark-3: hsl(var(--blue-h) var(--blue-s) calc(var(--blue-l) - 48%));
-
-
-  --pink-h: 324deg;
-  --pink-s: 99%;
-  --pink-l: 62%;
-
-  --brand-pink: hsl(var(--pink-h) var(--pink-s) var(--pink-l));
-
-  --brand-pink-light-1: hsl(var(--pink-h) var(--pink-s) calc(var(--pink-l) + 8%));
-  --brand-pink-light-2: hsl(var(--pink-h) var(--pink-s) calc(var(--pink-l) + 16%));
-  --brand-pink-light-3: hsl(var(--pink-h) var(--pink-s) calc(var(--pink-l) + 24%));
-
-  --brand-pink-dark-1: hsl(var(--pink-h) var(--pink-s) calc(var(--pink-l) - 16%));
-  --brand-pink-dark-2: hsl(var(--pink-h) var(--pink-s) calc(var(--pink-l) - 32%));
-  --brand-pink-dark-3: hsl(var(--pink-h) var(--pink-s) calc(var(--pink-l) - 48%));
-
-  --green-h: 162deg;
-  --green-s: 99%;
-  --green-l: 48%;
-
-  --brand-green: hsl(var(--green-h) var(--green-s) var(--green-l));
-
-  --brand-green-light-1: hsl(var(--green-h) var(--green-s) calc(var(--green-l) + 12%));
-  --brand-green-light-2: hsl(var(--green-h) var(--green-s) calc(var(--green-l) + 24%));
-  --brand-green-light-3: hsl(var(--green-h) var(--green-s) calc(var(--green-l) + 36%));
-
-  --brand-green-dark-1: hsl(var(--green-h) var(--green-s) calc(var(--green-l) - 12%));
-  --brand-green-dark-2: hsl(var(--green-h) var(--green-s) calc(var(--green-l) - 24%));
-  --brand-green-dark-3: hsl(var(--green-h) var(--green-s) calc(var(--green-l) - 36%));
-
-  --gray-h: 0deg;
-  --gray-s: 0%;
-  --gray-l: 87%;
-
-  --brand-gray: hsl(var(--gray-h) var(--gray-s) var(--gray-l));
-
-  --brand-gray-light-1: hsl(var(--gray-h) var(--gray-s) calc(var(--gray-l) + 6%));
-  --brand-gray-light-2: hsl(var(--gray-h) var(--gray-s) calc(var(--gray-l) + 10%));
-  --brand-gray-light-3: hsl(var(--gray-h) var(--gray-s) calc(var(--gray-l) + 13%));
-
-  --brand-gray-dark-1: hsl(var(--gray-h) var(--gray-s) calc(var(--gray-l) - 16%));
-  --brand-gray-dark-2: hsl(var(--gray-h) var(--gray-s) calc(var(--gray-l) - 32%));
-  --brand-gray-dark-3: hsl(var(--gray-h) var(--gray-s) calc(var(--gray-l) - 48%));
-
   --width: min(100vw - 2rem, 50rem);
 
-  --gradient-blue-green: linear-gradient(
-    0deg,
-    hsl(var(--blue-h) var(--blue-s) var(--blue-l)),
-    hsl(var(--green-h) var(--green-s) var(--green-l))
-  );
+  --text-color: var(--ink);
+  --background-color: var(--white);
 
-  color: var(--ink);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: hsl(0deg 0% 95%);
-    --paper: hsl(0deg 0% 5%);
-    --shadow: hsl(0deg 0% 27%);
-    --correct: hsl(120deg 62% 34%);
-    --incorrect: hsl(9deg 100% 64%);
+  @media (prefers-color-scheme: dark) {
+    --text-color: var(--white);
+    --background-color: var(--ink);
   }
 }

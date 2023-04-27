@@ -4,33 +4,33 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 300;
-  font-stretch: 125%;
+  font-weight: 400;
+  font-stretch: 80%;
   font-size: clamp(var(--size), var(--size) + 0.5vw, var(--size) * 2);
 }
 
 h1 {
-  --size: 1.875rem
+  --size: 1.875rem;
 }
 
 h2 {
-  --size: 1.75rem
+  --size: 1.75rem;
 }
 
 h3 {
-  --size: 1.5rem
+  --size: 1.5rem;
 }
 
 h4 {
-  --size: 1.25rem
+  --size: 1.25rem;
 }
 
 h5 {
-  --size: 1rem
+  --size: 1rem;
 }
 
 h6 {
-  --size: 0.875rem
+  --size: 0.875rem;
 }
 
 

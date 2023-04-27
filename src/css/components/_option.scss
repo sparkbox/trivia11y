@@ -2,11 +2,11 @@
   cursor: pointer;
   padding: 0.5rem 1rem;
   width: 100%;
-  background-color: var(--paper);
-  color: var(--ink);
+  background-color: var(--bakcground-color);
+  color: inherit;
   font-size: clamp(1rem, 1rem + 1vw, 2rem);
   font-weight: 700;
-  border: 0.125rem solid var(--ink);
+  border: 0.125rem solid currentColor;
   border-radius: 0.25rem;
   box-shadow: 0.25rem 0.25rem 0 0 var(--shadow);
 }
