@@ -1,6 +1,6 @@
-const optionButtons = document.querySelectorAll('.cmp-option-button');
-const explanation = document.querySelector('#explanation');
-const explanationSection = document.querySelector('#explanationSection');
+const optionButtons = document.querySelectorAll('.js-multiple-choice');
+const explanation = document.querySelector('.js-explanation');
+const explanationSection = document.querySelector('.js-explanation-section');
 
 const handleOptionButtonClick = (event) => {
   const isPressed = event.target.getAttribute('aria-pressed') === 'true';

@@ -2,15 +2,18 @@
   <div class="cmp-question">
     {{ question.Question | mdToHtml | safe }}
   </div>
-  <div class="cmp-switcher">
+  <div class="cmp-multiple-choice">
     {% for option in question.options %}
-      <button type="button" class="cmp-option-button" aria-pressed="false" data-correct="{{ option.isCorrect }}">
-        {{ option.answer }}
-      </button>
+      <div class="cmp-multiple-choice__item">
+        <button type="button" class="cmp-multiple-choice__button js-multiple-choice" aria-describedby="option-{{ loop.index }}" aria-pressed="false" data-correct="{{ option.isCorrect }}"></button>
+        <div class="cmp-multiple-choice__answer" id="option-{{ loop.index }}">
+          {{ option.answer | mdToHtml | safe }}
+        </div>
+      </div>
     {% endfor %}
   </div>
-  <div id="explanationSection" tabindex="-1"></div>
-  <template id="explanation">
+  <div id="explanationSection" class="js-explanation-section" tabindex="-1"></div>
+  <template id="explanation" class="js-explanation">
     {% if question.Explanation %}
       {{ question.Explanation | mdToHtml | safe }}
     {% endif %}
