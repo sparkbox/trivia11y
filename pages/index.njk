@@ -4,14 +4,21 @@ description: Choose a category to test your accessibility knowledge in.
 layout: default
 ---
 
-<h2>Game Types</h2>
+<div class="obj-width-limiter">
+	<h2>Game Types</h2>
 
-<p>Choose from the following game types and then select a category.</p>
+	<p>Choose from the following game types and then select a category.</p>
 
-{% set catdir = "flash-cards" %}
-{% set cattitle = "Flash Cards" %}
-{% include 'partials/categories.njk' %}
-
-{% set cattitle = "Multiple Choice" %}
-{% set catdir = "multiple-choice" %}
-{% include 'partials/categories.njk' %}
+	<div class="obj-game-type">
+		<div class="obj-game-type__group">
+			{% set catdir = "flash-cards" %}
+			{% set cattitle = "Flash Cards" %}
+			{% include 'partials/categories.njk' %}
+		</div>
+		<div class="obj-game-type__group">
+			{% set cattitle = "Multiple Choice" %}
+			{% set catdir = "multiple-choice" %}
+			{% include 'partials/categories.njk' %}
+		</div>
+	</div>
+</div>

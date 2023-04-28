@@ -13,7 +13,10 @@
 
   &__link {
     position: relative;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: hsl(var(--text-color-hsl) /  50%);
     text-align: center;
     line-height: 1.15;
     font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
@@ -22,10 +25,16 @@
     padding-block: 0.5rem;
     display: inline-flex;
     align-items: center;
-    transition: color 150ms ease-in-out;
+    transition: color 150ms ease-in-out, text-decoration-color 150ms ease-in-out;
 
     &:hover {
       color: var(--foundry-culture-base);
+      text-decoration-color: hsl(var(--text-color-hsl) /  0%);
+
+      @media (prefers-color-scheme: dark) {
+        color: var(--brand-turquoise);
+        text-decoration-color: hsl(var(--text-color-hsl) /  0%);
+      }
     }
 
     &::before,
@@ -39,6 +48,23 @@
       height: 1.5rem;
       width: 1.5rem;
       transition: opacity 150ms ease-in-out;
+
+      // This add an outline to all content in order
+      // to distinguish shapes from the background.
+      --a: -1px;
+      --b: 1px;
+      --color: var(--background-color);
+      filter:
+        drop-shadow(0 0 1px var(--color))
+        drop-shadow(0 0 0.5px var(--color))
+        drop-shadow(0 0 0.5px var(--color))
+        drop-shadow(0 0 0.5px var(--color))
+        drop-shadow(0 0 0.5px var(--color))
+        drop-shadow(0 0 0.5px var(--color))
+        drop-shadow(0 0 0.5px var(--color))
+        drop-shadow(0 0 0.5px var(--color))
+        drop-shadow(0 0 0.5px var(--color))
+        drop-shadow(0 0 0.5px var(--color));
     }
 
     &:hover::before,

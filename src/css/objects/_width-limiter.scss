@@ -1,0 +1,9 @@
+.obj-width-limiter {
+	width: var(--max-width);
+	margin-inline: auto;
+}
+
+.obj-content-width {
+	width: var(--content-width);
+	margin-inline: auto;
+}

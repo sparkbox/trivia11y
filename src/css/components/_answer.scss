@@ -2,22 +2,23 @@
   font-size: clamp(1rem, 1rem + 1vw, 2rem);
 }
 
-.cmp-answer summary {
+.cmp-answer__reveal {
   cursor: pointer;
   margin-block: 1rem;
 }
 
-.cmp-answer div {
+.cmp-answer__container {
   padding: 3rem;
+  background-color: var(--background-color);
   border: 0.125rem solid currentcolor;
   border-radius: 0.25rem;
 }
 
-.cmp-answer p {
+.cmp-answer__container p {
   margin: 0;
   font-size: clamp(1rem, 1rem + 1vw, 2rem);
 }
 
-.cmp-answer p:not(:first-child) {
+.cmp-answer__container p:not(:first-child) {
   margin-block-start: 1rem;
 }

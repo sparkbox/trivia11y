@@ -17,26 +17,33 @@ eleventyExcludeFromCollections: true
 {% endblock %}
 
 {% block content %}
-  <h1>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h1>
+<div class="obj-content-width">
+  <article>
+    <header>
+      <h1>All Categories</h1>
+      <h2>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h2>
+    </header>
 
-  {% from 'macros/flash-card.njk' import flashCard %}
-  {{ flashCard(question) }}
+    {% from 'macros/flash-card.njk' import flashCard %}
+    {{ flashCard(question) }}
 
-  <div class="cmp-pagination">
-    {% if questionTotal > pagination.pageNumber + 1 %}
-      <a href="/all/flash-cards/{{ pagination.pageNumber + 2 }}/">
-        Next Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
+    <div class="cmp-pagination">
+      {% if questionTotal > pagination.pageNumber + 1 %}
+        <a href="/all/flash-cards/{{ pagination.pageNumber + 2 }}/">
+          Next Question
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
 
-    {% if pagination.pageNumber + 1 > 1 %}
-      <a href="/all/flash-cards/{{ pagination.pageNumber }}/">
-        Previous Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
-  </div>
+      {% if pagination.pageNumber + 1 > 1 %}
+        <a href="/all/flash-cards/{{ pagination.pageNumber }}/">
+          Previous Question
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+    </div>
+  </article>
+</div>
 {% endblock %}

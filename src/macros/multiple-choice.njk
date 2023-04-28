@@ -4,20 +4,9 @@
   </div>
   <div class="cmp-switcher">
     {% for option in question.options %}
-      <div>
-        <button type="button" class="cmp-option-button" aria-pressed="false" aria-describedby="option-{{ loop.index }}" data-correct="{{ option.isCorrect }}">
-          {% if loop.index === 1 %}
-            A
-          {% elseif loop.index === 2 %}
-            B
-          {% else %}
-            C
-          {% endif %}
-        </button>
-        <div id="option-{{ loop.index }}">
-          {{ option.answer | mdToHtml | safe }}
-        </div>
-      </div>
+      <button type="button" class="cmp-option-button" aria-pressed="false" data-correct="{{ option.isCorrect }}">
+        {{ option.answer }}
+      </button>
     {% endfor %}
   </div>
   <div id="explanationSection" tabindex="-1"></div>

@@ -60,13 +60,14 @@
 // 5. Objects
 //    Class-based selectors which define undecorated design patterns,
 //    for example media object known from OOCSS.
+@forward "objects/width-limiter";
+@forward "objects/game-type";
 
 // =====================================================================
 // 6. Components
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
 @forward "components/header";
-@forward "components/container";
 @forward "components/stack";
 @forward "components/switcher";
 @forward "components/pagination";

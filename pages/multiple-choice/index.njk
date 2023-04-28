@@ -15,28 +15,36 @@ eleventyExcludeFromCollections: true
 {% endblock %}
 
 {% block content %}
-  <h1>{{ questionGroup.category }}: Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h1>
 
-  {% from 'macros/multiple-choice.njk' import multipleChoice %}
-  {{ multipleChoice(questionGroup.question) }}
+<div class="obj-content-width">
+  <article>
+    <header>
+      <h1>Category: {{ questionGroup.category }}</h1>
+      <h2>Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h2>
+    </header>
 
-  <div class="cmp-pagination">
-    {% if questionGroup.questionTotal > questionGroup.pageNumber %}
-      <a href="/multiple-choice/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
-        Next Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
+    {% from 'macros/multiple-choice.njk' import multipleChoice %}
+    {{ multipleChoice(questionGroup.question) }}
 
-    {% if questionGroup.pageNumber > 1 %}
-      <a href="/multiple-choice/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
-        Previous Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
-  </div>
+    <div class="cmp-pagination">
+      {% if questionGroup.questionTotal > questionGroup.pageNumber %}
+        <a href="/multiple-choice/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
+          Next Question
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+
+      {% if questionGroup.pageNumber > 1 %}
+        <a href="/multiple-choice/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
+          Previous Question
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+    </div>
+  </article>
+</div>
 {% endblock %}
 
 {% block scripts %}

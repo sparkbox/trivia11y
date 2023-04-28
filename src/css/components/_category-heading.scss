@@ -1,0 +1,12 @@
+.cmp-category-heading {
+	font-stretch: 125%;
+	font-size: clamp(1.5rem, 1.5rem + 0.5vw, 2.5rem);
+	font-weight: 280;
+	position: relative;
+	margin: 0;
+
+
+	&__link {
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,15 @@
+.obj-game-type {
+	container: game-type / inline-size;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: clamp(1rem, 1rem + 0.5vw, 2rem);
+
+	&__group {
+		container: game-type-group / inline-size;
+		grid-column: span 2;
+
+		@container (min-width: 60rem) {
+			grid-column: span 1;
+		}
+	}
+}

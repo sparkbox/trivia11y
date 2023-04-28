@@ -22,7 +22,7 @@
 	&__nav {
 		position: relative;
 		z-index: 200;
-		width: var(--width);
+		width: var(--max-width);
 		margin-inline: auto;
 		display: flex;
 		justify-content: space-between;

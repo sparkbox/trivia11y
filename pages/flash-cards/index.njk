@@ -15,26 +15,32 @@ eleventyExcludeFromCollections: true
 {% endblock %}
 
 {% block content %}
-  <h1>{{ questionGroup.category }}: Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h1>
+<div class="obj-content-width">
+  <article>
+    <header>
+      <h1>Category: {{ questionGroup.category }}</h1>
+      <h2>Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h2>
+    </header>
+    {% from 'macros/flash-card.njk' import flashCard %}
+    {{ flashCard(questionGroup.question) }}
 
-  {% from 'macros/flash-card.njk' import flashCard %}
-  {{ flashCard(questionGroup.question) }}
+    <div class="cmp-pagination">
+      {% if questionGroup.questionTotal > questionGroup.pageNumber %}
+        <a href="/flash-cards/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
+          Next Question
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
 
-  <div class="cmp-pagination">
-    {% if questionGroup.questionTotal > questionGroup.pageNumber %}
-      <a href="/flash-cards/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
-        Next Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
-
-    {% if questionGroup.pageNumber > 1 %}
-      <a href="/flash-cards/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
-        Previous Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
-  </div>
+      {% if questionGroup.pageNumber > 1 %}
+        <a href="/flash-cards/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
+          Previous Question
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+    </div>
+  </article>
+</div>
 {% endblock %}
