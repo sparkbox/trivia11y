@@ -1,0 +1,17 @@
+.cmp-footer {
+	width: var(--max-width);
+	margin-inline: auto;
+	padding-block: 2rem 3rem;
+	border-block-start: 2px solid var(--brand-gray-dark-1);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	column-gap: 1.5rem;
+
+	&__info {
+		font-size: clamp(0.875rem, 0.875rem + 0.5vw, 1.125rem);
+		margin: 0;
+		flex-basis: max(18rem, auto);
+		flex-shrink: 1;
+	}
+}

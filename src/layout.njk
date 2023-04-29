@@ -27,17 +27,24 @@
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    {% include 'partials/sprites.svg' %}
-    {% block header %}
-      {% include 'partials/header.njk' %}
-    {% endblock %}
-    <main id="main-content">
-      {% block content %}
-        {{ content | safe }}
+    <div class="obj-page">
+      {% include 'partials/sprites.svg' %}
+      {% block header %}
+        <div class="obj-page__header">
+          {% include 'partials/header.njk' %}
+        </div>
       {% endblock %}
-    </main>
-    {% block footer %}{% endblock %}
-
+      <main id="main-content" class="obj-page__main">
+        {% block content %}
+          {{ content | safe }}
+        {% endblock %}
+      </main>
+      {% block footer %}
+        <div class="obj-page__footer">
+          {% include 'partials/footer.njk' %}
+        </div>
+      {% endblock %}
+    </div>
     <!-- global scripts, should render on every page -->
 
     <!-- page-specific scripts, should be set within the page template -->
