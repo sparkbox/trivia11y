@@ -19,9 +19,9 @@ eleventyExcludeFromCollections: true
 {% block content %}
 <div class="obj-content-width">
   <article>
-    <header>
-      <h1>All Categories</h1>
-      <h2>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h2>
+    <header class="cmp-game-header">
+      <h1 class="cmp-game-header__title">All Categories</h1>
+      <h2 class="cmp-game-header__question-count">Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h2>
     </header>
 
     {% from 'macros/flash-card.njk' import flashCard %}

@@ -69,13 +69,12 @@
 //    and our UI components are often composed of Objects and Components
 @forward "components/header";
 @forward "components/stack";
-// @forward "components/switcher";
 @forward "components/pagination";
 @forward "components/question";
 @forward "components/answer";
 @forward "components/categories";
-// @forward "components/option-button";
 @forward "components/multiple-choice";
+@forward "components/game-header";
 
 // =====================================================================
 // 7. Vendors (Optional)

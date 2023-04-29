@@ -1,0 +1,13 @@
+.cmp-game-header {
+	margin-block-end: 1.5rem;
+
+	&__title {
+		margin: 0;
+	}
+
+	&__question-count {
+		margin: 0;
+		font-weight: 400;
+		font-size: clamp(1rem, var(--size) + 0.5vw, 1.5rem);
+	}
+}
