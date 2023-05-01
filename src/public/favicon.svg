@@ -1,3 +1,6 @@
-<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="8" cy="8" r="8" fill="rebeccapurple"/>
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#000" stroke-width="2" fill="none">
+    <path d="M11.5 27h11c1.7 0 3.5-1.5 3.5-3.5S24.1 20 22.5 20h-1m-1-14H7v9.5"/>
+    <path d="M21.5 6h1C24.3 6 26 7 26 9s-1.4 3-3 3h-6l6.5-9L4 16h23L8.5 29.5 14 20H7v7h2"/>
+  </g>
 </svg>
