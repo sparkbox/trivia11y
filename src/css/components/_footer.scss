@@ -1,9 +1,10 @@
 .cmp-footer {
+	--blur: blur(4px);
+
 	width: var(--content-width);
 	margin-inline: auto;
 	background-color: hsl(var(--white-hsl) / 70%);
-	--blur: blur(4px);
-	-webkit-backdrop-filter: var(--blur);
+	-webkit-backdrop-filter: var(--blur); /* stylelint-disable-line property-no-vendor-prefix */
 	backdrop-filter: var(--blur);
 	box-sizing: border-box;
 	padding: 1rem;

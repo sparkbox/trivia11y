@@ -26,6 +26,7 @@
 		border-radius: 0;
 		appearance: none;
 		cursor: pointer;
+		width: 100%;
 	}
 
 	&__answer {
@@ -62,23 +63,34 @@
 		box-shadow: 0 0 0 0 var(--shadow);
 	}
 
-	&__button:not([aria-pressed='true']):hover + &__answer {
-		background-color: var(--foundry-culture-accent-light);
-		border-color: var(--foundry-culture-base);
-
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--brand-turquoise);
-		}
-	}
-
 	&__button[aria-pressed='true'] + &__answer {
 		color: var(--white);
 		border-color: var(--incorrect-accent);
 		background-color: var(--incorrect);
+
+		@media (prefers-color-scheme: dark) {
+			--incorrect: var(--foundry-development-accent-dark);
+			--incorrect-accent: var(--foundry-development-accent-light);
+		}
 	}
 
 	&__button[aria-pressed='true'][data-correct='true'] + &__answer {
 		border-color: var(--correct-accent);
 		background-color: var(--correct);
+
+		@media (prefers-color-scheme: dark) {
+			--correct: var(--foundry-content-accent-dark);
+			--correct-accent: var(--foundry-content-accent-light);
+		}
+	}
+
+	&__button:not([aria-pressed='true']):hover + &__answer {
+		background-color: var(--foundry-culture-accent-light);
+		border-color: var(--foundry-culture-base);
+
+		@media (prefers-color-scheme: dark) {
+			background-color: var(--foundry-culture-accent-dark);
+			border-color: var(--brand-turquoise);
+		}
 	}
 }

@@ -131,8 +131,6 @@
 
   @media (prefers-color-scheme: dark) {
     --shadow: hsl(var(--white-hsl) / 10%);
-    --correct-accent: var(--foundry-content-accent-light);
-    --incorrect-accent: var(--foundry-development-accent-light);
     --text-color-hsl: var(--white-hsl);
     --text-color: hsl(var(--text-color-hsl));
     --background-color-hsl: var(--ink-hsl);

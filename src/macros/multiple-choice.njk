@@ -1,12 +1,12 @@
 {% macro multipleChoice(question) %}
-  <div class="cmp-question">
+  <div class="cmp-question" role="heading" aria-level="3">
     {{ question.Question | mdToHtml | safe }}
   </div>
   <div class="cmp-multiple-choice">
     {% for option in question.options %}
       <div class="cmp-multiple-choice__item">
-        <button type="button" class="cmp-multiple-choice__button js-multiple-choice" aria-describedby="option-{{ loop.index }}" aria-pressed="false" data-correct="{{ option.isCorrect }}"></button>
-        <div class="cmp-multiple-choice__answer" id="option-{{ loop.index }}">
+        <button type="button" class="cmp-multiple-choice__button js-multiple-choice" aria-labelledby="option-{{ loop.index }}" aria-pressed="false" data-correct="{{ option.isCorrect }}"></button>
+        <div class="cmp-multiple-choice__answer" id="option-{{ loop.index }}" aria-hidden="true">
           {{ option.answer | mdToHtml | safe }}
         </div>
       </div>

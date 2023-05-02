@@ -9,16 +9,13 @@ layout: default
 
 	<p>Choose from the following game types and then select a category.</p>
 
+	{% from 'macros/categories.njk' import categories %}
 	<div class="obj-game-type">
 		<div class="obj-game-type__group">
-			{% set catdir = "flash-cards" %}
-			{% set cattitle = "Flash Cards" %}
-			{% include 'partials/categories.njk' %}
+			{{ categories('flash-cards', 'Flash Cards', questionData.categories) }}
 		</div>
 		<div class="obj-game-type__group">
-			{% set cattitle = "Multiple Choice" %}
-			{% set catdir = "multiple-choice" %}
-			{% include 'partials/categories.njk' %}
+			{{ categories('multiple-choice', 'Multiple Choice', questionData.categories) }}
 		</div>
 	</div>
 </div>

@@ -1,12 +1,12 @@
 {% macro flashCard(question) %}
-  <div class="cmp-question">
+  <div class="cmp-question" role="heading" aria-level="3">
     {{ question.Question | mdToHtml | safe }}
   </div>
   <details class="cmp-answer">
-    <summary>
+    <summary class="cmp-answer__reveal">
       Reveal Answer
     </summary>
-    <div>
+    <div class="cmp-answer__container">
       {{ question.Answer | mdToHtml | safe }}
       {% if question.Explanation %}
         {{ question.Explanation | mdToHtml | safe }}

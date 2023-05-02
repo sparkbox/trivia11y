@@ -1,5 +1,6 @@
+{% macro categories(catdir, title, questionData) %}
 <h3 id="{{ catdir }}" class="cmp-category-heading">
-	<a href="#{{ catdir }}" class="cmp-category-heading__link">{{ cattitle }}</a>
+	<a href="#{{ catdir }}" class="cmp-category-heading__link">{{ title }}</a>
 </h3>
 
 <ul class="cmp-categories">
@@ -8,7 +9,8 @@
 			All Questions
 		</a>
 	</li>
-{% for category in questionData.categories %}
+{% for category in questionData %}
 	{% include 'partials/category.njk' %}
 {% endfor %}
 </ul>
+{% endmacro %}
