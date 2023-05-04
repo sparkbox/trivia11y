@@ -7,17 +7,18 @@
   font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
   font-weight: 400;
   line-height: 1.2;
-  border: 0.125rem solid currentColor;
+  border: 0.125rem solid currentcolor;
   border-radius: 0.25rem;
   box-shadow: 0.25rem 0.25rem 0 0 var(--shadow);
 }
 
 .cmp-option-button[aria-pressed='true'] {
-  box-shadow: none;
-  border-color: var(--incorrect);
+  color: var(--white);
+  border-color: var(--incorrect-accent);
+  background-color: var(--incorrect);
 }
 
 .cmp-option-button[aria-pressed='true'][data-correct='true'] {
-  box-shadow: none;
-  border-color: var(--correct);
+  border-color: var(--correct-accent);
+  background-color: var(--correct);
 }

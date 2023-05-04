@@ -1,4 +1,5 @@
 @use "../tools/svg" as *;
+@use "../tools/text-outline" as text;
 
 @keyframes categories-rotate {
   to {
@@ -16,7 +17,7 @@
     text-decoration: underline;
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
-    text-decoration-color: hsl(var(--text-color-hsl) /  50%);
+    text-decoration-color: hsl(var(--text-color-hsl) / 50%);
     text-align: center;
     line-height: 1.15;
     font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
@@ -29,11 +30,11 @@
 
     &:hover {
       color: var(--foundry-culture-base);
-      text-decoration-color: hsl(var(--text-color-hsl) /  0%);
+      text-decoration-color: hsl(var(--text-color-hsl) / 0%);
 
       @media (prefers-color-scheme: dark) {
         color: var(--brand-turquoise);
-        text-decoration-color: hsl(var(--text-color-hsl) /  0%);
+        text-decoration-color: hsl(var(--text-color-hsl) / 0%);
       }
     }
 
@@ -49,34 +50,7 @@
       width: 1.5rem;
       transition: opacity 150ms ease-in-out;
 
-      // This add an outline to all content in order
-      // to distinguish shapes from the background.
-      --a: -1px;
-      --b: 1px;
-      --color: var(--background-color);
-      filter:
-        drop-shadow(0 0 1px var(--color))
-        drop-shadow(0 0 0.5px var(--color))
-        drop-shadow(0 0 0.5px var(--color))
-        drop-shadow(0 0 0.5px var(--color))
-        drop-shadow(0 0 0.5px var(--color))
-        drop-shadow(0 0 0.5px var(--color))
-        drop-shadow(0 0 0.5px var(--color))
-        drop-shadow(0 0 0.5px var(--color))
-        drop-shadow(0 0 0.5px var(--color))
-        drop-shadow(0 0 0.5px var(--color));
-    }
-
-    &:hover::before,
-    &:hover::after,
-    &:focus::before,
-    &:focus::after {
-      opacity: 1;
-    }
-
-    &:hover::before,
-    &:focus::before {
-      animation: categories-rotate 2s linear infinite;
+      @include text.outline;
     }
 
     &::before {
@@ -85,6 +59,17 @@
 
     &::after {
       background-image: svg('<svg viewBox="0 0 24 24"><circle fill="hsl(207deg 85% 38%)" cx="12" cy="12" r="4" /></svg>');
+    }
+
+    &:hover::before,
+    &:focus::before {
+      opacity: 1;
+      animation: categories-rotate 2s linear infinite;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      opacity: 1;
     }
 
     @media (prefers-color-scheme: dark) {

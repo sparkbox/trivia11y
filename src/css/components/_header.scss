@@ -1,14 +1,17 @@
 @use "../settings/breakpoints" as bp;
+@use "../tools/text-outline" as text;
 
 @keyframes pop {
 	10% {
 		scale: 0.95;
 		translate: 0 0.25rem;
 	}
+
 	50% {
 		scale: 1.1;
 		translate: 0 -0.5rem;
 	}
+
 	100% {
 		scale: 1;
 		translate: 0 0;
@@ -73,6 +76,7 @@
 
 	&__nav-sparkbox {
 		--size: 1.75rem;
+
 		color: inherit;
 		display: flex;
 		justify-content: center;
@@ -81,14 +85,17 @@
 		height: var(--size);
 		width: var(--size);
 
+		@include text.outline;
+
 		@media (min-width: bp.$md) {
 			--size: 2.5rem;
+
 			width: calc(var(--size) * ( 578 / 154 ));
 		}
 	}
 
 	&__sparkbox-logo {
-		fill: currentColor;
+		fill: currentcolor;
 		width: 100%;
 		transition: color ease-in-out 250ms;
 

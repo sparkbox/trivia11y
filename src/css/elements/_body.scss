@@ -2,19 +2,4 @@ body {
 	font: 300 100% / 1.5 "Sole Sans", sans-serif;
 	color: var(--text-color);
 	background: url("/assets/90s-pattern.svg") center fixed var(--background-color);
-	--a: -1px;
-	--b: 1px;
-
-	--color: var(--background-color);
-	filter:
-		drop-shadow(0 0 1px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color));
 }

@@ -1,0 +1,20 @@
+// This add an outline to all content in order
+// to distinguish shapes from the background.
+
+@mixin outline {
+	--a: -1px;
+	--b: 1px;
+	--color: var(--background-color);
+
+	filter:
+		drop-shadow(0 0 1px var(--color))
+		drop-shadow(0 0 0.5px var(--color))
+		drop-shadow(0 0 0.5px var(--color))
+		drop-shadow(0 0 0.5px var(--color))
+		drop-shadow(0 0 0.5px var(--color))
+		drop-shadow(0 0 0.5px var(--color))
+		drop-shadow(0 0 0.5px var(--color))
+		drop-shadow(0 0 0.5px var(--color))
+		drop-shadow(0 0 0.5px var(--color))
+		drop-shadow(0 0 0.5px var(--color));
+}
