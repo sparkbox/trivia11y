@@ -1,12 +1,23 @@
-$bp-md: 40rem;
+@use "../settings/breakpoints" as bp;
+
+@keyframes pop {
+	10% {
+		scale: 0.95;
+		translate: 0 0.25rem;
+	}
+	50% {
+		scale: 1.1;
+		translate: 0 -0.5rem;
+	}
+	100% {
+		scale: 1;
+		translate: 0 0;
+	}
+}
 
 .cmp-header {
 	position: relative;
 	padding-block: 1.5rem;
-	color: var(--white);
-	background:
-		linear-gradient(0deg, hsl(0deg 0% 15%), hsl(0deg 0% 15% / 0%)),
-		url("assets/pattern.svg") center hsl(0deg 0% 15%);
 
 	&__nav {
 		position: relative;
@@ -19,30 +30,49 @@ $bp-md: 40rem;
 	}
 
 	&__nav-item {
-		display: inline-block;
-		text-decoration-color: #fff0;
-		text-decoration-thickness: 1px;
-		text-underline-offset: 0.0625em;
-		font-stretch: 150%;
+		white-space: nowrap;
+		display: inline-flex;
+		text-decoration: none;
+		font-stretch: 125%;
 		font-size: clamp(1.75rem, 1.75rem + 1vw, 3rem);
-		color: inherit;
-		font-weight: 200;
-		transition: text-decoration-color ease-in-out 150ms;
+		color: var(--color-text);
+		font-weight: 600;
+		transition: color ease-in-out 150ms;
 
-		&:hover {
-			text-decoration-color: currentcolor;
+		&:hover{
+			color: var(--brand-pink);
+			transition-delay: 450ms;
+		}
+
+		& > span {
+			display: inline-block;
+			will-change: transform;
+		}
+
+		& > span:not(:first-child) {
+			margin-inline-start: -1px;
 		}
 	}
 
-	&__nav-highlight {
-		background: var(--gradient-blue-green);
-		background-clip: text;
-		color: transparent;
-		font-weight: 600;
+	&__nav-item:hover > span {
+		animation: pop 500ms ease-in-out forwards 1;
+
+		@for $i from 1 through 8 {
+			$n: $i + 1;
+			&:nth-child(#{$n}) {
+				animation-delay: #{50ms * $i};
+			}
+		}
+	}
+
+	&__nav-item > &__nav-highlight {
+		white-space: nowrap;
+		display: flex;
+		color: var(--brand-pink);
 	}
 
 	&__nav-sparkbox {
-		--size: 2.5rem;
+		--size: 1.75rem;
 		color: inherit;
 		display: flex;
 		justify-content: center;
@@ -51,7 +81,8 @@ $bp-md: 40rem;
 		height: var(--size);
 		width: var(--size);
 
-		@media (min-width: $bp-md) {
+		@media (min-width: bp.$md) {
+			--size: 2.5rem;
 			width: calc(var(--size) * ( 578 / 154 ));
 		}
 	}
@@ -59,11 +90,12 @@ $bp-md: 40rem;
 	&__sparkbox-logo {
 		fill: currentColor;
 		width: 100%;
+		transition: color ease-in-out 250ms;
 
 		&--symbol {
 			aspect-ratio: 1 / 1;
 
-			@media (min-width: $bp-md) {
+			@media (min-width: bp.$md) {
 				display: none;
 			}
 		}
@@ -71,9 +103,17 @@ $bp-md: 40rem;
 		&--lockup {
 			display: none;
 
-			@media (min-width: $bp-md) {
+			@media (min-width: bp.$md) {
 				aspect-ratio: 578 / 154;
 				display: block;
+			}
+		}
+
+		&:hover {
+			color: var(--brand-turquoise-dark-1);
+
+			@media (prefers-color-scheme: dark) {
+				color: var(--brand-turquoise);
 			}
 		}
 	}
