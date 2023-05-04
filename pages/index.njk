@@ -12,7 +12,7 @@ layout: default
 	{% from 'macros/categories.njk' import categories %}
 	<div class="obj-game-type">
 		<div class="obj-game-type__group">
-			{{ categories('flash-cards', 'Flash Cards', questionData.categories) }}
+			{{ categories('flash-cards', 'Flash Cards', questionData.flashCardCategories) }}
 		</div>
 		<div class="obj-game-type__group">
 			{{ categories('multiple-choice', 'Multiple Choice', questionData.categories) }}
