@@ -12,9 +12,9 @@ const handleOptionButtonClick = (event) => {
   });
 
   event.target.setAttribute('aria-pressed', isPressed ? 'false' : 'true');
-  explanationSection.innerHTML = `<p>${
-    isCorrect ? 'Correct' : 'Incorrect'
-  }</p>${explanationContent}`;
+  explanationSection.innerHTML = `<h3 class="cmp-explanation-section__title cmp-explanation-section__title--${ isCorrect ? 'correct' : 'incorrect'}">
+    ${ isCorrect ? 'Correct' : 'Incorrect'}
+  </h3>${explanationContent}`;
   explanationSection.focus();
 };
 
