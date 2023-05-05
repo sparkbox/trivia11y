@@ -24,14 +24,14 @@ const getQuestions = async () => {
         },
       ];
 
-      if (record.fields['Distractor 1']) {
+      if (record.fields['Distractor 1']?.trim()) {
         options.push({
           answer: record.fields['Distractor 1'],
           isCorrect: false,
         });
       }
 
-      if (record.fields['Distractor 2']) {
+      if (record.fields['Distractor 2']?.trim()) {
         options.push({
           answer: record.fields['Distractor 2'],
           isCorrect: false,
