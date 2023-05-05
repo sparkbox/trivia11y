@@ -3,6 +3,7 @@
   flex-flow: row wrap;
   gap: 1rem;
   align-items: end;
+  margin-block: 1.5rem;
 
   > :first-child {
     flex-grow: 1;
@@ -18,20 +19,20 @@
     box-sizing: border-box;
     padding: 0.5rem 1rem;
     width: 100%;
-    background-color: var(--paper);
-    color: var(--ink);
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-size: clamp(1rem, 1rem + 1vw, 2rem);
-    border: 0.125rem solid var(--ink);
+    border: 0.125rem solid var(--text-color);
     border-radius: 0.25rem;
   }
 
   &__button {
     cursor: pointer;
     padding: 0.5rem 1rem;
-    background-color: var(--paper);
-    color: var(--ink);
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-size: clamp(1rem, 1rem + 1vw, 2rem);
-    border: 0.125rem solid var(--ink);
+    border: 0.125rem solid var(--text-color);
     border-radius: 0.25rem;
     box-shadow: 0.25rem 0.25rem 0 0 var(--shadow);
   }
