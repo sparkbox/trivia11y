@@ -4,11 +4,31 @@
   </div>
   <div class="cmp-multiple-choice">
     {% for option in question.options %}
-      <div class="cmp-multiple-choice__item">
+      <div class="cmp-multiple-choice__item" data-needs-js>
         <button type="button" class="cmp-multiple-choice__button js-multiple-choice" aria-labelledby="option-{{ loop.index }}" aria-pressed="false" data-correct="{{ option.isCorrect }}"></button>
         <div class="cmp-multiple-choice__answer" id="option-{{ loop.index }}" aria-hidden="true">
           {{ option.answer | mdToHtml | safe }}
         </div>
+      </div>
+      <div class="cmp-multiple-choice__item" data-no-js>
+        <div id="no-js-option-{{ loop.index }}" class="cmp-multiple-choice__answer" aria-hidden="true">
+          {{ option.answer | mdToHtml | safe }}
+        </div>
+        <details>
+          <summary class="cmp-multiple-choice__summary" aria-labelledby="no-js-option-{{ loop.index }}"></summary>
+          <div class="cmp-explanation-section">
+            <h3 class="cmp-explanation-section__title cmp-explanation-section__title--{% if option.isCorrect %}correct{% else %}incorrect{% endif %}">
+              {% if option.isCorrect %}
+                Correct
+              {% else %}
+                Incorrect
+              {% endif %}
+            </h3>
+            {% if question.Explanation %}
+              {{ question.Explanation | mdToHtml | safe }}
+            {% endif %}
+          </div>
+        </details>
       </div>
     {% endfor %}
   </div>

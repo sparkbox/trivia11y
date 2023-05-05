@@ -12,7 +12,8 @@
 		align-items: stretch;
 	}
 
-	&__button {
+	&__button,
+	&__summary {
 		position: absolute;
 		inset: 0;
 		z-index: 200;
@@ -91,6 +92,19 @@
 		@media (prefers-color-scheme: dark) {
 			background-color: var(--foundry-culture-accent-dark);
 			border-color: var(--brand-turquoise);
+		}
+	}
+
+	.no-js & {
+		flex-direction: column;
+
+		&__item[data-no-js] {
+			display: block;
+
+		}
+
+		&__summary {
+			list-style: none;
 		}
 	}
 }
