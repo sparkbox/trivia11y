@@ -15,27 +15,34 @@ eleventyExcludeFromCollections: true
 {% endblock %}
 
 {% block content %}
-  <h1>{{ questionGroup.category }}: Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h1>
+  <div class="obj-content-width">
+    <article>
+      <header class="cmp-game-header">
+        <h1 class="cmp-game-header__title">Category: {{ questionGroup.category }}</h1>
+        <h2 class="cmp-game-header__question-count">Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h2>
+      </header>
 
-  {% from 'macros/short-answer.njk' import shortAnswer %}
-  {{ shortAnswer(questionGroup.question) }}
+      {% from 'macros/short-answer.njk' import shortAnswer %}
+      {{ shortAnswer(questionGroup.question) }}
 
-  <div class="cmp-pagination">
-    {% if questionGroup.questionTotal > questionGroup.pageNumber %}
-      <a href="/short-answer/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
-        Next Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
+      <div class="cmp-pagination">
+        {% if questionGroup.questionTotal > questionGroup.pageNumber %}
+          <a href="/short-answer/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
+            Next Question
+          </a>
+        {% else %}
+          <span></span>
+        {% endif %}
 
-    {% if questionGroup.pageNumber > 1 %}
-      <a href="/short-answer/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
-        Previous Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
+        {% if questionGroup.pageNumber > 1 %}
+          <a href="/short-answer/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
+            Previous Question
+          </a>
+        {% else %}
+          <span></span>
+        {% endif %}
+      </div>
+    </article>
   </div>
 {% endblock %}
 

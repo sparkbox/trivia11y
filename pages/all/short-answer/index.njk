@@ -17,27 +17,34 @@ eleventyExcludeFromCollections: true
 {% endblock %}
 
 {% block content %}
-  <h1>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h1>
+  <div class="obj-content-width">
+    <article>
+      <header class="cmp-game-header">
+        <h1 class="cmp-game-header__title">All Categories</h1>
+        <h2 class="cmp-game-header__question-count">Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h2>
+      </header>
 
-  {% from 'macros/short-answer.njk' import shortAnswer %}
-  {{ shortAnswer(question) }}
+      {% from 'macros/short-answer.njk' import shortAnswer %}
+      {{ shortAnswer(question) }}
 
-  <div class="cmp-pagination">
-    {% if questionTotal > pagination.pageNumber + 1 %}
-      <a href="/all/short-answer/{{ pagination.pageNumber + 2 }}/">
-        Next Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
+      <div class="cmp-pagination">
+        {% if questionTotal > pagination.pageNumber + 1 %}
+          <a href="/all/short-answer/{{ pagination.pageNumber + 2 }}/">
+            Next Question
+          </a>
+        {% else %}
+          <span></span>
+        {% endif %}
 
-    {% if pagination.pageNumber + 1 > 1 %}
-      <a href="/all/short-answer/{{ pagination.pageNumber }}/">
-        Previous Question
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
+        {% if pagination.pageNumber + 1 > 1 %}
+          <a href="/all/short-answer/{{ pagination.pageNumber }}/">
+            Previous Question
+          </a>
+        {% else %}
+          <span></span>
+        {% endif %}
+      </div>
+    </article>
   </div>
 {% endblock %}
 
