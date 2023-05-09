@@ -23,7 +23,7 @@ eleventyExcludeFromCollections: true
   <article>
     <header class="cmp-game-header">
       <h1 class="cmp-game-header__title">All Categories</h1>
-      <h2 class="cmp-game-header__question-count">Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }}</h2>
+      <h2 class="cmp-game-header__question-count">Question <span data-question-number>{{ pagination.pageNumber + 1 }}</span> of {{ questionTotal }}</h2>
     </header>
 
     {% from 'macros/flash-card.njk' import flashCard %}
@@ -31,7 +31,7 @@ eleventyExcludeFromCollections: true
 
     <div class="cmp-pagination">
       {% if questionTotal > pagination.pageNumber + 1 %}
-        <a href="/all/flash-cards/{{ pagination.pageNumber + 2 }}/">
+        <a href="/all/flash-cards/{{ pagination.pageNumber + 2 }}/" data-next-link>
           Next Question
         </a>
       {% else %}
@@ -39,7 +39,7 @@ eleventyExcludeFromCollections: true
       {% endif %}
 
       {% if pagination.pageNumber + 1 > 1 %}
-        <a href="/all/flash-cards/{{ pagination.pageNumber }}/">
+        <a href="/all/flash-cards/{{ pagination.pageNumber }}/" data-prev-link>
           Previous Question
         </a>
       {% else %}
@@ -48,4 +48,10 @@ eleventyExcludeFromCollections: true
     </div>
   </article>
 </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    {% include 'js/update-pagination-links.js' %}
+  </script>
 {% endblock %}

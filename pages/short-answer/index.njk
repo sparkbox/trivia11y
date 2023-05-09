@@ -22,7 +22,7 @@ eleventyExcludeFromCollections: true
     <article>
       <header class="cmp-game-header">
         <h1 class="cmp-game-header__title">Category: {{ questionGroup.category }}</h1>
-        <h2 class="cmp-game-header__question-count">Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}</h2>
+        <h2 class="cmp-game-header__question-count">Question <span data-question-number>{{ questionGroup.pageNumber }}</span> of {{ questionGroup.questionTotal }}</h2>
       </header>
 
       {% from 'macros/short-answer.njk' import shortAnswer %}
@@ -30,7 +30,7 @@ eleventyExcludeFromCollections: true
 
       <div class="cmp-pagination">
         {% if questionGroup.questionTotal > questionGroup.pageNumber %}
-          <a href="/short-answer/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/">
+          <a href="/short-answer/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber + 1 }}/" data-next-link>
             Next Question
           </a>
         {% else %}
@@ -38,7 +38,7 @@ eleventyExcludeFromCollections: true
         {% endif %}
 
         {% if questionGroup.pageNumber > 1 %}
-          <a href="/short-answer/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/">
+          <a href="/short-answer/{{ questionGroup.tagName }}/{{ questionGroup.pageNumber - 1 }}/" data-prev-link>
             Previous Question
           </a>
         {% else %}
@@ -52,5 +52,6 @@ eleventyExcludeFromCollections: true
 {% block scripts %}
   <script>
     {% include 'js/short-answer.js' %}
+    {% include 'js/update-pagination-links.js' %}
   </script>
 {% endblock %}

@@ -2,32 +2,41 @@
 title: Home
 seo_title: "Trivia11y: A Web Accessibility Quiz by Sparkbox"
 description: A quiz game and study tool to help those at all skill levels to learn and test their accessibility knowledge. Flash cards, multiple choice, and short answer questions are available in multiple categories.
-layout: default
 ---
 
-<div class="obj-width-limiter">
-	<h1>Test Your Accessibility Knowledge</h1>
+{% extends 'layout.njk' %}
 
-	<p class="util-limit-width">
-		Accessibility is important, but becoming an expert means taking the time to understand and memorize priorities, regulations, requirements, and techniques. So how can you determine whether you're up to speed? With games, of course!
-	</p>
+{% block content%}
+	<div class="obj-width-limiter">
+		<h1>Test Your Accessibility Knowledge</h1>
 
-	<h2>Game Types</h2>
+		<p class="util-limit-width">
+			Accessibility is important, but becoming an expert means taking the time to understand and memorize priorities, regulations, requirements, and techniques. So how can you determine whether you're up to speed? With games, of course!
+		</p>
 
-	<p class="util-limit-width">
-		Choose a game format and then select a category to help you test your knowledge: Flash Cards for reviewing what you know, Short Answer questions for confirming you actually know your stuff, and Multiple Choice for simulating test conditions.
-	</p>
+		<h2>Game Types</h2>
 
-	{% from 'macros/categories.njk' import categories %}
-	<div class="obj-game-type">
-		<div class="obj-game-type__group">
-			{{ categories('flash-cards', 'Flash Cards', questionData.flashCardCategories) }}
-		</div>
-    <div class="obj-game-type__group">
-			{{ categories('short-answer', 'Short Answer', questionData.flashCardCategories) }}
-		</div>
-		<div class="obj-game-type__group">
-			{{ categories('multiple-choice', 'Multiple Choice', questionData.categories) }}
+		<p class="util-limit-width">
+			Choose a game format and then select a category to help you test your knowledge: Flash Cards for reviewing what you know, Short Answer questions for confirming you actually know your stuff, and Multiple Choice for simulating test conditions.
+		</p>
+
+		{% from 'macros/categories.njk' import categories %}
+		<div class="obj-game-type">
+			<div class="obj-game-type__group">
+				{{ categories('flash-cards', 'Flash Cards', questionData.flashCardCategories) }}
+			</div>
+			<div class="obj-game-type__group">
+				{{ categories('short-answer', 'Short Answer', questionData.flashCardCategories) }}
+			</div>
+			<div class="obj-game-type__group">
+				{{ categories('multiple-choice', 'Multiple Choice', questionData.categories) }}
+			</div>
 		</div>
 	</div>
-</div>
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		{% include 'js/intercept-category-navigation.js' %}
+	</script>
+{% endblock %}
