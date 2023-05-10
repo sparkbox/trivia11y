@@ -13,6 +13,8 @@
   padding-inline: 2rem 0;
 
   &__link {
+    @include text.outline;
+
     position: relative;
     text-decoration: underline;
     text-underline-offset: 2px;
