@@ -64,7 +64,10 @@
     &:hover::before,
     &:focus::before {
       opacity: 1;
-      animation: categories-rotate 2s linear infinite;
+
+      @media (prefers-reduced-motion: no-preference) {
+        animation: categories-rotate 2s linear infinite;
+      }
     }
 
     &:hover::after,

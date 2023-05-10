@@ -44,7 +44,10 @@
 
 		&:hover{
 			color: var(--brand-pink);
-			transition-delay: 450ms;
+
+			@media (prefers-reduced-motion: no-preference) {
+				transition-delay: 450ms;
+			}
 		}
 
 		& > span {
@@ -58,12 +61,14 @@
 	}
 
 	&__nav-item:hover > span {
-		animation: pop 500ms ease-in-out forwards 1;
+		@media (prefers-reduced-motion: no-preference) {
+			animation: pop 500ms ease-in-out forwards 1;
 
-		@for $i from 1 through 8 {
-			$n: $i + 1;
-			&:nth-child(#{$n}) {
-				animation-delay: #{50ms * $i};
+			@for $i from 1 through 8 {
+				$n: $i + 1;
+				&:nth-child(#{$n}) {
+					animation-delay: #{50ms * $i};
+				}
 			}
 		}
 	}
