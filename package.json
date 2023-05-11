@@ -24,7 +24,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "dotenv": "^16.0.3",
-    "eslint": "^8.39.0",
+    "eslint": "^8.40.0",
     "npm-check-updates": "^16.10.9",
     "sass": "^1.62.1",
     "stylelint": "^15.6.0",
