@@ -1,8 +1,0 @@
-[build.environment]
-  NODE_ENV = ""
-[context.dev.environment]
-  NODE_ENV = "development"
-[context.deploy-preview.environment]
-  NODE_ENV = "preview"
-[context.production.environment]
-  NODE_ENV = "production"
