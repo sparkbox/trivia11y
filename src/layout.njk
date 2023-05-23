@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% block titleAndDescription %}
-    <title>{{ title }} | Trivia11y: A Web Accessibility Quiz</title>
+    <title>
+      {%- if seo_title -%}
+        {{ seo_title }}
+      {%- else -%}
+        {{ title }} | Trivia11y: A Web Accessibility Quiz
+      {%- endif -%}
+    </title>
     <meta name="description" content="{{ description }}">
     {% endblock %}
 
