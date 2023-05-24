@@ -9,9 +9,18 @@ eleventyExcludeFromCollections: true
 
 {% extends 'layout.njk' %}
 
+{% set seoTitle %}
+  Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | {{ questionGroup.category }} | Trivia11y
+{% endset %}
+{% set seoDescription %}
+  Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }}.
+{% endset %}
+
 {% block titleAndDescription %}
-  <title>Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | {{ questionGroup.category }} | Trivia11y</title>
-  <meta name="description" content="Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }}.">
+  <title>{{ seoTitle }}</title>
+  <meta name="description" content="{{ seoDescription }}">
+  <meta property="og:title" content="{{ seoTitle }}">
+  <meta property="og:description" content="{{ seoDescription }}">
 {% endblock %}
 
 {% block content %}
