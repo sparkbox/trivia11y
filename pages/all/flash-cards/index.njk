@@ -18,12 +18,8 @@ eleventyExcludeFromCollections: true
 {% endset %}
 
 {% block titleAndDescription %}
-  <title>{{ seoTitle }}</title>
-  <meta name="description" content="{{ seoDescription }}">
-  <meta property="og:title" content="{{ seoTitle }}">
-  <meta property="twitter:title" content="{{ seoTitle }}">
-  <meta property="og:description" content="{{ seoDescription }}">
-  <meta property="twitter:description" content="{{ seoDescription }}">
+  {% from 'macros/seo-info.njk' import seoInfo %}
+  {{ seoInfo(seoTitle, seoDescription) }}
 {% endblock %}
 
 {% block content %}
