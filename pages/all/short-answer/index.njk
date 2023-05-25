@@ -10,11 +10,13 @@ eleventyExcludeFromCollections: true
 {% extends 'layout.njk' %}
 
 {% set questionTotal = questionData.flashCardQuestions.length %}
+{% set seoTitle %}Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }} | Short Answer - All Questions | Trivia11y{% endset %}
+{% set seoDescription %}Answer question {{ pagination.pageNumber + 1 }} of {{ questionTotal }} in all Short Answer categories.{% endset %}
 
-{% block titleAndDescription %}
-  <title>Question {{ pagination.pageNumber + 1 }} of {{ questionTotal }} | All Questions | Trivia11y</title>
-  <meta name="description" content="Answer question {{ pagination.pageNumber + 1 }} of {{ questionTotal }} in all categories.">
-{% endblock %}
+{% block titleAndDescription -%}
+  {% from 'macros/seo-info.njk' import seoInfo %}
+  {{ seoInfo(seoTitle, seoDescription) }}
+{%- endblock %}
 
 {% block content %}
   <div class="obj-content-width">

@@ -9,10 +9,13 @@ eleventyExcludeFromCollections: true
 
 {% extends 'layout.njk' %}
 
-{% block titleAndDescription %}
-  <title>Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | {{ questionGroup.category }} | Trivia11y</title>
-  <meta name="description" content="Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }}.">
-{% endblock %}
+{% set seoTitle %}Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | Multiple Choice - {{ questionGroup.category }} | Trivia11y{% endset %}
+{% set seoDescription %}Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }} (Multiple Choice).{% endset %}
+
+{% block titleAndDescription -%}
+  {% from 'macros/seo-info.njk' import seoInfo %}
+  {{ seoInfo(seoTitle, seoDescription) }}
+{%- endblock %}
 
 {% block content %}
 
