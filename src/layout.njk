@@ -4,24 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% block titleAndDescription %}
+    {% block titleAndDescription -%}
       {% if seo_title %}
-        <title>
-          {{ seo_title }}
-        </title>
+        <title>{{ seo_title }}</title>
         <meta property="og:title" content="{{ seo_title }}">
         <meta property="twitter:title" content="{{ seo_title }}">
       {% else %}
-        <title>
-          {{ title }} | Trivia11y: A Web Accessibility Quiz
-        </title>
+        <title>{{ title }} | Trivia11y: A Web Accessibility Quiz</title>
         <meta property="og:title" content="{{ title }} | Trivia11y: A Web Accessibility Quiz">
         <meta property="twitter:title" content="{{ title }} | Trivia11y: A Web Accessibility Quiz">
       {% endif %}
       <meta name="description" content="{{ description }}">
       <meta property="og:description" content="{{ description }}">
       <meta property="twitter:description" content="{{ description }}">
-    {% endblock %}
+    {%- endblock %}
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/favicon.png" type="image/png">
@@ -32,6 +28,7 @@
 
     <meta property="og:image" content="{{ processEnv.BASE_URL }}/og-image.png" />
     <meta property="twitter:image" content="{{ processEnv.BASE_URL }}/og-image.png" />
+    <meta property="og:url" content="{{ processEnv.BASE_URL }}{{ page.url }}">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 

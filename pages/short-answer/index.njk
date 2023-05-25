@@ -9,17 +9,13 @@ eleventyExcludeFromCollections: true
 
 {% extends 'layout.njk' %}
 
-{% set seoTitle %}
-  Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | {{ questionGroup.category }} | Trivia11y
-{% endset %}
-{% set seoDescription %}
-  Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }}.
-{% endset %}
+{% set seoTitle %}Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | Short Answer - {{ questionGroup.category }} | Trivia11y{% endset %}
+{% set seoDescription %}Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }} (Short Answer).{% endset %}
 
-{% block titleAndDescription %}
+{% block titleAndDescription -%}
   {% from 'macros/seo-info.njk' import seoInfo %}
   {{ seoInfo(seoTitle, seoDescription) }}
-{% endblock %}
+{%- endblock %}
 
 {% block content %}
   <div class="obj-content-width">
