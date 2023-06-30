@@ -4,6 +4,9 @@ const DOMPurify = require('isomorphic-dompurify');
 const markdownToHtml = (markdown) => {
   const html = marked.parse(markdown.replace(/\\/g, ''), {
     breaks: true,
+    mangle: false,
+    headerIds: false,
+    headerPrefix: false,
   });
   const withKbdElements = html.replace(/\[\[(.+?)\]\]/g, '<kbd>$1</kbd>');
   const cleanHtml = DOMPurify.sanitize(withKbdElements);
