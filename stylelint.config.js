@@ -5,5 +5,7 @@ module.exports = {
   ],
   rules: {
     'selector-class-pattern': null,
+    // this CSS rule doesn't understand SCSS
+    'media-query-no-invalid': null,
   },
 };
