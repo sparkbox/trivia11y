@@ -4,3 +4,11 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
+    ignore:
+      # ignore major version updates for slugify to keep in line with eleventy
+      - "@sindresorhus/slugify"
+        update-types: ["version-update:semver-major"]
+    groups:
+      dev-dependencies:
+        patterns:
+          - "stylelint*"
