@@ -1,5 +1,5 @@
 .cmp-question {
-  padding: 3rem;
+  padding: clamp(1rem, 1rem + 1vw,3rem);
   background-color: var(--background-color);
   border: 0.125rem solid currentcolor;
   border-radius: 0.25rem;
