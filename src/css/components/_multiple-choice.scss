@@ -56,6 +56,10 @@
 				margin-block-start: 0.5em;
 			}
 		}
+
+		> pre {
+			white-space: pre-wrap;
+		}
 	}
 
 	&__button:hover + &__answer {
