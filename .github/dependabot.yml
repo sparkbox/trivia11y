@@ -4,11 +4,26 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
-    ignore:
-      # ignore major version updates for slugify to keep in line with eleventy
-      - dependency-name: "@sindresorhus/slugify"
-        update-types: ["version-update:semver-major"]
     groups:
       dev-dependencies:
-        patterns:
-          - "stylelint*"
+        dependency-type: 'development'
+        update-types:
+          - 'minor'
+          - 'patch'
+      major-dev-dependencies:
+        dependency-type: 'development'
+        update-types:
+          - 'major'
+      production-dependencies:
+        dependency-type: 'production'
+        update-types:
+          - 'minor'
+          - 'patch'
+      major-production-dependencies:
+        dependency-type: 'production'
+        update-types:
+          - 'major'
+    ignore:
+      # ignore major version updates for slugify to keep in line with eleventy
+      - dependency-name: '@sindresorhus/slugify'
+        update-types: ['version-update:semver-major']
