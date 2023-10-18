@@ -53,6 +53,10 @@ const updateQuestionNumber = (currentQuestionIndex) => {
   }
 };
 
+const updatePageTitle = (currentQuestionIndex) => {
+  document.title = document.title.replace(/\d+/, currentQuestionIndex + 1);
+};
+
 export const updatePaginationLinks = () => {
   const questionsRaw = sessionStorage.getItem('questions');
   const currentQuestionIndexRaw = sessionStorage.getItem(
@@ -66,6 +70,7 @@ export const updatePaginationLinks = () => {
     updatePreviousLink(questions, currentQuestionIndex);
     updateNextLink(questions, currentQuestionIndex);
     updateQuestionNumber(currentQuestionIndex);
+    updatePageTitle(currentQuestionIndex);
 
     const previousLink = document.querySelector('[data-prev-link]');
     previousLink?.addEventListener('click', (event) => {
