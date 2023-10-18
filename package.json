@@ -10,11 +10,15 @@
   },
   "scripts": {
     "prestart": "rm -rf dist",
-    "start": "npm run eleventy:watch & npm run sass:watch",
-    "build": "eleventy && npm run sass",
-    "eleventy:watch": "eleventy --serve --incremental",
-    "sass": "sass ./src/css/styles.scss:./dist/styles.css --no-source-map",
-    "sass:watch": "sass ./src/css/styles.scss:./dist/styles.css --watch",
+    "prebuild": "rm -rf dist",
+    "start": "npm run eleventy:dev & npm run sass:dev & npm run js:dev",
+    "build": "npm run eleventy:build && npm run sass:build && npm run js:build",
+    "eleventy:build": "eleventy",
+    "eleventy:dev": "eleventy --serve --incremental",
+    "sass:build": "sass ./src/css/styles.scss:./dist/styles.css --style=compressed --no-source-map",
+    "sass:dev": "sass ./src/css/styles.scss:./dist/styles.css --watch",
+    "js:build": "NODE_ENV=production node esbuild.mjs",
+    "js:dev": "NODE_ENV=development node esbuild.mjs",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint \"src/**/*.{css,scss,sass}\" --color --formatter verbose",
     "lint:js": "DEBUG=eslint:cli-engine eslint .",
@@ -36,5 +40,10 @@
     "isomorphic-dompurify": "^2.4.0",
     "marked": "^12.0.0",
     "sass": "^1.71.1"
-  }
+  },
+  "browserslist": [
+    ">0.5%",
+    "last 10 versions",
+    "Firefox ESR"
+  ]
 }
