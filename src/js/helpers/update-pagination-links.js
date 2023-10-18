@@ -53,7 +53,7 @@ const updateQuestionNumber = (currentQuestionIndex) => {
   }
 };
 
-(() => {
+export const updatePaginationLinks = () => {
   const questionsRaw = sessionStorage.getItem('questions');
   const currentQuestionIndexRaw = sessionStorage.getItem(
     'currentQuestionIndex'
@@ -89,4 +89,4 @@ const updateQuestionNumber = (currentQuestionIndex) => {
       window.location.href = event.target.href;
     });
   }
-})();
+};

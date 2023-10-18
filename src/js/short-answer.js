@@ -1,3 +1,5 @@
+import { updatePaginationLinks } from './helpers/update-pagination-links';
+
 const answerForm = document.querySelector('#answerForm');
 const acceptedAnswer = document.querySelector('#acceptedAnswer');
 const acceptedAnswerSection = document.querySelector('#acceptedAnswerSection');
@@ -11,3 +13,5 @@ const handleShortAnswerFormSubmit = (event) => {
 };
 
 answerForm.addEventListener('submit', handleShortAnswerFormSubmit);
+
+updatePaginationLinks();
