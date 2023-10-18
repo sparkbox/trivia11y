@@ -15,6 +15,7 @@
   --brand-turquoise-dark-2: hsl(var(--brand-turquoise-dark-2-hsl));
   --brand-turquoise-dark-3-hsl: 188deg 100% 11%;
   --brand-turquoise-dark-3: hsl(var(--brand-turquoise-dark-3-hsl));
+
   // Brand Pink
   --brand-pink-hsl: 324deg 99% 62%;
   --brand-pink: hsl(var(--brand-pink-hsl));
@@ -30,6 +31,7 @@
   --brand-pink-dark-2: hsl(var(--brand-pink-dark-2-hsl));
   --brand-pink-dark-3-hsl: 324deg 85% 10%;
   --brand-pink-dark-3: hsl(var(--brand-pink-dark-3-hsl));
+
   // Brand Green
   --brand-green-hsl: 162deg 99% 48%;
   --brand-green: hsl(var(--brand-green-hsl));
@@ -45,6 +47,7 @@
   --brand-green-dark-2: hsl(var(--brand-green-dark-2-hsl));
   --brand-green-dark-3-hsl: 162deg 88% 10%;
   --brand-green-dark-3: hsl(var(--brand-green-dark-3-hsl));
+
   // Brand Gray
   --brand-gray-hsl: 0deg 0% 87%;
   --brand-gray: hsl(var(--brand-gray-hsl));
@@ -60,6 +63,7 @@
   --brand-gray-dark-2: hsl(var(--brand-gray-dark-2-hsl));
   --brand-gray-dark-3-hsl: 0deg 0% 48%;
   --brand-gray-dark-3: hsl(var(--brand-gray-dark-3-hsl));
+
   // Green Foundry Group
   --foundry-content-base-hsl: 102deg 67% 41%;
   --foundry-content-base: hsl(var(--foundry-content-base-hsl));
@@ -71,6 +75,7 @@
   --foundry-content-gradient-start: hsl(var(--foundry-content-gradient-start-hsl));
   --foundry-content-gradient-end-hsl: 53deg 90% 64%;
   --foundry-content-gradient-end: hsl(var(--foundry-content-gradient-end-hsl));
+
   // Red Foundry Group
   --foundry-development-base-hsl: 346deg 72% 49%;
   --foundry-development-base: hsl(var(--foundry-development-base-hsl));
@@ -82,6 +87,7 @@
   --foundry-development-gradient-start: hsl(var(--foundry-development-gradient-start-hsl));
   --foundry-development-gradient-end-hsl: 40deg 99% 67%;
   --foundry-development-gradient-end: hsl(var(--foundry-development-gradient-end-hsl));
+
   // Purple Foundry Group
   --foundry-design-base-hsl: 265deg 57% 34%;
   --foundry-design-base: hsl(var(--foundry-design-base-hsl));
@@ -93,6 +99,7 @@
   --foundry-design-gradient-start: hsl(var(--foundry-design-gradient-start-hsl));
   --foundry-design-gradient-end-hsl: 327deg 87% 58%;
   --foundry-design-gradient-end: hsl(var(--foundry-design-gradient-end-hsl));
+
   // Blue Foundry Group
   --foundry-culture-base-hsl: 207deg 85% 38%;
   --foundry-culture-base: hsl(var(--foundry-culture-base-hsl));
@@ -104,11 +111,13 @@
   --foundry-culture-gradient-start: hsl(var(--foundry-culture-gradient-start-hsl));
   --foundry-culture-gradient-end-hsl: 159deg 84% 60%;
   --foundry-culture-gradient-end: hsl(var(--foundry-culture-gradient-end-hsl));
+
   // Black and White
   --smokey-black-hsl: 0deg 0% 4%;
   --smokey-black: hsl(var(--smokey-black-hsl));
   --white-hsl: 0deg 0% 100%;
   --white: hsl(var(--white-hsl));
+
   // Named Extras
   --ink-hsl: 0deg 0% 12%;
   --ink: hsl(var(--ink-hsl));
@@ -125,6 +134,7 @@
   --link-color-hsl: var(--foundry-culture-base-hsl);
   --link-color: hsl(var(--link-color-hsl));
   --link-color-line: hsl(var(--link-color-hsl) / 50%);
+
   // Content Width
   --content-width: min(100vw - 2rem, 60rem);
   --max-width: min(100vw - 2rem, 80rem);

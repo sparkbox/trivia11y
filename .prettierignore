@@ -1,0 +1,28 @@
+# Configs
+package.json
+package-lock.json
+tsconfig.json
+
+# npm
+node_modules
+npm-debug.log
+
+# Build
+/out
+/build
+/dist
+/_site
+
+# IDEs
+.vscode
+.idea
+
+# Swap
+*~
+*.swp
+*.swo
+
+# Next.js
+.next
+next.config.json
+next-env.d.ts
