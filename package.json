@@ -32,6 +32,7 @@
     "@sindresorhus/slugify": "^1.1.2",
     "airtable": "^0.12.2",
     "dotenv": "^16.4.5",
+    "esbuild": "^0.20.1",
     "isomorphic-dompurify": "^2.4.0",
     "marked": "^12.0.0",
     "sass": "^1.71.1"
