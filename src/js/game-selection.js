@@ -1,25 +1,6 @@
-const getQuestions = async () => {
-  const response = await fetch('/questions.json');
-  const questions = await response.json();
+import { getQuestions, getRelevantQuestions } from './helpers/questions';
 
-  return questions;
-};
-
-const getRelevantQuestions = (questions, category, isMultipleChoice) => {
-  return questions.filter((question) => {
-    if (!isMultipleChoice && question['Multiple Choice Only']) {
-      return false;
-    }
-
-    if (category !== 'All' && !question.Tags.some((tag) => tag === category)) {
-      return false;
-    }
-
-    return true;
-  });
-};
-
-(async () => {
+const interceptCategoryNavigation = async () => {
   sessionStorage.removeItem('questions');
   sessionStorage.removeItem('questionStatus');
   const questions = await getQuestions();
@@ -47,4 +28,6 @@ const getRelevantQuestions = (questions, category, isMultipleChoice) => {
       window.location.href = questionOrder[0];
     });
   });
-})();
+};
+
+interceptCategoryNavigation();
