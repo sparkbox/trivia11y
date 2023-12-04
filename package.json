@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "scripts": {
     "prestart": "rm -rf dist",
@@ -33,7 +33,7 @@
     "@sindresorhus/slugify": "^1.1.2",
     "airtable": "^0.12.2",
     "dotenv": "^16.3.1",
-    "isomorphic-dompurify": "^1.9.0",
+    "isomorphic-dompurify": "^1.11.0",
     "marked": "^10.0.0",
     "sass": "^1.69.5"
   }
