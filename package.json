@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "scripts": {
     "prestart": "rm -rf dist",
