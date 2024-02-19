@@ -31,9 +31,9 @@
     "@11ty/eleventy": "^2.0.1",
     "@sindresorhus/slugify": "^1.1.2",
     "airtable": "^0.12.2",
-    "dotenv": "^16.4.3",
+    "dotenv": "^16.4.4",
     "isomorphic-dompurify": "^2.3.0",
     "marked": "^12.0.0",
-    "sass": "^1.70.0"
+    "sass": "^1.71.0"
   }
 }
