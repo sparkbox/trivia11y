@@ -1,5 +1,3 @@
-@use "../tools/text-outline" as text;
-
 h1,
 h2,
 h3,
@@ -9,8 +7,6 @@ h6 {
   font-weight: 320;
   font-stretch: 125%;
   font-size: clamp(var(--size), var(--size) + 0.5vw, var(--size) * 2);
-
-  @include text.outline;
 }
 
 h1 {

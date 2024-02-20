@@ -6,15 +6,5 @@
 	--b: 1px;
 	--color: var(--background-color);
 
-	filter:
-		drop-shadow(0 0 1px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color))
-		drop-shadow(0 0 0.5px var(--color));
+	// mask: linear-gradient(var(--color) 0 0) text;
 }

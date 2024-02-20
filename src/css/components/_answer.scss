@@ -1,12 +1,8 @@
-@use "../tools/text-outline" as text;
-
 .cmp-answer {
   margin-block: 1.5rem;
   font-size: clamp(1rem, 1rem + 1vw, 2rem);
 
   &__reveal {
-    @include text.outline;
-
     cursor: pointer;
     margin-block: 1rem;
     text-decoration: underline;

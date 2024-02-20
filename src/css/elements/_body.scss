@@ -2,4 +2,5 @@ body {
 	font: 300 100% / 1.5 "Sole Sans", sans-serif;
 	color: var(--text-color);
 	background: url("/assets/90s-pattern.svg") 20% 50% fixed var(--background-color);
+	backdrop-filter: blur(3px);
 }

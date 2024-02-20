@@ -1,5 +1,4 @@
 @use "../settings/breakpoints" as bp;
-@use "../tools/text-outline" as text;
 
 @keyframes pop {
 	10% {
@@ -89,8 +88,6 @@
 		overflow: hidden;
 		height: var(--size);
 		width: var(--size);
-
-		@include text.outline;
 
 		@media (min-width: bp.$md) {
 			--size: 2.5rem;

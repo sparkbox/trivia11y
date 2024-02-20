@@ -1,5 +1,4 @@
 @use "../tools/svg" as *;
-@use "../tools/text-outline" as text;
 
 @keyframes categories-rotate {
   to {
@@ -13,8 +12,6 @@
   padding-inline: 2rem 0;
 
   &__link {
-    @include text.outline;
-
     position: relative;
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -51,8 +48,6 @@
       height: 1.5rem;
       width: 1.5rem;
       transition: opacity 150ms ease-in-out;
-
-      @include text.outline;
     }
 
     &::before {
