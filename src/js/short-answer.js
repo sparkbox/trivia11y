@@ -1,13 +1,5 @@
-const answerForm = document.querySelector('#answerForm');
-const acceptedAnswer = document.querySelector('#acceptedAnswer');
-const acceptedAnswerSection = document.querySelector('#acceptedAnswerSection');
+import { initializeAnswerFormListener } from './helpers/short-answer-form';
+import { updatePaginationLinks } from './helpers/update-pagination-links';
 
-const handleShortAnswerFormSubmit = (event) => {
-  event.preventDefault();
-
-  const acceptedAnswerContent = acceptedAnswer.innerHTML;
-  acceptedAnswerSection.innerHTML = acceptedAnswerContent;
-  acceptedAnswerSection.focus();
-};
-
-answerForm.addEventListener('submit', handleShortAnswerFormSubmit);
+initializeAnswerFormListener();
+updatePaginationLinks();

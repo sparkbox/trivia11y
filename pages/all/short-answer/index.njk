@@ -51,8 +51,5 @@ eleventyExcludeFromCollections: true
 {% endblock %}
 
 {% block scripts %}
-  <script>
-    {% include 'js/short-answer.js' %}
-    {% include 'js/update-pagination-links.js' %}
-  </script>
+  <script src="/js/short-answer.js" type="module"></script>
 {% endblock %}
