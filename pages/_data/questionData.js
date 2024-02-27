@@ -39,13 +39,14 @@ const getQuestions = async () => {
       }
 
       return {
-        ...record.fields,
-        options: options.sort(() => {
-          const sign = Math.round(Math.random()) > 0 ? 1 : -1;
+				...record.fields,
+				id: record.id,
+				options: options.sort(() => {
+					const sign = Math.round(Math.random()) > 0 ? 1 : -1;
 
-          return sign;
-        }),
-      };
+					return sign;
+				}),
+			};
     });
 
   return publishedQuestions;

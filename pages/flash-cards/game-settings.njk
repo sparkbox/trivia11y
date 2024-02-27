@@ -16,7 +16,7 @@ description: Choose from categories to study using flash cards, and set the maxi
         <div>
           {% for category in questionData.flashCardCategories %}
             <div>
-              <input id="{{ category | slugify }}" type="checkbox" name="category">
+              <input id="{{ category | slugify }}" type="checkbox" name="category" value="{{ category }}">
               <label for="{{ category | slugify }}">{{ category }} <span data-category="{{ category }}"></span></label>
             </div>
           {% endfor %}
