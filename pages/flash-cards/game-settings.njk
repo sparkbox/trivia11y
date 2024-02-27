@@ -63,3 +63,10 @@ description: Choose from categories to study using flash cards, and set the maxi
     </form>
 	</div>
 {% endblock %}
+
+{% block scripts %}
+  <script>
+    const IS_MULTIPLE_CHOICE = false;
+  </script>
+  <script src="/js/game-settings.js" type="module"></script>
+{% endblock %}
