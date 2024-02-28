@@ -21,14 +21,14 @@ eleventyExcludeFromCollections: true
   <div class="obj-content-width">
     <article>
       <header class="cmp-game-header">
-      <h1 class="cmp-game-header__title">
-        {% if questionGroup.category !== 'All Questions' %}
-          Category: {{ questionGroup.category }}
-        {% else %}
-          All Categories
-        {% endif %}
-      </h1>
-        <h2 class="cmp-game-header__question-count">Question <span data-question-number>{{ questionGroup.pageNumber }}</span> of {{ questionGroup.questionTotal }}</h2>
+        <h1 class="cmp-game-header__title">
+          {% if questionGroup.category !== 'All Questions' %}
+            Category: {{ questionGroup.category }}
+          {% else %}
+            All Categories
+          {% endif %}
+        </h1>
+        <h2 class="cmp-game-header__question-count">Question <span data-question-number>{{ questionGroup.pageNumber }}</span> of <span data-question-total>{{ questionGroup.questionTotal }}</span></h2>
       </header>
 
       {% from 'macros/short-answer.njk' import shortAnswer %}
