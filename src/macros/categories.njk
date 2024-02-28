@@ -4,11 +4,6 @@
 </h3>
 
 <ul class="cmp-categories">
-	<li class="cmp-categories__item">
-		<a href="/all/{{ catdir }}/1/" class="cmp-categories__link" data-type="{{ title }}" data-category="All" data-base-link="/all/{{ catdir }}/">
-			All Questions
-		</a>
-	</li>
 {% for category in questionData %}
 	{% include 'partials/category.njk' %}
 {% endfor %}

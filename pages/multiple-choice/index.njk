@@ -10,7 +10,7 @@ eleventyExcludeFromCollections: true
 {% extends 'layout.njk' %}
 
 {% set seoTitle %}Question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} | Multiple Choice - {{ questionGroup.category }} | Trivia11y{% endset %}
-{% set seoDescription %}Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }} about {{ questionGroup.category }} (Multiple Choice).{% endset %}
+{% set seoDescription %}Answer question {{ questionGroup.pageNumber }} of {{ questionGroup.questionTotal }}: {{ questionGroup.category }} (Multiple Choice).{% endset %}
 
 {% block titleAndDescription -%}
   {% from 'macros/seo-info.njk' import seoInfo %}
@@ -22,7 +22,13 @@ eleventyExcludeFromCollections: true
 <div class="obj-content-width">
   <article>
     <header class="cmp-game-header">
-      <h1 class="cmp-game-header__title">Category: {{ questionGroup.category }}</h1>
+      <h1 class="cmp-game-header__title">
+        {% if questionGroup.category !== 'All Questions' %}
+          Category: {{ questionGroup.category }}
+        {% else %}
+          All Categories
+        {% endif %}
+      </h1>
       <h2 class="cmp-game-header__question-count">Question <span data-question-number>{{ questionGroup.pageNumber }}</span> of {{ questionGroup.questionTotal }}</h2>
     </header>
 

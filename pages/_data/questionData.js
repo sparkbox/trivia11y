@@ -55,65 +55,72 @@ const getFlashCardQuestions = (questions) =>
   questions.filter((question) => !question['Multiple Choice Only']);
 
 const getUniqueCategories = (questions) => {
-  return [
-    ...new Set(
-      questions
-        .map((question) => question.Tags)
-        .flat()
-        .sort()
-    ),
-  ];
+	return [
+		'All Questions',
+		...new Set(
+			questions
+				.map((question) => question.Tags)
+				.flat()
+				.sort()
+		),
+	];
 };
 
 const groupQuestionsIntoCategories = (questions, categories) => {
-  const questionGroups = [];
+	const questionGroups = [];
+	questions.forEach((question, index) => {
+		questionGroups.push({
+			category: 'All Questions',
+			tagName: 'all-questions',
+			pageNumber: index + 1,
+			questionTotal: questions.length,
+			question,
+		});
+	});
 
-  categories.forEach((category) => {
-    let pageNumber = 1;
-    const questionTotal = questions.reduce((sum, question) => {
-      if (question.Tags.includes(category)) {
-        return sum + 1;
-      }
+	categories.forEach((category) => {
+		let pageNumber = 1;
+		const questionTotal = questions.reduce((sum, question) => {
+			if (question.Tags.includes(category)) {
+				return sum + 1;
+			}
 
-      return sum;
-    }, 0);
+			return sum;
+		}, 0);
 
-    questions.forEach((question) => {
-      if (question.Tags.includes(category)) {
-        questionGroups.push({
-          category,
-          tagName: slugify(category),
-          pageNumber,
-          questionTotal,
-          question,
-        });
+		questions.forEach((question) => {
+			if (question.Tags.includes(category)) {
+				questionGroups.push({
+					category,
+					tagName: slugify(category),
+					pageNumber,
+					questionTotal,
+					question,
+				});
 
-        pageNumber += 1;
-      }
-    });
-  });
+				pageNumber += 1;
+			}
+		});
+	});
 
-  return questionGroups;
+	return questionGroups;
 };
 
 module.exports = async () => {
-  const questions = await getQuestions();
-  const categories = getUniqueCategories(questions);
-  const questionGroups = groupQuestionsIntoCategories(questions, categories);
+	const questions = await getQuestions();
+	const categories = getUniqueCategories(questions);
+	const questionGroups = groupQuestionsIntoCategories(questions, categories);
 
-  const flashCardQuestions = getFlashCardQuestions(questions);
-  const flashCardCategories = getUniqueCategories(flashCardQuestions);
-  const flashCardQuestionGroups = groupQuestionsIntoCategories(
-    flashCardQuestions,
-    flashCardCategories
-  );
+	const flashCardQuestions = getFlashCardQuestions(questions);
+	const flashCardCategories = getUniqueCategories(flashCardQuestions);
+	const flashCardQuestionGroups = groupQuestionsIntoCategories(flashCardQuestions, flashCardCategories);
 
-  return {
-    questions,
-    categories,
-    questionGroups,
-    flashCardQuestions,
-    flashCardCategories,
-    flashCardQuestionGroups,
-  };
+	return {
+		questions,
+		categories,
+		questionGroups,
+		flashCardQuestions,
+		flashCardCategories,
+		flashCardQuestionGroups,
+	};
 };

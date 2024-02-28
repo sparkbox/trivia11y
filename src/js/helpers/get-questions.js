@@ -11,9 +11,9 @@ export const getRelevantQuestions = (questions, category, isMultipleChoice) => {
       return false;
     }
 
-    if (category !== 'All' && !question.Tags.some((tag) => tag === category)) {
-      return false;
-    }
+    if (category !== 'All Questions' && !question.Tags.some((tag) => tag === category)) {
+			return false;
+		}
 
     return true;
   });
