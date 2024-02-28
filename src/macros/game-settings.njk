@@ -5,10 +5,10 @@
 		<form class="cmp-stack" data-game-settings>
 			<fieldset>
 				<legend>Question Categories</legend>
-				<div>
+				<div class="cmp-checkbox__grid">
 					{% for category in categories %}
-						<div>
-							<input id="{{ category | slugify }}" type="checkbox" name="category" value="{{ category }}">
+						<div class="cmp-checkbox__wrapper">
+							<input id="{{ category | slugify }}" type="checkbox" name="category" value="{{ category }}" class="cmp-checkbox__input">
 							<label for="{{ category | slugify }}">{{ category }} <span data-category="{{ category }}"></span></label>
 						</div>
 					{% endfor %}
