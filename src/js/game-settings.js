@@ -64,6 +64,11 @@ const handleSelectionChange = async () => {
 		questionCountElement.textContent = numberOfQuestions;
 	}
 
+	const maxQuestionsInput = document.querySelector('#max-questions');
+	if (maxQuestionsInput) {
+		maxQuestionsInput.value = numberOfQuestions;
+	}
+
 	const durationElements = document.querySelectorAll('[data-timer-duration]');
 	durationElements.forEach((durationElement) => {
 		const numberOfSeconds = Number.parseInt(durationElement.dataset.timerDuration, 10);
