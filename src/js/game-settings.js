@@ -41,18 +41,47 @@ const getQuestionsForGame = async () => {
 	return questionsForGame;
 };
 
+const formatDuration = (durationInSeconds) => {
+	const minutes = Math.floor(durationInSeconds / 60);
+	const remainingSeconds = durationInSeconds % 60;
+
+	if (remainingSeconds === 0) {
+		return `${minutes} minute${minutes > 1 ? 's' : ''}`;
+	}
+
+	if (minutes === 0) {
+		return `${remainingSeconds} seconds`;
+	}
+
+	return `${minutes} minute${minutes > 1 ? 's' : ''}, ${remainingSeconds} seconds`;
+};
+
+const handleSelectionChange = async () => {
+	const questionsForGame = await getQuestionsForGame();
+	const numberOfQuestions = questionsForGame.length;
+	const questionCountElement = document.querySelector('[data-question-total]');
+	if (questionCountElement) {
+		questionCountElement.textContent = numberOfQuestions;
+	}
+
+	const durationElements = document.querySelectorAll('[data-timer-duration]');
+	durationElements.forEach((durationElement) => {
+		const numberOfSeconds = Number.parseInt(durationElement.dataset.timerDuration, 10);
+		if (numberOfQuestions > 0) {
+			durationElement.textContent = `(${formatDuration(numberOfQuestions * numberOfSeconds)} total)`;
+		} else {
+			durationElement.textContent = '';
+		}
+	});
+};
+
 const initializeCategorySelectionChangeHandler = () => {
 	const elements = document.querySelectorAll('input[name="category"]');
 	elements.forEach((element) => {
-		element.addEventListener('change', async () => {
-			const questionsForGame = await getQuestionsForGame();
-			const questionCountElement = document.querySelector('[data-question-total]');
-			if (questionCountElement) {
-				questionCountElement.textContent = questionsForGame.length;
-			}
-		});
+		element.addEventListener('change', handleSelectionChange);
 	});
 };
 
 updateQuestionCounts();
 initializeCategorySelectionChangeHandler();
+handleSelectionChange();

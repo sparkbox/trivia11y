@@ -10,63 +10,63 @@ description: Choose from categories to study using flash cards, and set the maxi
 	<div class="obj-width-limiter">
 		<h1>Flash Cards Game Settings</h1>
 
-    <form>
-      <fieldset>
-        <legend>Question Categories</legend>
-        <div>
-          {% for category in questionData.flashCardCategories %}
-            <div>
-              <input id="{{ category | slugify }}" type="checkbox" name="category" value="{{ category }}">
-              <label for="{{ category | slugify }}">{{ category }} <span data-category="{{ category }}"></span></label>
-            </div>
-          {% endfor %}
-        </div>
-      </fieldset>
-      <div>
-        <label for="max-questions">Max Questions</label>
-        <p id="max-questions-description">
-          There are <span data-question-total>0</span> questions in the chosen categories. Some questions overlap in category, so this total number may not reflect the sum of questions presented above.
-        </p>
-        <input id="max-questions" type="text" name="max-questions" inputmode="numeric" pattern="\d+" aria-describedby="max-questions-description">
-      </div>
-      <fieldset>
-        <legend>Question Timer</legend>
-        <div>
-          <div>
-            <input id="no-timer" type="radio" name="question-timer" value="no-timer">
-            <label for="no-timer">No timer</label>
-          </div>
-          <div>
-            <input id="15-seconds" type="radio" name="question-timer" value="15-seconds">
-            <label for="15-seconds">15 seconds <span data-timer-15-duration></span></label>
-          </div>
-          <div>
-            <input id="30-seconds" type="radio" name="question-timer" value="30-seconds">
-            <label for="30-seconds">30 seconds <span data-timer-30-duration></span></label>
-          </div>
-          <div>
-            <input id="60-seconds" type="radio" name="question-timer" value="60-seconds">
-            <label for="60-seconds">60 seconds <span data-timer-60-duration></span></label>
-          </div>
-        </div>
-      </fieldset>
-      <div>
-        <input id="save-settings" type="checkbox" name="save-settings" aria-describedby="save-settings-description">
-        <label for="save-settings">Save Settings</label>
-        <p id="save-settings-description">
-          Saved settings can be accessed on the home page to quick-start a game.
-        </p>
-      </div>
-      <div>
-        <button type="submit">Start Game</button>
-      </div>
-    </form>
+		<form>
+			<fieldset>
+				<legend>Question Categories</legend>
+				<div>
+					{% for category in questionData.flashCardCategories %}
+						<div>
+							<input id="{{ category | slugify }}" type="checkbox" name="category" value="{{ category }}">
+							<label for="{{ category | slugify }}">{{ category }} <span data-category="{{ category }}"></span></label>
+						</div>
+					{% endfor %}
+				</div>
+			</fieldset>
+			<div>
+				<label for="max-questions">Max Questions</label>
+				<p id="max-questions-description">
+					There are <span data-question-total>0</span> questions in the chosen categories. Some questions overlap in category, so this total number may not reflect the sum of questions presented above.
+				</p>
+				<input id="max-questions" type="text" name="max-questions" inputmode="numeric" pattern="\d+" aria-describedby="max-questions-description">
+			</div>
+			<fieldset>
+				<legend>Question Timer</legend>
+				<div>
+					<div>
+						<input id="no-timer" type="radio" name="question-timer" value="no-timer">
+						<label for="no-timer">No timer</label>
+					</div>
+					<div>
+						<input id="15-seconds" type="radio" name="question-timer" value="15-seconds">
+						<label for="15-seconds">15 seconds <span data-timer-duration="15"></span></label>
+					</div>
+					<div>
+						<input id="30-seconds" type="radio" name="question-timer" value="30-seconds">
+						<label for="30-seconds">30 seconds <span data-timer-duration="30"></span></label>
+					</div>
+					<div>
+						<input id="60-seconds" type="radio" name="question-timer" value="60-seconds">
+						<label for="60-seconds">60 seconds <span data-timer-duration="60"></span></label>
+					</div>
+				</div>
+			</fieldset>
+			<div>
+				<input id="save-settings" type="checkbox" name="save-settings" aria-describedby="save-settings-description">
+				<label for="save-settings">Save Settings</label>
+				<p id="save-settings-description">
+					Saved settings can be accessed on the home page to quick-start a game.
+				</p>
+			</div>
+			<div>
+				<button type="submit">Start Game</button>
+			</div>
+		</form>
 	</div>
 {% endblock %}
 
 {% block scripts %}
-  <script>
-    const IS_MULTIPLE_CHOICE = false;
-  </script>
-  <script src="/js/game-settings.js" type="module"></script>
+	<script>
+		const IS_MULTIPLE_CHOICE = false;
+	</script>
+	<script src="/js/game-settings.js" type="module"></script>
 {% endblock %}
