@@ -15,45 +15,51 @@ const getQuestions = async () => {
   const questions = await base('Questions and Answers').select().all();
 
   const publishedQuestions = questions
-    .filter((record) => record.fields.Published || viewDrafts)
-    .map((record) => {
-      const options = [
-        {
-          answer: record.fields.Answer,
-          isCorrect: true,
-        },
-      ];
+		.filter((record) => record.fields.Published || viewDrafts)
+		.map((record, index) => {
+			const options = [
+				{
+					answer: record.fields.Answer,
+					isCorrect: true,
+				},
+			];
 
-      if (record.fields['Distractor 1']?.trim()) {
-        options.push({
-          answer: record.fields['Distractor 1'],
-          isCorrect: false,
-        });
-      }
+			if (record.fields['Distractor 1']?.trim()) {
+				options.push({
+					answer: record.fields['Distractor 1'],
+					isCorrect: false,
+				});
+			}
 
-      if (record.fields['Distractor 2']?.trim()) {
-        options.push({
-          answer: record.fields['Distractor 2'],
-          isCorrect: false,
-        });
-      }
+			if (record.fields['Distractor 2']?.trim()) {
+				options.push({
+					answer: record.fields['Distractor 2'],
+					isCorrect: false,
+				});
+			}
 
-      return {
+			return {
 				...record.fields,
 				id: record.id,
+				pageNumber: index + 1,
 				options: options.sort(() => {
 					const sign = Math.round(Math.random()) > 0 ? 1 : -1;
 
 					return sign;
 				}),
 			};
-    });
+		});
 
   return publishedQuestions;
 };
 
 const getFlashCardQuestions = (questions) =>
-  questions.filter((question) => !question['Multiple Choice Only']);
+	questions
+		.filter((question) => !question['Multiple Choice Only'])
+		.map((question, index) => ({
+			...question,
+			pageNumber: index + 1,
+		}));
 
 const getUniqueCategories = (questions) => {
 	return [

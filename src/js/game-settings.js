@@ -10,7 +10,7 @@ const getQuestionCountForCategory = (questions, categoryName) => {
 };
 
 const updateQuestionCounts = async () => {
-	questions = await getQuestions();
+	questions = await getQuestions(IS_MULTIPLE_CHOICE);
 
 	const categoryCountElements = document.querySelectorAll('[data-category]');
 	categoryCountElements.forEach((element) => {
@@ -24,7 +24,7 @@ const updateQuestionCounts = async () => {
 const getQuestionsForGame = async () => {
 	const questionsForGame = [];
 	if (!questions) {
-		questions = await getQuestions();
+		questions = await getQuestions(IS_MULTIPLE_CHOICE);
 	}
 	const selectedElements = document.querySelectorAll('input[name="category"]:checked');
 
@@ -96,14 +96,19 @@ const getSavedSettings = () => {
 	return [];
 };
 
+const getMaxQuestions = () => {
+	const maxQuestionsInput = document.querySelector('#max-questions');
+	const maxQuestions = Number.parseInt(maxQuestionsInput?.value, 10) || null;
+	return maxQuestions;
+};
+
 const saveSettings = () => {
 	const gameType = GAME_TYPE;
 
 	const selectedCategoryElements = document.querySelectorAll('input[name="category"]:checked');
 	const selectedCategories = Array.from(selectedCategoryElements).map((element) => element.value);
 
-	const maxQuestionsInput = document.querySelector('#max-questions');
-	const maxQuestions = Number.parseInt(maxQuestionsInput?.value, 10) || null;
+	const maxQuestions = getMaxQuestions;
 
 	const timerElement = document.querySelector('input[name="question-timer"]:checked');
 	const timer = timerElement?.value ?? 'no-timer';
@@ -120,6 +125,23 @@ const saveSettings = () => {
 	localStorage.setItem('savedSettings', JSON.stringify(updatedSettings));
 };
 
+const startGame = async () => {
+	sessionStorage.removeItem('questions');
+	sessionStorage.removeItem('questionStatus');
+
+	const questionsForGame = await getQuestionsForGame();
+	const questionOrder = questionsForGame
+		.map((question) => `/${GAME_TYPE}/all-questions/${question.pageNumber}/`)
+		.sort(() => (Math.random() > 0.5 ? 1 : -1))
+		.slice(0, getMaxQuestions());
+
+	sessionStorage.setItem('questions', JSON.stringify(questionOrder));
+
+	sessionStorage.setItem('currentQuestionIndex', '0');
+
+	window.location.href = questionOrder[0];
+};
+
 const handleFormSubmit = (event) => {
 	event.preventDefault();
 
@@ -127,6 +149,8 @@ const handleFormSubmit = (event) => {
 	if (saveSettingsInput?.checked) {
 		saveSettings();
 	}
+
+	startGame();
 };
 
 const initializeFormSubmitListener = () => {

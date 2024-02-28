@@ -1,20 +1,20 @@
-export const getQuestions = async () => {
-  const response = await fetch('/questions.json');
-  const questions = await response.json();
+export const getQuestions = async (isMultipleChoice = true) => {
+	const response = await fetch(isMultipleChoice ? '/questions.json' : '/flash-card-questions.json');
+	const questions = await response.json();
 
-  return questions;
+	return questions;
 };
 
 export const getRelevantQuestions = (questions, category, isMultipleChoice) => {
-  return questions.filter((question) => {
-    if (!isMultipleChoice && question['Multiple Choice Only']) {
-      return false;
-    }
-
-    if (category !== 'All Questions' && !question.Tags.some((tag) => tag === category)) {
+	return questions.filter((question) => {
+		if (!isMultipleChoice && question['Multiple Choice Only']) {
 			return false;
 		}
 
-    return true;
-  });
+		if (category !== 'All Questions' && !question.Tags.some((tag) => tag === category)) {
+			return false;
+		}
+
+		return true;
+	});
 };
