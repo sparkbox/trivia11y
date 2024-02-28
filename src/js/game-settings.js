@@ -1,4 +1,4 @@
-/* globals IS_MULTIPLE_CHOICE */
+/* globals IS_MULTIPLE_CHOICE GAME_TYPE */
 import { getQuestions, getRelevantQuestions } from './helpers/get-questions';
 
 let questions;
@@ -80,13 +80,61 @@ const handleSelectionChange = async () => {
 	});
 };
 
-const initializeCategorySelectionChangeHandler = () => {
+const initializeCategorySelectionChangeListener = () => {
 	const elements = document.querySelectorAll('input[name="category"]');
 	elements.forEach((element) => {
 		element.addEventListener('change', handleSelectionChange);
 	});
 };
 
+const getSavedSettings = () => {
+	const savedSettings = localStorage.getItem('savedSettings');
+	if (savedSettings) {
+		return JSON.parse(savedSettings);
+	}
+
+	return [];
+};
+
+const saveSettings = () => {
+	const gameType = GAME_TYPE;
+
+	const selectedCategoryElements = document.querySelectorAll('input[name="category"]:checked');
+	const selectedCategories = Array.from(selectedCategoryElements).map((element) => element.value);
+
+	const maxQuestionsInput = document.querySelector('#max-questions');
+	const maxQuestions = Number.parseInt(maxQuestionsInput?.value, 10) || null;
+
+	const timerElement = document.querySelector('input[name="question-timer"]:checked');
+	const timer = timerElement?.value ?? 'no-timer';
+
+	const gameSettings = {
+		gameType,
+		selectedCategories,
+		maxQuestions,
+		timer,
+	};
+
+	const savedSettings = getSavedSettings();
+	const updatedSettings = [...savedSettings, gameSettings];
+	localStorage.setItem('savedSettings', JSON.stringify(updatedSettings));
+};
+
+const handleFormSubmit = (event) => {
+	event.preventDefault();
+
+	const saveSettingsInput = document.querySelector('#save-settings');
+	if (saveSettingsInput?.checked) {
+		saveSettings();
+	}
+};
+
+const initializeFormSubmitListener = () => {
+	const form = document.querySelector('[data-game-settings]');
+	form?.addEventListener('submit', handleFormSubmit);
+};
+
 updateQuestionCounts();
-initializeCategorySelectionChangeHandler();
+initializeCategorySelectionChangeListener();
+initializeFormSubmitListener();
 handleSelectionChange();

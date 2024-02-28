@@ -10,7 +10,7 @@ description: Choose from categories to study using flash cards, and set the maxi
 	<div class="obj-width-limiter">
 		<h1>Flash Cards Game Settings</h1>
 
-		<form>
+		<form data-game-settings>
 			<fieldset>
 				<legend>Question Categories</legend>
 				<div>
@@ -33,7 +33,7 @@ description: Choose from categories to study using flash cards, and set the maxi
 				<legend>Question Timer</legend>
 				<div>
 					<div>
-						<input id="no-timer" type="radio" name="question-timer" value="no-timer">
+						<input id="no-timer" type="radio" name="question-timer" value="no-timer" checked>
 						<label for="no-timer">No timer</label>
 					</div>
 					<div>
@@ -67,6 +67,7 @@ description: Choose from categories to study using flash cards, and set the maxi
 {% block scripts %}
 	<script>
 		const IS_MULTIPLE_CHOICE = false;
+		const GAME_TYPE = 'flash-cards';
 	</script>
 	<script src="/js/game-settings.js" type="module"></script>
 {% endblock %}
