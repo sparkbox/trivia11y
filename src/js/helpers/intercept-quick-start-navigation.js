@@ -9,7 +9,6 @@ const quickStartGame = async (gameType) => {
 		.slice(0, 50);
 
 	sessionStorage.setItem('questions', JSON.stringify(questionOrder));
-
 	sessionStorage.setItem('currentQuestionIndex', '0');
 
 	window.location.href = questionOrder[0];

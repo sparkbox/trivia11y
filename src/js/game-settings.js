@@ -21,21 +21,6 @@ const updateQuestionCounts = async () => {
 	});
 };
 
-const formatDuration = (durationInSeconds) => {
-	const minutes = Math.floor(durationInSeconds / 60);
-	const remainingSeconds = durationInSeconds % 60;
-
-	if (remainingSeconds === 0) {
-		return `${minutes} minute${minutes > 1 ? 's' : ''}`;
-	}
-
-	if (minutes === 0) {
-		return `${remainingSeconds} seconds`;
-	}
-
-	return `${minutes} minute${minutes > 1 ? 's' : ''}, ${remainingSeconds} seconds`;
-};
-
 const handleSelectionChange = async () => {
 	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
 	const numberOfQuestions = questionsForGame.length;
@@ -48,16 +33,6 @@ const handleSelectionChange = async () => {
 	if (maxQuestionsInput) {
 		maxQuestionsInput.value = numberOfQuestions;
 	}
-
-	const durationElements = document.querySelectorAll('[data-timer-duration]');
-	durationElements.forEach((durationElement) => {
-		const numberOfSeconds = Number.parseInt(durationElement.dataset.timerDuration, 10);
-		if (numberOfQuestions > 0) {
-			durationElement.textContent = `(${formatDuration(numberOfQuestions * numberOfSeconds)} total)`;
-		} else {
-			durationElement.textContent = '';
-		}
-	});
 };
 
 const initializeCategorySelectionChangeListener = () => {
@@ -67,42 +42,10 @@ const initializeCategorySelectionChangeListener = () => {
 	});
 };
 
-const getSavedSettings = () => {
-	const savedSettings = localStorage.getItem('savedSettings');
-	if (savedSettings) {
-		return JSON.parse(savedSettings);
-	}
-
-	return [];
-};
-
 const getMaxQuestions = () => {
 	const maxQuestionsInput = document.querySelector('#max-questions');
 	const maxQuestions = Number.parseInt(maxQuestionsInput?.value, 10) || null;
 	return maxQuestions;
-};
-
-const saveSettings = () => {
-	const gameType = GAME_TYPE;
-
-	const selectedCategoryElements = document.querySelectorAll('input[name="category"]:checked');
-	const selectedCategories = Array.from(selectedCategoryElements).map((element) => element.value);
-
-	const maxQuestions = getMaxQuestions;
-
-	const timerElement = document.querySelector('input[name="question-timer"]:checked');
-	const timer = timerElement?.value ?? 'no-timer';
-
-	const gameSettings = {
-		gameType,
-		selectedCategories,
-		maxQuestions,
-		timer,
-	};
-
-	const savedSettings = getSavedSettings();
-	const updatedSettings = [...savedSettings, gameSettings];
-	localStorage.setItem('savedSettings', JSON.stringify(updatedSettings));
 };
 
 const startGame = async () => {
@@ -116,7 +59,6 @@ const startGame = async () => {
 		.slice(0, getMaxQuestions());
 
 	sessionStorage.setItem('questions', JSON.stringify(questionOrder));
-
 	sessionStorage.setItem('currentQuestionIndex', '0');
 
 	window.location.href = questionOrder[0];
@@ -124,11 +66,6 @@ const startGame = async () => {
 
 const handleFormSubmit = (event) => {
 	event.preventDefault();
-
-	const saveSettingsInput = document.querySelector('#save-settings');
-	if (saveSettingsInput?.checked) {
-		saveSettings();
-	}
 
 	startGame();
 };
