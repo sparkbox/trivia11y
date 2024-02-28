@@ -1,3 +1,3 @@
-import { interceptCategoryNavigation } from './helpers/intercept-category-navigation';
+import { interceptQuickStartNavigation } from './helpers/intercept-quick-start-navigation';
 
-interceptCategoryNavigation();
+interceptQuickStartNavigation();

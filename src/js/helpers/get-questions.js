@@ -18,3 +18,27 @@ export const getRelevantQuestions = (questions, category, isMultipleChoice) => {
 		return true;
 	});
 };
+
+export const getQuestionsForGame = async (questions, isMultipleChoice) => {
+	const questionsForGame = [];
+	if (!questions) {
+		questions = await getQuestions(isMultipleChoice);
+	}
+	const selectedElements = document.querySelectorAll('input[name="category"]:checked');
+
+	if (!selectedElements.length) {
+		return questions;
+	}
+
+	selectedElements.forEach((element) => {
+		const category = element.value;
+		const relevantQuestions = getRelevantQuestions(questions, category, isMultipleChoice);
+		relevantQuestions.forEach((question) => {
+			if (!questionsForGame.some(({ id }) => id === question.id)) {
+				questionsForGame.push(question);
+			}
+		});
+	});
+
+	return questionsForGame;
+};

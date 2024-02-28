@@ -1,5 +1,5 @@
 /* globals IS_MULTIPLE_CHOICE GAME_TYPE */
-import { getQuestions, getRelevantQuestions } from './helpers/get-questions';
+import { getQuestions, getRelevantQuestions, getQuestionsForGame } from './helpers/get-questions';
 
 let questions;
 
@@ -21,26 +21,6 @@ const updateQuestionCounts = async () => {
 	});
 };
 
-const getQuestionsForGame = async () => {
-	const questionsForGame = [];
-	if (!questions) {
-		questions = await getQuestions(IS_MULTIPLE_CHOICE);
-	}
-	const selectedElements = document.querySelectorAll('input[name="category"]:checked');
-
-	selectedElements.forEach((element) => {
-		const category = element.value;
-		const relevantQuestions = getRelevantQuestions(questions, category, IS_MULTIPLE_CHOICE);
-		relevantQuestions.forEach((question) => {
-			if (!questionsForGame.some(({ id }) => id === question.id)) {
-				questionsForGame.push(question);
-			}
-		});
-	});
-
-	return questionsForGame;
-};
-
 const formatDuration = (durationInSeconds) => {
 	const minutes = Math.floor(durationInSeconds / 60);
 	const remainingSeconds = durationInSeconds % 60;
@@ -57,7 +37,7 @@ const formatDuration = (durationInSeconds) => {
 };
 
 const handleSelectionChange = async () => {
-	const questionsForGame = await getQuestionsForGame();
+	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
 	const numberOfQuestions = questionsForGame.length;
 	const questionCountElement = document.querySelector('[data-question-total]');
 	if (questionCountElement) {
@@ -129,7 +109,7 @@ const startGame = async () => {
 	sessionStorage.removeItem('questions');
 	sessionStorage.removeItem('questionStatus');
 
-	const questionsForGame = await getQuestionsForGame();
+	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
 	const questionOrder = questionsForGame
 		.map((question) => `/${GAME_TYPE}/all-questions/${question.pageNumber}/`)
 		.sort(() => (Math.random() > 0.5 ? 1 : -1))

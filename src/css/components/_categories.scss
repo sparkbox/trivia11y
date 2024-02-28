@@ -27,6 +27,10 @@
     align-items: center;
     transition: color 150ms ease-in-out, text-decoration-color 150ms ease-in-out;
 
+    &--alternative {
+      font-size: clamp(0.875rem, 0.875rem + 0.5vw, 1.125rem);
+    }
+
     &:hover {
       color: var(--foundry-culture-base);
       text-decoration-color: hsl(var(--text-color-hsl) / 0%);

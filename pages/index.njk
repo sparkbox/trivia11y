@@ -20,18 +20,38 @@ description: A quiz game and study tool to help those at all skill levels to lea
 			Choose a game format and then select a category to help you test your knowledge: Flash Cards for reviewing what you know, Short Answer questions for confirming you actually know your stuff, and Multiple Choice for simulating test conditions.
 		</p>
 
-		{% from 'macros/categories.njk' import categories %}
-		<div class="obj-game-type">
-			<div class="obj-game-type__group">
-				{{ categories('flash-cards', 'Flash Cards', questionData.flashCardCategories) }}
-			</div>
-			<div class="obj-game-type__group">
-				{{ categories('short-answer', 'Short Answer', questionData.flashCardCategories) }}
-			</div>
-			<div class="obj-game-type__group">
-				{{ categories('multiple-choice', 'Multiple Choice', questionData.categories) }}
-			</div>
-		</div>
+		<ul class="cmp-categories">
+			<li class="cmp-categories__item">
+				<a href="/flash-cards/game-settings/" class="cmp-categories__link">
+					Flash Cards
+				</a>
+			</li>
+			<li class="cmp-categories__item">
+				<a href="/flash-cards/all-questions/1/" class="cmp-categories__link cmp-categories__link--alternative" data-game-type="flash-cards">
+					Flash Cards quick start (all categories, no time limit, 50 questions max)
+				</a>
+			</li>
+			<li class="cmp-categories__item">
+				<a href="/short-answer/game-settings/" class="cmp-categories__link">
+					Short Answer
+				</a>
+			</li>
+			<li class="cmp-categories__item">
+				<a href="/short-answer/all-questions/1/" class="cmp-categories__link cmp-categories__link--alternative" data-game-type="short-answer">
+					Short Answer quick start (all categories, no time limit, 50 questions max)
+				</a>
+			</li>
+			<li class="cmp-categories__item">
+				<a href="/multiple-choice/game-settings/" class="cmp-categories__link">
+					Multiple Choice
+				</a>
+			</li>
+			<li class="cmp-categories__item">
+				<a href="/multiple-choice/all-questions/1/" class="cmp-categories__link cmp-categories__link--alternative" data-game-type="multiple-choice">
+					Multiple Choice quick start (all categories, no time limit, 50 questions max)
+				</a>
+			</li>
+		</ul>
 	</div>
 {% endblock %}
 
