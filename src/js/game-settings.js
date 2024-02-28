@@ -28,11 +28,6 @@ const handleSelectionChange = async () => {
 	if (questionCountElement) {
 		questionCountElement.textContent = numberOfQuestions;
 	}
-
-	const maxQuestionsInput = document.querySelector('#max-questions');
-	if (maxQuestionsInput) {
-		maxQuestionsInput.value = numberOfQuestions;
-	}
 };
 
 const initializeCategorySelectionChangeListener = () => {
@@ -42,12 +37,6 @@ const initializeCategorySelectionChangeListener = () => {
 	});
 };
 
-const getMaxQuestions = () => {
-	const maxQuestionsInput = document.querySelector('#max-questions');
-	const maxQuestions = Number.parseInt(maxQuestionsInput?.value, 10) || null;
-	return maxQuestions;
-};
-
 const startGame = async () => {
 	sessionStorage.removeItem('questions');
 	sessionStorage.removeItem('questionStatus');
@@ -55,8 +44,7 @@ const startGame = async () => {
 	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
 	const questionOrder = questionsForGame
 		.map((question) => `/${GAME_TYPE}/all-questions/${question.pageNumber}/`)
-		.sort(() => (Math.random() > 0.5 ? 1 : -1))
-		.slice(0, getMaxQuestions());
+		.sort(() => (Math.random() > 0.5 ? 1 : -1));
 
 	sessionStorage.setItem('questions', JSON.stringify(questionOrder));
 	sessionStorage.setItem('currentQuestionIndex', '0');
@@ -64,15 +52,13 @@ const startGame = async () => {
 	window.location.href = questionOrder[0];
 };
 
-const handleFormSubmit = (event) => {
-	event.preventDefault();
-
-	startGame();
-};
-
 const initializeFormSubmitListener = () => {
 	const form = document.querySelector('[data-game-settings]');
-	form?.addEventListener('submit', handleFormSubmit);
+	form?.addEventListener('submit', (event) => {
+		event.preventDefault();
+
+		startGame();
+	});
 };
 
 updateQuestionCounts();
