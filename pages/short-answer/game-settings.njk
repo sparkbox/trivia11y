@@ -8,7 +8,7 @@ description: Choose from categories to study using short answer questions, and s
 
 {% block content%}
 	{% from 'macros/game-settings.njk' import gameSettings %}
-	{{ gameSettings('Short Answer Game Settings', questionData.flashCardCategories) }}
+	{{ gameSettings('Short Answer Game Settings', questionData.flashCardCategories, 'short-answer') }}
 {% endblock %}
 
 {% block scripts %}

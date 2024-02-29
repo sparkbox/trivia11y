@@ -8,7 +8,7 @@ description: Choose from categories to study using flash cards, and set the maxi
 
 {% block content%}
 	{% from 'macros/game-settings.njk' import gameSettings %}
-	{{ gameSettings('Flash Cards Game Settings', questionData.flashCardCategories) }}
+	{{ gameSettings('Flash Cards Game Settings', questionData.flashCardCategories, 'flash-cards') }}
 {% endblock %}
 
 {% block scripts %}

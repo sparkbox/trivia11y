@@ -8,7 +8,7 @@ description: Choose from categories to study using multiple choice questions, an
 
 {% block content%}
 	{% from 'macros/game-settings.njk' import gameSettings %}
-	{{ gameSettings('Multiple Choice Game Settings', questionData.categories) }}
+	{{ gameSettings('Multiple Choice Game Settings', questionData.categories, 'multiple-choice') }}
 {% endblock %}
 
 {% block scripts %}

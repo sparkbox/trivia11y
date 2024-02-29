@@ -1,8 +1,8 @@
-{% macro gameSettings(title, categories) %}
+{% macro gameSettings(title, categories, gameType) %}
 	<div class="obj-width-limiter">
 		<h1>{{ title }}</h1>
 
-		<form class="cmp-stack" data-game-settings>
+		<form class="cmp-stack" method="GET" action="/{{ gameType }}/all-questions/1/" data-game-settings>
 			<fieldset>
 				<legend>Question Categories</legend>
 				<div class="cmp-checkbox__grid">
@@ -15,7 +15,7 @@
 				</div>
 			</fieldset>
 			<div>
-				<button type="submit" class="cmp-button">Start Game (<span data-question-total>0</span> Questions)</button>
+				<button type="submit" class="cmp-button">Start Game (<span data-question-total>All</span> Questions)</button>
 			</div>
 		</form>
 	</div>
