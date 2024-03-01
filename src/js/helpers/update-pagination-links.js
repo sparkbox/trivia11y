@@ -9,12 +9,15 @@ const setLinkHref = (selector, url, linkText) => {
 
 	if (link) {
 		link.setAttribute('href', url);
+		if (linkText) {
+			link.textContent = linkText;
+		}
 	} else {
 		const span = document.querySelector('.cmp-pagination span');
 		const a = document.createElement('a');
 		a.setAttribute('href', url);
 		a.setAttribute(selector.replace('[', '').replace(']', ''), '');
-		a.innerHTML = linkText;
+		a.textContent = linkText;
 		span?.replaceWith(a);
 	}
 };
@@ -29,7 +32,7 @@ const updatePreviousLink = (questions, currentQuestionIndex) => {
 
 const updateNextLink = (questions, currentQuestionIndex) => {
 	if (currentQuestionIndex >= questions.length - 1) {
-		removeLink('[data-next-link]');
+		setLinkHref('[data-next-link]', '../../game-settings/', 'Set up new game');
 	} else {
 		setLinkHref('[data-next-link]', questions[currentQuestionIndex + 1], 'Next Question');
 	}
@@ -39,7 +42,7 @@ const updateQuestionNumber = (currentQuestionIndex) => {
 	const currentQuestionElement = document.querySelector('[data-question-number]');
 
 	if (currentQuestionElement) {
-		currentQuestionElement.innerHTML = currentQuestionIndex + 1;
+		currentQuestionElement.textContent = currentQuestionIndex + 1;
 	}
 };
 
@@ -47,7 +50,7 @@ const updateQuestionTotal = (total) => {
 	const questionTotalElement = document.querySelector('[data-question-total]');
 
 	if (questionTotalElement) {
-		questionTotalElement.innerHTML = total;
+		questionTotalElement.textContent = total;
 	}
 };
 
