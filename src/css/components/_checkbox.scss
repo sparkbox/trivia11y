@@ -1,0 +1,28 @@
+.cmp-checkbox {
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem 2rem;
+
+		> div:first-child {
+			grid-column: 1 / -1;
+		}
+
+		@container (min-width: 36rem) {
+			grid-template-columns: auto 1fr;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
+	}
+
+	&__input {
+		accent-color: var(--link-color);
+		height: 0.8em;
+		width: 0.8em;
+	}
+}

@@ -56,6 +56,7 @@
 @forward 'elements/heading';
 @forward 'elements/a';
 @forward 'elements/p';
+@forward 'elements/fieldset-legend';
 
 // =====================================================================
 // 5. Objects
@@ -63,7 +64,6 @@
 //    for example media object known from OOCSS.
 @forward 'objects/page';
 @forward 'objects/width-limiter';
-@forward 'objects/game-type';
 
 // =====================================================================
 // 6. Components
@@ -76,11 +76,12 @@
 @forward 'components/question';
 @forward 'components/answer';
 @forward 'components/categories';
-@forward 'components/category-heading';
 @forward 'components/multiple-choice';
 @forward 'components/game-header';
 @forward 'components/explanation-section';
 @forward 'components/inline-form';
+@forward 'components/button';
+@forward 'components/checkbox';
 
 // =====================================================================
 // 7. Vendors (Optional)

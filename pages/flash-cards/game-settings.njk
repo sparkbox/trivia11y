@@ -1,0 +1,20 @@
+---
+title: Flash Cards Game Settings
+seo_title: "Flash Cards Game Settings: Trivia11y"
+description: Choose from categories to study using flash cards to test your accessibility knowledge.
+---
+
+{% extends 'layout.njk' %}
+
+{% block content%}
+	{% from 'macros/game-settings.njk' import gameSettings %}
+	{{ gameSettings('Flash Cards Game Settings', questionData.flashCardCategories, 'flash-cards') }}
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		const IS_MULTIPLE_CHOICE = false;
+		const GAME_TYPE = 'flash-cards';
+	</script>
+	<script src="/js/game-settings.js" type="module"></script>
+{% endblock %}

@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('default', 'layout.njk');
 
   eleventyConfig.addFilter('mdToHtml', markdownToHtml);
+  eleventyConfig.addFilter('csvList', (values) => values.join(', '));
 
   return {
     dir: {

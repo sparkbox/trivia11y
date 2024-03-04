@@ -1,0 +1,22 @@
+{% macro gameSettings(title, categories, gameType) %}
+	<div class="obj-width-limiter">
+		<h1>{{ title }}</h1>
+
+		<form class="cmp-stack" method="GET" action="/{{ gameType }}/all-questions/1/" data-game-settings>
+			<fieldset>
+				<legend>Question Categories</legend>
+				<div class="cmp-checkbox__grid">
+					{% for category in categories %}
+						<div class="cmp-checkbox__wrapper">
+							<input id="{{ category | slugify }}" type="checkbox" name="category" value="{{ category }}" class="cmp-checkbox__input">
+							<label for="{{ category | slugify }}">{{ category }} <span data-category="{{ category }}"></span></label>
+						</div>
+					{% endfor %}
+				</div>
+			</fieldset>
+			<div>
+				<button type="submit" class="cmp-button">Start Game (<span data-question-total>All</span> Questions)</button>
+			</div>
+		</form>
+	</div>
+{% endmacro %}
