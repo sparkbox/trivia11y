@@ -1,12 +1,14 @@
-.cmp-inline-form {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1rem;
-  align-items: end;
-  margin-block: 1.5rem;
+.cmp-form {
+  &--inline {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    align-items: end;
+    margin-block: 1.5rem;
 
-  > :first-child {
-    flex-grow: 1;
+    > :first-child {
+      flex-grow: 1;
+    }
   }
 
   &__label {
@@ -24,5 +26,15 @@
     font-size: clamp(1rem, 1rem + 1vw, 2rem);
     border: 0.125rem solid var(--text-color);
     border-radius: 0.25rem;
+
+    &--mini {
+      max-width: 8ch;
+    }
+  }
+
+  &__description {
+    font-size: clamp(0.875rem, 0.875rem + 0.5vw, 1.125rem);
+    margin-block-start: 0;
+    max-width: 70ch;
   }
 }

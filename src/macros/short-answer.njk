@@ -2,12 +2,12 @@
   <div class="cmp-question">
     {{ question.Question | mdToHtml | safe }}
   </div>
-  <form id="answerForm" class="cmp-inline-form">
+  <form id="answerForm" class="cmp-form cmp-form--inline">
     <div>
-      <label for="userAnswer" class="cmp-inline-form__label">
+      <label for="userAnswer" class="cmp-form__label">
         Your Answer
       </label>
-      <input id="userAnswer" type="text" name="answer" autofill="false" autocomplete="off" class="cmp-inline-form__input">
+      <input id="userAnswer" type="text" name="answer" autofill="false" autocomplete="off" class="cmp-form__input">
     </div>
     <div>
       <button type="submit" class="cmp-button">
