@@ -24,9 +24,9 @@ const updateQuestionCounts = async () => {
 const handleSelectionChange = async () => {
 	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
 	const numberOfQuestions = questionsForGame.length;
-	const questionCountElement = document.querySelector('[data-question-total]');
-	if (questionCountElement) {
-		questionCountElement.textContent = numberOfQuestions;
+	const maxQuestionsInput = document.querySelector('#max-questions');
+	if (maxQuestionsInput) {
+		maxQuestionsInput.value = numberOfQuestions;
 	}
 };
 
@@ -42,9 +42,13 @@ const startGame = async () => {
 	sessionStorage.removeItem('questionStatus');
 
 	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
+	const maxQuestionsInput = document.querySelector('#max-questions');
+	const maxQuestions = Number.parseInt(maxQuestionsInput?.value, 10) || questionsForGame.length;
+
 	const questionOrder = questionsForGame
 		.map((question) => `/${GAME_TYPE}/all-questions/${question.pageNumber}/`)
-		.sort(() => (Math.random() > 0.5 ? 1 : -1));
+		.sort(() => (Math.random() > 0.5 ? 1 : -1))
+		.slice(0, maxQuestions);
 
 	sessionStorage.setItem('questions', JSON.stringify(questionOrder));
 	sessionStorage.setItem('currentQuestionIndex', '0');
