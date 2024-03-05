@@ -21,6 +21,37 @@ const updateQuestionCounts = async () => {
 	});
 };
 
+const getDurationInMinutes = (durationInSeconds) => {
+	const minutes = Math.floor(durationInSeconds / 60);
+	const remainingSeconds = durationInSeconds % 60;
+	let durationStrings = [];
+
+	if (minutes > 0) {
+		durationStrings.push(minutes === 1 ? '1 minute' : `${minutes} minutes`);
+	}
+
+	if (remainingSeconds > 0) {
+		durationStrings.push(`${remainingSeconds} seconds`);
+	}
+
+	return durationStrings.join(', ');
+};
+
+const updateDurationIndicators = (numberOfQuestions) => {
+	const durationIndicators = document.querySelectorAll('[data-duration]');
+	durationIndicators.forEach((element) => {
+		const secondsPerQuestion = Number.parseInt(element.dataset.duration, 10);
+		const totalDurationInSeconds = secondsPerQuestion * numberOfQuestions;
+
+		const durationInMinutes = getDurationInMinutes(totalDurationInSeconds);
+		if (durationInMinutes) {
+			element.textContent = `(up to ${getDurationInMinutes(totalDurationInSeconds)})`;
+		} else {
+			element.textContent = '';
+		}
+	});
+};
+
 const handleSelectionChange = async () => {
 	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
 	const numberOfQuestions = questionsForGame.length;
@@ -28,6 +59,8 @@ const handleSelectionChange = async () => {
 	if (maxQuestionsInput) {
 		maxQuestionsInput.value = numberOfQuestions;
 	}
+
+	updateDurationIndicators(numberOfQuestions);
 };
 
 const initializeCategorySelectionChangeListener = () => {
@@ -35,6 +68,16 @@ const initializeCategorySelectionChangeListener = () => {
 	elements.forEach((element) => {
 		element.addEventListener('change', handleSelectionChange);
 	});
+};
+
+const initializeMaxQuestionsChangeListener = () => {
+	const maxQuestionsInput = document.querySelector('#max-questions');
+	if (maxQuestionsInput) {
+		maxQuestionsInput.addEventListener('change', (event) => {
+			const numberOfQuestions = Number.parseInt(event.target.value, 10) || 0;
+			updateDurationIndicators(numberOfQuestions);
+		});
+	}
 };
 
 const startGame = async () => {
@@ -67,5 +110,6 @@ const initializeFormSubmitListener = () => {
 
 updateQuestionCounts();
 initializeCategorySelectionChangeListener();
+initializeMaxQuestionsChangeListener();
 initializeFormSubmitListener();
 handleSelectionChange();
