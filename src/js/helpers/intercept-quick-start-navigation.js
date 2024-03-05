@@ -15,8 +15,7 @@ const quickStartGame = async (gameType) => {
 };
 
 export const interceptQuickStartNavigation = async () => {
-	sessionStorage.removeItem('questions');
-	sessionStorage.removeItem('questionStatus');
+	sessionStorage.clear();
 	const links = document.querySelectorAll('[data-game-type]');
 
 	links.forEach((link) => {

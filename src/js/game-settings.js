@@ -81,12 +81,14 @@ const initializeMaxQuestionsChangeListener = () => {
 };
 
 const startGame = async () => {
-	sessionStorage.removeItem('questions');
-	sessionStorage.removeItem('questionStatus');
+	sessionStorage.clear();
 
 	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
 	const maxQuestionsInput = document.querySelector('#max-questions');
 	const maxQuestions = Number.parseInt(maxQuestionsInput?.value, 10) || questionsForGame.length;
+	const questionTimer = document.querySelector('[name="timer"]:checked')?.value;
+	const durationInSeconds =
+		questionTimer === 'no-timer' ? null : Number.parseInt(questionTimer, 10) * maxQuestions;
 
 	const questionOrder = questionsForGame
 		.map((question) => `/${GAME_TYPE}/all-questions/${question.pageNumber}/`)
@@ -95,6 +97,11 @@ const startGame = async () => {
 
 	sessionStorage.setItem('questions', JSON.stringify(questionOrder));
 	sessionStorage.setItem('currentQuestionIndex', '0');
+	if (durationInSeconds) {
+		const now = new Date().getTime();
+		const endTime = now + 1000 * durationInSeconds;
+		sessionStorage.setItem('endTime', endTime);
+	}
 
 	window.location.href = questionOrder[0];
 };
