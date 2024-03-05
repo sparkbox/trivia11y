@@ -21,6 +21,27 @@
 				</p>
 				<input id="max-questions" type="text" inputmode="numeric" pattern="\d+" class="cmp-form__input cmp-form__input--mini" aria-describedby="max-questions-description">
 			</div>
+			<fieldset>
+				<legend>Question Timer</legend>
+				<div class="cmp-stack">
+					<div class="cmp-checkbox__wrapper">
+						<input id="no-timer" type="radio" name="timer" value="no-timer" checked class="cmp-checkbox__input">
+						<label for="no-timer">No Timer</label>
+					</div>
+					<div class="cmp-checkbox__wrapper">
+						<input id="15-seconds" type="radio" name="timer" value="15-seconds" class="cmp-checkbox__input">
+						<label for="15-seconds">15 seconds <span data-duration="15"></span></label>
+					</div>
+					<div class="cmp-checkbox__wrapper">
+						<input id="30-seconds" type="radio" name="timer" value="30-seconds" class="cmp-checkbox__input">
+						<label for="30-seconds">30 seconds <span data-duration="30"></span></label>
+					</div>
+					<div class="cmp-checkbox__wrapper">
+						<input id="60-seconds" type="radio" name="timer" value="60-seconds" class="cmp-checkbox__input">
+						<label for="60-seconds">60 seconds <span data-duration="60"></span></label>
+					</div>
+				</div>
+			</fieldset>
 			<div>
 				<button type="submit" class="cmp-button">Start Game</button>
 			</div>
