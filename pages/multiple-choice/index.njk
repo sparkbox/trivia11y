@@ -22,14 +22,17 @@ eleventyExcludeFromCollections: true
 <div class="obj-content-width">
   <article>
     <header class="cmp-game-header">
-      <h1 class="cmp-game-header__title">Question <span data-question-number>{{ questionGroup.pageNumber }}</span> of <span data-question-total>{{ questionGroup.questionTotal }}</span></h2>
+      <h1 class="cmp-game-header__title">Question <span data-question-number>{{ questionGroup.pageNumber }}</span> of <span data-question-total>{{ questionGroup.questionTotal }}</span></h1>
       <h2 class="cmp-game-header__subtitle">
-        {% if questionGroup.category !== 'All Questions' %}
-          Category: {{ questionGroup.category }}
-        {% else %}
-          {{ questionGroup.question.Tags | csvList }}
-        {% endif %}
-      </h1>
+        <span>
+          {% if questionGroup.category !== 'All Questions' %}
+            Category: {{ questionGroup.category }}
+          {% else %}
+            {{ questionGroup.question.Tags | csvList }}
+          {% endif %}
+        </span>
+        <span data-time-remaining></span>
+      </h2>
     </header>
 
     {% from 'macros/multiple-choice.njk' import multipleChoice %}

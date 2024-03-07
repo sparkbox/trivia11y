@@ -7,6 +7,10 @@
 	}
 
 	&__subtitle {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 1rem;
+		justify-content: space-between;
 		margin: 0;
 		font-weight: 400;
 		font-size: clamp(1rem, var(--size) + 0.5vw, 1.5rem);

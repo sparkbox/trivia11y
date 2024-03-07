@@ -21,6 +21,37 @@ const updateQuestionCounts = async () => {
 	});
 };
 
+const getDurationInMinutes = (durationInSeconds) => {
+	const minutes = Math.floor(durationInSeconds / 60);
+	const remainingSeconds = durationInSeconds % 60;
+	let durationStrings = [];
+
+	if (minutes > 0) {
+		durationStrings.push(minutes === 1 ? '1 minute' : `${minutes} minutes`);
+	}
+
+	if (remainingSeconds > 0) {
+		durationStrings.push(`${remainingSeconds} seconds`);
+	}
+
+	return durationStrings.join(', ');
+};
+
+const updateDurationIndicators = (numberOfQuestions) => {
+	const durationIndicators = document.querySelectorAll('[data-duration]');
+	durationIndicators.forEach((element) => {
+		const secondsPerQuestion = Number.parseInt(element.dataset.duration, 10);
+		const totalDurationInSeconds = secondsPerQuestion * numberOfQuestions;
+
+		const durationInMinutes = getDurationInMinutes(totalDurationInSeconds);
+		if (durationInMinutes) {
+			element.textContent = `(up to ${getDurationInMinutes(totalDurationInSeconds)})`;
+		} else {
+			element.textContent = '';
+		}
+	});
+};
+
 const handleSelectionChange = async () => {
 	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
 	const numberOfQuestions = questionsForGame.length;
@@ -28,6 +59,8 @@ const handleSelectionChange = async () => {
 	if (maxQuestionsInput) {
 		maxQuestionsInput.value = numberOfQuestions;
 	}
+
+	updateDurationIndicators(numberOfQuestions);
 };
 
 const initializeCategorySelectionChangeListener = () => {
@@ -37,13 +70,25 @@ const initializeCategorySelectionChangeListener = () => {
 	});
 };
 
+const initializeMaxQuestionsChangeListener = () => {
+	const maxQuestionsInput = document.querySelector('#max-questions');
+	if (maxQuestionsInput) {
+		maxQuestionsInput.addEventListener('change', (event) => {
+			const numberOfQuestions = Number.parseInt(event.target.value, 10) || 0;
+			updateDurationIndicators(numberOfQuestions);
+		});
+	}
+};
+
 const startGame = async () => {
-	sessionStorage.removeItem('questions');
-	sessionStorage.removeItem('questionStatus');
+	sessionStorage.clear();
 
 	const questionsForGame = await getQuestionsForGame(questions, IS_MULTIPLE_CHOICE);
 	const maxQuestionsInput = document.querySelector('#max-questions');
 	const maxQuestions = Number.parseInt(maxQuestionsInput?.value, 10) || questionsForGame.length;
+	const questionTimer = document.querySelector('[name="timer"]:checked')?.value;
+	const durationInSeconds =
+		questionTimer === 'no-timer' ? null : Number.parseInt(questionTimer, 10) * maxQuestions;
 
 	const questionOrder = questionsForGame
 		.map((question) => `/${GAME_TYPE}/all-questions/${question.pageNumber}/`)
@@ -52,6 +97,11 @@ const startGame = async () => {
 
 	sessionStorage.setItem('questions', JSON.stringify(questionOrder));
 	sessionStorage.setItem('currentQuestionIndex', '0');
+	if (durationInSeconds) {
+		const now = new Date().getTime();
+		const endTime = now + 1000 * durationInSeconds;
+		sessionStorage.setItem('endTime', endTime);
+	}
 
 	window.location.href = questionOrder[0];
 };
@@ -67,5 +117,6 @@ const initializeFormSubmitListener = () => {
 
 updateQuestionCounts();
 initializeCategorySelectionChangeListener();
+initializeMaxQuestionsChangeListener();
 initializeFormSubmitListener();
 handleSelectionChange();
