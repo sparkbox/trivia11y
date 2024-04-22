@@ -37,9 +37,9 @@
     "airtable": "^0.12.2",
     "dotenv": "^16.4.5",
     "esbuild": "^0.20.2",
-    "isomorphic-dompurify": "^2.6.0",
-    "marked": "^12.0.1",
-    "sass": "^1.72.0"
+    "isomorphic-dompurify": "^2.7.0",
+    "marked": "^12.0.2",
+    "sass": "^1.75.0"
   },
   "browserslist": [
     ">0.5%",
