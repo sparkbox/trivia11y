@@ -26,11 +26,11 @@
     "update-deps": "ncu -u -x @sindresorhus/slugify && npm install"
   },
   "devDependencies": {
-    "@eslint/js": "^9.2.0",
-    "eslint": "^9.2.0",
-    "globals": "^15.1.0",
-    "stylelint": "^16.5.0",
-    "stylelint-config-standard": "^36.0.0",
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
+    "globals": "^15.9.0",
+    "stylelint": "^16.8.2",
+    "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0"
   },
   "dependencies": {
