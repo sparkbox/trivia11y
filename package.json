@@ -38,10 +38,10 @@
     "@sindresorhus/slugify": "^1.1.2",
     "airtable": "^0.12.2",
     "dotenv": "^16.4.5",
-    "esbuild": "^0.20.2",
-    "isomorphic-dompurify": "^2.9.0",
+    "esbuild": "^0.23.1",
+    "isomorphic-dompurify": "^2.14.0",
     "marked": "^12.0.2",
-    "sass": "^1.76.0"
+    "sass": "^1.77.8"
   },
   "browserslist": [
     ">0.5%",
