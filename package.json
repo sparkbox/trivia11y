@@ -6,8 +6,9 @@
   "author": "",
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
+  "type": "module",
   "scripts": {
     "prestart": "rm -rf dist",
     "prebuild": "rm -rf dist",
@@ -17,8 +18,8 @@
     "eleventy:dev": "eleventy --serve --incremental",
     "sass:build": "sass ./src/css/styles.scss:./dist/styles.css --style=compressed --no-source-map",
     "sass:dev": "sass ./src/css/styles.scss:./dist/styles.css --watch",
-    "js:build": "NODE_ENV=production node esbuild.mjs",
-    "js:dev": "NODE_ENV=development node esbuild.mjs",
+    "js:build": "NODE_ENV=production node esbuild.js",
+    "js:dev": "NODE_ENV=development node esbuild.js",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint \"src/**/*.{css,scss,sass}\" --color --formatter verbose",
     "lint:js": "eslint",
@@ -26,22 +27,23 @@
     "update-deps": "ncu -u -x @sindresorhus/slugify && npm install"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.0",
-    "eslint": "^9.11.0",
-    "globals": "^15.9.0",
-    "stylelint": "^16.9.0",
-    "stylelint-config-standard": "^36.0.1",
-    "stylelint-config-standard-scss": "^13.1.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
+    "stylelint": "^17.6.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-standard-scss": "^17.0.0"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@sindresorhus/slugify": "^1.1.2",
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-plugin-ejs": "^1.0.0",
+    "@sindresorhus/slugify": "^2.2.1",
     "airtable": "^0.12.2",
-    "dotenv": "^16.4.5",
-    "esbuild": "^0.23.1",
-    "isomorphic-dompurify": "^2.15.0",
-    "marked": "^14.1.2",
-    "sass": "^1.78.0"
+    "dotenv": "^17.3.1",
+    "esbuild": "^0.27.4",
+    "isomorphic-dompurify": "^3.7.1",
+    "marked": "^17.0.5",
+    "sass": "^1.98.0"
   },
   "browserslist": [
     ">0.5%",

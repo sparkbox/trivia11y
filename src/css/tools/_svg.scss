@@ -5,7 +5,7 @@
 @function str-replace($string, $search, $replace: '') {
 	$index: string.index($string, $search);
 
-	@return if($index, str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace), $string);
+	@return if(sass($index): string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace); else: $string);
 }
 
 // SVG URL fixer Icons by Taylor Hunt
