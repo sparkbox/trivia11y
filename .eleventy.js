@@ -1,5 +1,6 @@
-const { marked } = require('marked');
-const DOMPurify = require('isomorphic-dompurify');
+import { marked } from 'marked';
+import DOMPurify from 'isomorphic-dompurify';
+import ejsPlugin from '@11ty/eleventy-plugin-ejs';
 
 const markdownToHtml = (markdown) => {
   const html = marked.parse(markdown.replace(/\\/g, ''), {
@@ -14,7 +15,9 @@ const markdownToHtml = (markdown) => {
   return cleanHtml;
 };
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(ejsPlugin);
+
   eleventyConfig.addPassthroughCopy({ 'src/public/': '/' });
   eleventyConfig.addLayoutAlias('default', 'layout.njk');
 
